@@ -1,0 +1,741 @@
+{
+  "schema_version": "1.0.0",
+  "automated_decision_allowed": false,
+  "notice": "Educational manual review queue. All cases require human underwriting review; no automated lending decisions are made.",
+  "cases": {
+    "DEC-E7B02863EABE492B": {
+      "decision_id": "DEC-E7B02863EABE492B",
+      "application_id": "APP-202401-03660",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202401-03660",
+        "applicant_id": "USR-103659",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-01-09T04:27:18Z",
+        "feature_as_of_timestamp": "2024-01-08T20:27:18Z",
+        "annual_income_usd": 67870.54,
+        "loan_amount_usd": 6126.92,
+        "loan_term_months": 36,
+        "debt_to_income_ratio": 0.193,
+        "credit_score": 799,
+        "credit_history_months": null,
+        "revolving_utilization_ratio": 0.3078,
+        "delinquencies_24m": 0,
+        "inquiries_6m": 1,
+        "employment_length_years": 9.5,
+        "home_ownership": "OWN",
+        "loan_purpose": "DEBT_CONSOLIDATION",
+        "age_band": "18_29",
+        "region_tier": "METRO"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-E7B02863EABE492B",
+        "application_id": "APP-202401-03660",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.024573,
+        "calibrated_pd": 0.019276,
+        "risk_band": "LOW_RISK_REVIEW",
+        "queue_priority": "standard",
+        "review_sla_hours": 48,
+        "recommended_action": "ROUTE_TO_STANDARD_UNDERWRITER_CHECK",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "credit_score",
+            "value": 799.0,
+            "contribution_log_odds": -1.088031,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC01_CREDIT_SCORE",
+            "summary": "Bureau credit score (799.0) reduces estimated default risk (delta log-odds -1.0880)."
+          },
+          {
+            "feature": "employment_length_years",
+            "value": 9.5,
+            "contribution_log_odds": -0.220599,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC12_EMPLOYMENT_TENURE",
+            "summary": "Employment length (9.5) reduces estimated default risk (delta log-odds -0.2206)."
+          },
+          {
+            "feature": "home_ownership_OWN",
+            "value": 1.0,
+            "contribution_log_odds": -0.216576,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC14_HOUSING_STATUS",
+            "summary": "Housing status (OWN) (1.0) reduces estimated default risk (delta log-odds -0.2166)."
+          },
+          {
+            "feature": "debt_to_income_ratio",
+            "value": 0.193,
+            "contribution_log_odds": -0.151929,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC02_DEBT_TO_INCOME",
+            "summary": "Debt-to-income ratio (0.193) reduces estimated default risk (delta log-odds -0.1519)."
+          },
+          {
+            "feature": "estimated_payment_to_income",
+            "value": 0.035,
+            "contribution_log_odds": 0.076136,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC07_PAYMENT_BURDEN",
+            "summary": "Estimated monthly payment burden (0.035) increases estimated default risk (delta log-odds +0.0761)."
+          }
+        ],
+        "warnings": [
+          "Imputed missing origination features using training medians: credit_history_months"
+        ],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-72085E823E9B8C8E": {
+      "decision_id": "DEC-72085E823E9B8C8E",
+      "application_id": "APP-202401-03638",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202401-03638",
+        "applicant_id": "USR-103637",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-01-04T03:22:04Z",
+        "feature_as_of_timestamp": "2024-01-02T16:22:04Z",
+        "annual_income_usd": 32106.71,
+        "loan_amount_usd": 10935.66,
+        "loan_term_months": 48,
+        "debt_to_income_ratio": 0.1087,
+        "credit_score": 740,
+        "credit_history_months": 112,
+        "revolving_utilization_ratio": 0.3417,
+        "delinquencies_24m": 1,
+        "inquiries_6m": 2,
+        "employment_length_years": 4.1,
+        "home_ownership": "MORTGAGE",
+        "loan_purpose": "SMALL_BUSINESS",
+        "age_band": "30_44",
+        "region_tier": "METRO"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-72085E823E9B8C8E",
+        "application_id": "APP-202401-03638",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.07238,
+        "calibrated_pd": 0.061502,
+        "risk_band": "MODERATE_RISK_REVIEW",
+        "queue_priority": "elevated",
+        "review_sla_hours": 24,
+        "recommended_action": "ROUTE_TO_DETAILED_UNDERWRITER_REVIEW",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "credit_score",
+            "value": 740.0,
+            "contribution_log_odds": -0.723125,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC01_CREDIT_SCORE",
+            "summary": "Bureau credit score (740.0) reduces estimated default risk (delta log-odds -0.7231)."
+          },
+          {
+            "feature": "debt_to_income_ratio",
+            "value": 0.1087,
+            "contribution_log_odds": -0.126887,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC02_DEBT_TO_INCOME",
+            "summary": "Debt-to-income ratio (0.1087) reduces estimated default risk (delta log-odds -0.1269)."
+          },
+          {
+            "feature": "inquiries_6m",
+            "value": 2.0,
+            "contribution_log_odds": 0.114688,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC05_RECENT_INQUIRIES",
+            "summary": "Credit inquiries in past 6 months (2.0) increases estimated default risk (delta log-odds +0.1147)."
+          },
+          {
+            "feature": "delinquencies_24m",
+            "value": 1.0,
+            "contribution_log_odds": -0.027702,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC04_RECENT_DELINQUENCIES",
+            "summary": "Delinquencies in past 24 months (1.0) reduces estimated default risk (delta log-odds -0.0277)."
+          },
+          {
+            "feature": "loan_to_income_ratio",
+            "value": 0.3406,
+            "contribution_log_odds": 0.02571,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC06_LOAN_TO_INCOME",
+            "summary": "Requested loan-to-income ratio (0.3406) increases estimated default risk (delta log-odds +0.0257)."
+          }
+        ],
+        "warnings": [],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-606E5425807843B7": {
+      "decision_id": "DEC-606E5425807843B7",
+      "application_id": "APP-202401-03742",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202401-03742",
+        "applicant_id": "USR-103741",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-01-29T14:57:22Z",
+        "feature_as_of_timestamp": "2024-01-28T21:57:22Z",
+        "annual_income_usd": 82039.73,
+        "loan_amount_usd": 7553.58,
+        "loan_term_months": 48,
+        "debt_to_income_ratio": 0.2744,
+        "credit_score": 721,
+        "credit_history_months": 28,
+        "revolving_utilization_ratio": 0.6653,
+        "delinquencies_24m": 1,
+        "inquiries_6m": null,
+        "employment_length_years": 9.5,
+        "home_ownership": "RENT",
+        "loan_purpose": "DEBT_CONSOLIDATION",
+        "age_band": "45_59",
+        "region_tier": "RURAL"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-606E5425807843B7",
+        "application_id": "APP-202401-03742",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.098596,
+        "calibrated_pd": 0.085846,
+        "risk_band": "MODERATE_RISK_REVIEW",
+        "queue_priority": "elevated",
+        "review_sla_hours": 24,
+        "recommended_action": "ROUTE_TO_DETAILED_UNDERWRITER_REVIEW",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "credit_score",
+            "value": 721.0,
+            "contribution_log_odds": -0.809408,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC01_CREDIT_SCORE",
+            "summary": "Bureau credit score (721.0) reduces estimated default risk (delta log-odds -0.8094)."
+          },
+          {
+            "feature": "credit_history_months",
+            "value": 28.0,
+            "contribution_log_odds": 0.288527,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC11_CREDIT_HISTORY",
+            "summary": "Length of credit history (28.0) increases estimated default risk (delta log-odds +0.2885)."
+          },
+          {
+            "feature": "employment_length_years",
+            "value": 9.5,
+            "contribution_log_odds": -0.194683,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC12_EMPLOYMENT_TENURE",
+            "summary": "Employment length (9.5) reduces estimated default risk (delta log-odds -0.1947)."
+          },
+          {
+            "feature": "revolving_utilization_ratio",
+            "value": 0.6653,
+            "contribution_log_odds": 0.135221,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC03_REVOLVING_UTILIZATION",
+            "summary": "Revolving credit utilization (0.6653) increases estimated default risk (delta log-odds +0.1352)."
+          },
+          {
+            "feature": "delinquencies_24m",
+            "value": 1.0,
+            "contribution_log_odds": -0.133126,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC04_RECENT_DELINQUENCIES",
+            "summary": "Delinquencies in past 24 months (1.0) reduces estimated default risk (delta log-odds -0.1331)."
+          }
+        ],
+        "warnings": [
+          "Imputed missing origination features using training medians: inquiries_6m"
+        ],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-6D9D69B7A8B7028A": {
+      "decision_id": "DEC-6D9D69B7A8B7028A",
+      "application_id": "APP-202405-04320",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202405-04320",
+        "applicant_id": "USR-104319",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-05-26T16:28:32Z",
+        "feature_as_of_timestamp": "2024-05-26T07:28:32Z",
+        "annual_income_usd": 99191.21,
+        "loan_amount_usd": 27418.59,
+        "loan_term_months": 12,
+        "debt_to_income_ratio": 0.2551,
+        "credit_score": 682,
+        "credit_history_months": 151,
+        "revolving_utilization_ratio": 0.6691,
+        "delinquencies_24m": 0,
+        "inquiries_6m": 0,
+        "employment_length_years": 2.2,
+        "home_ownership": "OTHER",
+        "loan_purpose": "DEBT_CONSOLIDATION",
+        "age_band": "30_44",
+        "region_tier": "SUBURBAN"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-6D9D69B7A8B7028A",
+        "application_id": "APP-202405-04320",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.131495,
+        "calibrated_pd": 0.117207,
+        "risk_band": "MODERATE_RISK_REVIEW",
+        "queue_priority": "elevated",
+        "review_sla_hours": 24,
+        "recommended_action": "ROUTE_TO_DETAILED_UNDERWRITER_REVIEW",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "revolving_utilization_ratio",
+            "value": 0.6691,
+            "contribution_log_odds": 0.385806,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC03_REVOLVING_UTILIZATION",
+            "summary": "Revolving credit utilization (0.6691) increases estimated default risk (delta log-odds +0.3858)."
+          },
+          {
+            "feature": "loan_term_months",
+            "value": 12.0,
+            "contribution_log_odds": -0.168661,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC10_LOAN_TERM",
+            "summary": "Requested repayment term length (12.0) reduces estimated default risk (delta log-odds -0.1687)."
+          },
+          {
+            "feature": "estimated_payment_to_income",
+            "value": 0.2916,
+            "contribution_log_odds": -0.066118,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC07_PAYMENT_BURDEN",
+            "summary": "Estimated monthly payment burden (0.2916) reduces estimated default risk (delta log-odds -0.0661)."
+          },
+          {
+            "feature": "annual_income_usd",
+            "value": 99191.21,
+            "contribution_log_odds": 0.025509,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC08_ANNUAL_INCOME",
+            "summary": "Annual income level (99191.21) increases estimated default risk (delta log-odds +0.0255)."
+          },
+          {
+            "feature": "loan_purpose_DEBT_CONSOLIDATION",
+            "value": 1.0,
+            "contribution_log_odds": 0.020628,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC15_LOAN_PURPOSE",
+            "summary": "Loan purpose (DEBT_CONSOLIDATION) (1.0) increases estimated default risk (delta log-odds +0.0206)."
+          }
+        ],
+        "warnings": [],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-47953A323DC423FB": {
+      "decision_id": "DEC-47953A323DC423FB",
+      "application_id": "APP-202403-03992",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202403-03992",
+        "applicant_id": "USR-103991",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-03-21T16:45:06Z",
+        "feature_as_of_timestamp": "2024-03-21T04:45:06Z",
+        "annual_income_usd": 39095.88,
+        "loan_amount_usd": 13518.0,
+        "loan_term_months": 12,
+        "debt_to_income_ratio": 0.3715,
+        "credit_score": 644,
+        "credit_history_months": 101,
+        "revolving_utilization_ratio": 0.316,
+        "delinquencies_24m": 0,
+        "inquiries_6m": 0,
+        "employment_length_years": 1.2,
+        "home_ownership": "RENT",
+        "loan_purpose": "HOME_IMPROVEMENT",
+        "age_band": "45_59",
+        "region_tier": "METRO"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-47953A323DC423FB",
+        "application_id": "APP-202403-03992",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.16741,
+        "calibrated_pd": 0.152264,
+        "risk_band": "HIGH_RISK_REVIEW",
+        "queue_priority": "high",
+        "review_sla_hours": 12,
+        "recommended_action": "ROUTE_TO_SENIOR_CREDIT_ANALYST",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "loan_term_months",
+            "value": 12.0,
+            "contribution_log_odds": -0.393579,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC10_LOAN_TERM",
+            "summary": "Requested repayment term length (12.0) reduces estimated default risk (delta log-odds -0.3936)."
+          },
+          {
+            "feature": "credit_score",
+            "value": 644.0,
+            "contribution_log_odds": 0.351406,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC01_CREDIT_SCORE",
+            "summary": "Bureau credit score (644.0) increases estimated default risk (delta log-odds +0.3514)."
+          },
+          {
+            "feature": "debt_to_income_ratio",
+            "value": 0.3715,
+            "contribution_log_odds": 0.203912,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC02_DEBT_TO_INCOME",
+            "summary": "Debt-to-income ratio (0.3715) increases estimated default risk (delta log-odds +0.2039)."
+          },
+          {
+            "feature": "home_ownership_RENT",
+            "value": 1.0,
+            "contribution_log_odds": 0.186172,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC14_HOUSING_STATUS",
+            "summary": "Housing status (RENT) (1.0) increases estimated default risk (delta log-odds +0.1862)."
+          },
+          {
+            "feature": "estimated_payment_to_income",
+            "value": 0.3648,
+            "contribution_log_odds": -0.179773,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC07_PAYMENT_BURDEN",
+            "summary": "Estimated monthly payment burden (0.3648) reduces estimated default risk (delta log-odds -0.1798)."
+          }
+        ],
+        "warnings": [],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-08750BCE71F6EF4A": {
+      "decision_id": "DEC-08750BCE71F6EF4A",
+      "application_id": "APP-202405-04331",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202405-04331",
+        "applicant_id": "USR-104330",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-05-28T16:14:27Z",
+        "feature_as_of_timestamp": "2024-05-28T08:14:27Z",
+        "annual_income_usd": 65530.47,
+        "loan_amount_usd": 5517.02,
+        "loan_term_months": 36,
+        "debt_to_income_ratio": 0.3516,
+        "credit_score": 666,
+        "credit_history_months": null,
+        "revolving_utilization_ratio": 0.7018,
+        "delinquencies_24m": 0,
+        "inquiries_6m": 1,
+        "employment_length_years": 5.6,
+        "home_ownership": "MORTGAGE",
+        "loan_purpose": "OTHER",
+        "age_band": "18_29",
+        "region_tier": "METRO"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-08750BCE71F6EF4A",
+        "application_id": "APP-202405-04331",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.212815,
+        "calibrated_pd": 0.19756,
+        "risk_band": "HIGH_RISK_REVIEW",
+        "queue_priority": "high",
+        "review_sla_hours": 12,
+        "recommended_action": "ROUTE_TO_SENIOR_CREDIT_ANALYST",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "revolving_utilization_ratio",
+            "value": 0.7018,
+            "contribution_log_odds": 0.328314,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC03_REVOLVING_UTILIZATION",
+            "summary": "Revolving credit utilization (0.7018) increases estimated default risk (delta log-odds +0.3283)."
+          },
+          {
+            "feature": "debt_to_income_ratio",
+            "value": 0.3516,
+            "contribution_log_odds": 0.281829,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC02_DEBT_TO_INCOME",
+            "summary": "Debt-to-income ratio (0.3516) increases estimated default risk (delta log-odds +0.2818)."
+          },
+          {
+            "feature": "loan_amount_usd",
+            "value": 5517.02,
+            "contribution_log_odds": -0.026955,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC09_LOAN_AMOUNT",
+            "summary": "Requested loan amount (5517.02) reduces estimated default risk (delta log-odds -0.0270)."
+          },
+          {
+            "feature": "annual_income_usd",
+            "value": 65530.47,
+            "contribution_log_odds": 0.0,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC08_ANNUAL_INCOME",
+            "summary": "Annual income level (65530.47) increases estimated default risk (delta log-odds +0.0000)."
+          },
+          {
+            "feature": "credit_history_months",
+            "value": 134.0,
+            "contribution_log_odds": 0.0,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC11_CREDIT_HISTORY",
+            "summary": "Length of credit history (134.0) increases estimated default risk (delta log-odds +0.0000)."
+          }
+        ],
+        "warnings": [
+          "Imputed missing origination features using training medians: credit_history_months"
+        ],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-B62FC8C6CC1C2FFD": {
+      "decision_id": "DEC-B62FC8C6CC1C2FFD",
+      "application_id": "APP-202404-04106",
+      "review_status": "PENDING_MANUAL_REVIEW",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202404-04106",
+        "applicant_id": "USR-104105",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-04-18T12:52:26Z",
+        "feature_as_of_timestamp": "2024-04-16T17:52:26Z",
+        "annual_income_usd": 60348.56,
+        "loan_amount_usd": 6690.21,
+        "loan_term_months": 36,
+        "debt_to_income_ratio": 0.1854,
+        "credit_score": 601,
+        "credit_history_months": 166,
+        "revolving_utilization_ratio": 0.4543,
+        "delinquencies_24m": 0,
+        "inquiries_6m": 1,
+        "employment_length_years": 5.8,
+        "home_ownership": "MORTGAGE",
+        "loan_purpose": "DEBT_CONSOLIDATION",
+        "age_band": "30_44",
+        "region_tier": "RURAL"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-B62FC8C6CC1C2FFD",
+        "application_id": "APP-202404-04106",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.294068,
+        "calibrated_pd": 0.280676,
+        "risk_band": "HIGH_RISK_REVIEW",
+        "queue_priority": "high",
+        "review_sla_hours": 12,
+        "recommended_action": "ROUTE_TO_SENIOR_CREDIT_ANALYST",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "credit_score",
+            "value": 601.0,
+            "contribution_log_odds": 1.080211,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC01_CREDIT_SCORE",
+            "summary": "Bureau credit score (601.0) increases estimated default risk (delta log-odds +1.0802)."
+          },
+          {
+            "feature": "revolving_utilization_ratio",
+            "value": 0.4543,
+            "contribution_log_odds": 0.058615,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC03_REVOLVING_UTILIZATION",
+            "summary": "Revolving credit utilization (0.4543) increases estimated default risk (delta log-odds +0.0586)."
+          },
+          {
+            "feature": "debt_to_income_ratio",
+            "value": 0.1854,
+            "contribution_log_odds": -0.036301,
+            "direction": "DECREASES_RISK",
+            "reason_code": "RC02_DEBT_TO_INCOME",
+            "summary": "Debt-to-income ratio (0.1854) reduces estimated default risk (delta log-odds -0.0363)."
+          },
+          {
+            "feature": "annual_income_usd",
+            "value": 60348.56,
+            "contribution_log_odds": 0.032123,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC08_ANNUAL_INCOME",
+            "summary": "Annual income level (60348.56) increases estimated default risk (delta log-odds +0.0321)."
+          },
+          {
+            "feature": "credit_history_months",
+            "value": 166.0,
+            "contribution_log_odds": 0.0,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC11_CREDIT_HISTORY",
+            "summary": "Length of credit history (166.0) increases estimated default risk (delta log-odds +0.0000)."
+          }
+        ],
+        "warnings": [],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": []
+    },
+    "DEC-5161D5BF2DF97B4F": {
+      "decision_id": "DEC-5161D5BF2DF97B4F",
+      "application_id": "APP-202401-03727",
+      "review_status": "HUMAN_REQUEST_DOCUMENTATION",
+      "automated_decision_allowed": false,
+      "manual_review_required": true,
+      "applicant_snapshot": {
+        "application_id": "APP-202401-03727",
+        "applicant_id": "USR-103726",
+        "schema_version": "1.0.0",
+        "application_timestamp": "2024-01-26T14:37:38Z",
+        "feature_as_of_timestamp": "2024-01-26T00:37:38Z",
+        "annual_income_usd": 102070.46,
+        "loan_amount_usd": 28714.25,
+        "loan_term_months": 60,
+        "debt_to_income_ratio": 0.1963,
+        "credit_score": 538,
+        "credit_history_months": 127,
+        "revolving_utilization_ratio": 0.6014,
+        "delinquencies_24m": 1,
+        "inquiries_6m": 3,
+        "employment_length_years": 1.3,
+        "home_ownership": "RENT",
+        "loan_purpose": "DEBT_CONSOLIDATION",
+        "age_band": "45_59",
+        "region_tier": "RURAL"
+      },
+      "scoring_output": {
+        "decision_id": "DEC-5161D5BF2DF97B4F",
+        "application_id": "APP-202401-03727",
+        "schema_version": "1.0.0",
+        "feature_version": "1.0.0",
+        "model_id": "gbdt_baseline_v1",
+        "calibration_method": "sigmoid",
+        "policy_version": "1.0.0",
+        "raw_score": 0.763642,
+        "calibrated_pd": 0.775702,
+        "risk_band": "VERY_HIGH_RISK_ESCALATION",
+        "queue_priority": "urgent",
+        "review_sla_hours": 4,
+        "recommended_action": "ROUTE_TO_CREDIT_COMMITTEE_MANUAL_REVIEW",
+        "automated_decision_allowed": false,
+        "manual_review_required": true,
+        "explanations": [
+          {
+            "feature": "credit_score",
+            "value": 538.0,
+            "contribution_log_odds": 2.023893,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC01_CREDIT_SCORE",
+            "summary": "Bureau credit score (538.0) increases estimated default risk (delta log-odds +2.0239)."
+          },
+          {
+            "feature": "delinquencies_24m",
+            "value": 1.0,
+            "contribution_log_odds": 0.361807,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC04_RECENT_DELINQUENCIES",
+            "summary": "Delinquencies in past 24 months (1.0) increases estimated default risk (delta log-odds +0.3618)."
+          },
+          {
+            "feature": "home_ownership_RENT",
+            "value": 1.0,
+            "contribution_log_odds": 0.107801,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC14_HOUSING_STATUS",
+            "summary": "Housing status (RENT) (1.0) increases estimated default risk (delta log-odds +0.1078)."
+          },
+          {
+            "feature": "loan_term_months",
+            "value": 60.0,
+            "contribution_log_odds": 0.103867,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC10_LOAN_TERM",
+            "summary": "Requested repayment term length (60.0) increases estimated default risk (delta log-odds +0.1039)."
+          },
+          {
+            "feature": "inquiries_6m",
+            "value": 3.0,
+            "contribution_log_odds": 0.072382,
+            "direction": "INCREASES_RISK",
+            "reason_code": "RC05_RECENT_INQUIRIES",
+            "summary": "Credit inquiries in past 6 months (3.0) increases estimated default risk (delta log-odds +0.0724)."
+          }
+        ],
+        "warnings": [],
+        "scored_at_utc": "2025-07-01T12:00:00Z"
+      },
+      "human_reviews": [
+        {
+          "reviewer_id": "demo-underwriter-01",
+          "disposition": "HUMAN_REQUEST_DOCUMENTATION",
+          "rationale": "Synthetic demo review: elevated PD driven by DTI/utilization; requesting income verification.",
+          "reviewed_at_utc": "2025-07-01T12:00:00Z",
+          "automated_decision": false
+        }
+      ]
+    }
+  }
+}

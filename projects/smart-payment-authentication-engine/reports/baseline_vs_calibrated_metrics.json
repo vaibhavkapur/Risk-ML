@@ -1,0 +1,316 @@
+{
+  "dataset_summary": {
+    "empirical_fraud_rate": 0.051556,
+    "mean_true_prob": 0.05,
+    "n_cal_mature": 474,
+    "n_test": 752,
+    "n_total": 4500,
+    "n_train_excluded_immature": 1027,
+    "n_train_mature": 1243,
+    "n_val": 729
+  },
+  "feature_version": "1.0.0",
+  "manifest": {
+    "artifact_sha256": "f4b38904a1a2b7a2e04f53c61075adbc705e5a00c61b94bcab3d56da80810111",
+    "calibration_method": "sigmoid",
+    "feature_names": [
+      "log_amount_major",
+      "merchant_category_risk",
+      "is_recurring",
+      "is_cross_border",
+      "log_account_age_months",
+      "prior_chargebacks_90d",
+      "tx_count_24h",
+      "log_tx_amount_24h_major",
+      "log_device_age_months",
+      "is_emulator",
+      "is_tor_or_vpn",
+      "ip_velocity_1h",
+      "ip_velocity_24h",
+      "device_trust_score",
+      "biometric_enrolled",
+      "browser_fingerprint_mismatch"
+    ],
+    "feature_version": "1.0.0",
+    "label_maturity_days": 14,
+    "metrics": {
+      "raw_val_brier_score": 0.03756,
+      "raw_val_ece": 0.021482,
+      "val_brier_score": 0.036566,
+      "val_ece": 0.020609,
+      "val_log_loss": 0.141579,
+      "val_roc_auc": 0.856782
+    },
+    "model_version": "gbm_sigmoid_seed42_fv1.0.0",
+    "n_calibration_mature": 474,
+    "n_train_excluded_immature": 1027,
+    "n_train_mature": 1243,
+    "n_train_total": 2270,
+    "seed": 42,
+    "trained_as_of": "2026-01-31T00:00:00Z"
+  },
+  "model_version": "gbm_sigmoid_seed42_fv1.0.0",
+  "schema_version": "1.0.0",
+  "validation_metrics": {
+    "calibrated_gbm": {
+      "base_rate": 0.049383,
+      "brier_score": 0.036566,
+      "ece": 0.020609,
+      "log_loss": 0.141579,
+      "mean_predicted_prob": 0.063184,
+      "reliability_bins": [
+        {
+          "bin_lower": 0.0,
+          "bin_upper": 0.1,
+          "count": 631.0,
+          "empirical_fraud_rate": 0.017433,
+          "mean_predicted": 0.026695
+        },
+        {
+          "bin_lower": 0.1,
+          "bin_upper": 0.2,
+          "count": 48.0,
+          "empirical_fraud_rate": 0.125,
+          "mean_predicted": 0.138476
+        },
+        {
+          "bin_lower": 0.2,
+          "bin_upper": 0.3,
+          "count": 16.0,
+          "empirical_fraud_rate": 0.25,
+          "mean_predicted": 0.25099
+        },
+        {
+          "bin_lower": 0.3,
+          "bin_upper": 0.4,
+          "count": 11.0,
+          "empirical_fraud_rate": 0.181818,
+          "mean_predicted": 0.350047
+        },
+        {
+          "bin_lower": 0.4,
+          "bin_upper": 0.5,
+          "count": 6.0,
+          "empirical_fraud_rate": 0.666667,
+          "mean_predicted": 0.451238
+        },
+        {
+          "bin_lower": 0.5,
+          "bin_upper": 0.6,
+          "count": 6.0,
+          "empirical_fraud_rate": 0.166667,
+          "mean_predicted": 0.563123
+        },
+        {
+          "bin_lower": 0.6,
+          "bin_upper": 0.7,
+          "count": 3.0,
+          "empirical_fraud_rate": 1.0,
+          "mean_predicted": 0.659558
+        },
+        {
+          "bin_lower": 0.7,
+          "bin_upper": 0.8,
+          "count": 3.0,
+          "empirical_fraud_rate": 0.333333,
+          "mean_predicted": 0.749861
+        },
+        {
+          "bin_lower": 0.8,
+          "bin_upper": 0.9,
+          "count": 3.0,
+          "empirical_fraud_rate": 0.666667,
+          "mean_predicted": 0.852004
+        },
+        {
+          "bin_lower": 0.9,
+          "bin_upper": 1.0,
+          "count": 2.0,
+          "empirical_fraud_rate": 1.0,
+          "mean_predicted": 0.916304
+        }
+      ],
+      "roc_auc": 0.856782
+    },
+    "comparison_by_calibrator": {
+      "isotonic": {
+        "brier_score": 0.03792,
+        "ece": 0.016441,
+        "log_loss": 0.171099,
+        "roc_auc": 0.848445
+      },
+      "none": {
+        "brier_score": 0.03756,
+        "ece": 0.021482,
+        "log_loss": 0.143527,
+        "roc_auc": 0.856782
+      },
+      "sigmoid": {
+        "brier_score": 0.036566,
+        "ece": 0.020609,
+        "log_loss": 0.141579,
+        "roc_auc": 0.856782
+      }
+    },
+    "raw_gbm": {
+      "base_rate": 0.049383,
+      "brier_score": 0.03756,
+      "ece": 0.021482,
+      "log_loss": 0.143527,
+      "mean_predicted_prob": 0.064892,
+      "reliability_bins": [
+        {
+          "bin_lower": 0.0,
+          "bin_upper": 0.1,
+          "count": 630.0,
+          "empirical_fraud_rate": 0.01746,
+          "mean_predicted": 0.023211
+        },
+        {
+          "bin_lower": 0.1,
+          "bin_upper": 0.2,
+          "count": 44.0,
+          "empirical_fraud_rate": 0.090909,
+          "mean_predicted": 0.139747
+        },
+        {
+          "bin_lower": 0.2,
+          "bin_upper": 0.3,
+          "count": 13.0,
+          "empirical_fraud_rate": 0.384615,
+          "mean_predicted": 0.236658
+        },
+        {
+          "bin_lower": 0.3,
+          "bin_upper": 0.4,
+          "count": 13.0,
+          "empirical_fraud_rate": 0.230769,
+          "mean_predicted": 0.336143
+        },
+        {
+          "bin_lower": 0.4,
+          "bin_upper": 0.5,
+          "count": 9.0,
+          "empirical_fraud_rate": 0.222222,
+          "mean_predicted": 0.453154
+        },
+        {
+          "bin_lower": 0.5,
+          "bin_upper": 0.6,
+          "count": 5.0,
+          "empirical_fraud_rate": 0.4,
+          "mean_predicted": 0.584378
+        },
+        {
+          "bin_lower": 0.6,
+          "bin_upper": 0.7,
+          "count": 4.0,
+          "empirical_fraud_rate": 0.25,
+          "mean_predicted": 0.676918
+        },
+        {
+          "bin_lower": 0.7,
+          "bin_upper": 0.8,
+          "count": 4.0,
+          "empirical_fraud_rate": 0.75,
+          "mean_predicted": 0.75932
+        },
+        {
+          "bin_lower": 0.8,
+          "bin_upper": 0.9,
+          "count": 3.0,
+          "empirical_fraud_rate": 0.333333,
+          "mean_predicted": 0.865464
+        },
+        {
+          "bin_lower": 0.9,
+          "bin_upper": 1.0,
+          "count": 4.0,
+          "empirical_fraud_rate": 1.0,
+          "mean_predicted": 0.936642
+        }
+      ],
+      "roc_auc": 0.856782
+    },
+    "reference_oracle": {
+      "base_rate": 0.049383,
+      "brier_score": 0.046019,
+      "ece": 0.078868,
+      "log_loss": 0.176421,
+      "mean_predicted_prob": 0.128251,
+      "reliability_bins": [
+        {
+          "bin_lower": 0.0,
+          "bin_upper": 0.1,
+          "count": 484.0,
+          "empirical_fraud_rate": 0.006198,
+          "mean_predicted": 0.044624
+        },
+        {
+          "bin_lower": 0.1,
+          "bin_upper": 0.2,
+          "count": 105.0,
+          "empirical_fraud_rate": 0.038095,
+          "mean_predicted": 0.138529
+        },
+        {
+          "bin_lower": 0.2,
+          "bin_upper": 0.3,
+          "count": 56.0,
+          "empirical_fraud_rate": 0.089286,
+          "mean_predicted": 0.247881
+        },
+        {
+          "bin_lower": 0.3,
+          "bin_upper": 0.4,
+          "count": 30.0,
+          "empirical_fraud_rate": 0.066667,
+          "mean_predicted": 0.351212
+        },
+        {
+          "bin_lower": 0.4,
+          "bin_upper": 0.5,
+          "count": 16.0,
+          "empirical_fraud_rate": 0.375,
+          "mean_predicted": 0.453374
+        },
+        {
+          "bin_lower": 0.5,
+          "bin_upper": 0.6,
+          "count": 15.0,
+          "empirical_fraud_rate": 0.333333,
+          "mean_predicted": 0.544687
+        },
+        {
+          "bin_lower": 0.6,
+          "bin_upper": 0.7,
+          "count": 12.0,
+          "empirical_fraud_rate": 0.333333,
+          "mean_predicted": 0.672308
+        },
+        {
+          "bin_lower": 0.7,
+          "bin_upper": 0.8,
+          "count": 3.0,
+          "empirical_fraud_rate": 0.333333,
+          "mean_predicted": 0.720579
+        },
+        {
+          "bin_lower": 0.8,
+          "bin_upper": 0.9,
+          "count": 4.0,
+          "empirical_fraud_rate": 0.75,
+          "mean_predicted": 0.877666
+        },
+        {
+          "bin_lower": 0.9,
+          "bin_upper": 1.0,
+          "count": 4.0,
+          "empirical_fraud_rate": 0.75,
+          "mean_predicted": 0.942248
+        }
+      ],
+      "roc_auc": 0.907808
+    }
+  }
+}

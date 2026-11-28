@@ -1,0 +1,103 @@
+[
+  {
+    "case_name": "credit_score_out_of_range",
+    "expected_error": "CONTRACT_VALIDATION_ERROR",
+    "payload": {
+      "application_id": "FIX-INV-001",
+      "applicant_id": "USR-INV-001",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-01T09:00:00Z",
+      "annual_income_usd": 65000.0,
+      "loan_amount_usd": 12000.0,
+      "loan_term_months": 36,
+      "debt_to_income_ratio": 0.25,
+      "credit_score": 910,
+      "credit_history_months": 60,
+      "revolving_utilization_ratio": 0.30,
+      "delinquencies_24m": 0,
+      "inquiries_6m": 1,
+      "employment_length_years": 3.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "30_44",
+      "region_tier": "METRO"
+    }
+  },
+  {
+    "case_name": "zero_loan_amount",
+    "expected_error": "CONTRACT_VALIDATION_ERROR",
+    "payload": {
+      "application_id": "FIX-INV-002",
+      "applicant_id": "USR-INV-002",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-01T09:00:00Z",
+      "annual_income_usd": 65000.0,
+      "loan_amount_usd": 0.0,
+      "loan_term_months": 36,
+      "debt_to_income_ratio": 0.25,
+      "credit_score": 700,
+      "credit_history_months": 60,
+      "revolving_utilization_ratio": 0.30,
+      "delinquencies_24m": 0,
+      "inquiries_6m": 1,
+      "employment_length_years": 3.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "30_44",
+      "region_tier": "METRO"
+    }
+  },
+  {
+    "case_name": "unsupported_loan_term",
+    "expected_error": "CONTRACT_VALIDATION_ERROR",
+    "payload": {
+      "application_id": "FIX-INV-003",
+      "applicant_id": "USR-INV-003",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-01T09:00:00Z",
+      "annual_income_usd": 65000.0,
+      "loan_amount_usd": 10000.0,
+      "loan_term_months": 42,
+      "debt_to_income_ratio": 0.25,
+      "credit_score": 700,
+      "credit_history_months": 60,
+      "revolving_utilization_ratio": 0.30,
+      "delinquencies_24m": 0,
+      "inquiries_6m": 1,
+      "employment_length_years": 3.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "30_44",
+      "region_tier": "METRO"
+    }
+  },
+  {
+    "case_name": "unknown_extra_field",
+    "expected_error": "CONTRACT_VALIDATION_ERROR",
+    "payload": {
+      "application_id": "FIX-INV-004",
+      "applicant_id": "USR-INV-004",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-01T09:00:00Z",
+      "annual_income_usd": 65000.0,
+      "loan_amount_usd": 10000.0,
+      "loan_term_months": 36,
+      "debt_to_income_ratio": 0.25,
+      "credit_score": 700,
+      "credit_history_months": 60,
+      "revolving_utilization_ratio": 0.30,
+      "delinquencies_24m": 0,
+      "inquiries_6m": 1,
+      "employment_length_years": 3.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "30_44",
+      "region_tier": "METRO",
+      "undocumented_score": 99
+    }
+  }
+]

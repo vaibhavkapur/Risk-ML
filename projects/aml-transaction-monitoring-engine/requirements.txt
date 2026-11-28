@@ -1,0 +1,2 @@
+# Core engine uses Python >=3.9 standard library only for deterministic offline reproducibility.
+# See requirements-optional.txt for optional FastAPI, NetworkX, PostgreSQL, and pytest extras.

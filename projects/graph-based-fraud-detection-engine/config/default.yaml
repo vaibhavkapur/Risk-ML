@@ -1,0 +1,78 @@
+config_version: "1.0.0"
+schema_version: "1.0.0"
+feature_version: "1.0.0"
+model_version: "0.1.0"
+seed: 42
+
+privacy:
+  # Local synthetic-only HMAC salt (never a production secret).
+  salt: "synthetic-demo-salt-v1"
+  digest_length: 12
+
+synthetic_data:
+  n_accounts: 320
+  n_devices: 260
+  n_merchants: 55
+  n_transactions: 3600
+  start_time_utc: "2025-01-01T00:00:00Z"
+  horizon_days: 120
+  fraud_ring_count: 6
+  accounts_per_ring: 6
+  devices_per_ring: 2
+  legitimate_shared_device_groups: 10
+  accounts_per_shared_group: 4
+  target_fraud_rate: 0.05
+  label_maturity_days_min: 3
+  label_maturity_days_max: 14
+
+temporal_split:
+  train_end_day: 65
+  val_end_day: 95
+  test_end_day: 120
+  # Only labels with label_available_at <= split_cutoff are used for training/calibration.
+  enforce_label_maturity: true
+
+features:
+  short_window_hours: 24
+  medium_window_days: 7
+  long_window_days: 30
+  max_hops: 2
+  high_risk_merchant_min_tx: 5
+
+models:
+  logistic:
+    C: 0.25
+    max_iter: 1000
+    class_weight: "balanced"
+  boosted:
+    max_iter: 120
+    max_depth: 5
+    learning_rate: 0.06
+    l2_regularization: 1.0
+    min_samples_leaf: 15
+  gnn:
+    enabled: true
+    hidden_dim: 24
+    epochs: 75
+    learning_rate: 0.025
+    weight_decay: 0.001
+    pos_weight: 8.0
+    aggregation: "mean"
+    neighbor_window_days: 30
+    use_pyg_if_available: false
+
+calibration:
+  method: "platt"
+  n_bins: 10
+
+policy:
+  review_threshold: 0.35
+  block_threshold: 0.72
+  cold_start_review_threshold: 0.25
+  max_evidence_paths: 5
+  fixed_fpr_targets: [0.01, 0.05]
+
+serving:
+  host: "127.0.0.1"
+  port: 8000
+  default_model: "gnn"

@@ -1,0 +1,34 @@
+[
+  {
+    "dispute_id": "DSP_001",
+    "transaction_id": "TX_001",
+    "dispute_ts": "2025-02-10T00:00:00Z",
+    "reason_code": "10.4",
+    "dispute_amount": 100.0,
+    "currency": "USD"
+  },
+  {
+    "dispute_id": "DSP_002",
+    "transaction_id": "TX_003",
+    "dispute_ts": "2025-05-05T00:00:00Z",
+    "reason_code": null,
+    "dispute_amount": 150.0,
+    "currency": "USD"
+  },
+  {
+    "dispute_id": "DSP_003",
+    "transaction_id": "TX_004",
+    "dispute_ts": "2025-06-01T00:00:00Z",
+    "reason_code": "13.1",
+    "dispute_amount": 300.0,
+    "currency": "EUR"
+  },
+  {
+    "dispute_id": "DSP_004",
+    "transaction_id": "TX_005",
+    "dispute_ts": "2025-08-01T00:00:00Z",
+    "reason_code": "4837",
+    "dispute_amount": 80.0,
+    "currency": "USD"
+  }
+]

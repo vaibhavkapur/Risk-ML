@@ -1,0 +1,81 @@
+[
+  {
+    "transaction_id": "TX_001",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-01-10T00:00:00Z",
+    "settlement_ts": "2025-01-11T00:00:00Z",
+    "amount": 100.0,
+    "currency": "USD",
+    "channel": "card_not_present",
+    "is_cross_border": false,
+    "has_3ds": false,
+    "has_avs_match": true,
+    "customer_tenure_days": 120
+  },
+  {
+    "transaction_id": "TX_002",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-01-20T00:00:00Z",
+    "settlement_ts": "2025-01-21T00:00:00Z",
+    "amount": 200.0,
+    "currency": "USD",
+    "channel": "card_present",
+    "is_cross_border": false,
+    "has_3ds": true,
+    "has_avs_match": true,
+    "customer_tenure_days": 365
+  },
+  {
+    "transaction_id": "TX_003",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-04-15T00:00:00Z",
+    "settlement_ts": "2025-04-15T00:00:00Z",
+    "amount": 150.0,
+    "currency": "USD",
+    "channel": "card_not_present",
+    "is_cross_border": true,
+    "has_3ds": false,
+    "has_avs_match": false,
+    "customer_tenure_days": 15
+  },
+  {
+    "transaction_id": "TX_004",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-05-10T00:00:00Z",
+    "settlement_ts": "2025-05-10T00:00:00Z",
+    "amount": 300.0,
+    "currency": "EUR",
+    "channel": "digital_wallet",
+    "is_cross_border": true,
+    "has_3ds": true,
+    "has_avs_match": true,
+    "customer_tenure_days": 45
+  },
+  {
+    "transaction_id": "TX_005",
+    "merchant_id": "M_NEW",
+    "transaction_ts": "2025-06-01T00:00:00Z",
+    "settlement_ts": "2025-06-02T00:00:00Z",
+    "amount": 80.0,
+    "currency": "USD",
+    "channel": "card_not_present",
+    "is_cross_border": false,
+    "has_3ds": false,
+    "has_avs_match": true,
+    "customer_tenure_days": 5
+  },
+  {
+    "transaction_id": "TX_006",
+    "merchant_id": "M_NEW",
+    "transaction_ts": "2025-07-10T00:00:00Z",
+    "settlement_ts": "2025-07-10T00:00:00Z",
+    "amount": 50.0,
+    "currency": "USD",
+    "channel": "recurring",
+    "is_cross_border": false,
+    "has_3ds": true,
+    "has_avs_match": true,
+    "customer_tenure_days": 60,
+    "maturity_date": "2025-08-09T00:00:00Z"
+  }
+]

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aml-transaction-monitoring-engine"
+version = "0.1.0"
+description = "Educational synthetic AML transaction monitoring engine with explainable alerts, graph features, ML prioritization, and auditable case provenance."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+api = [
+    "fastapi==0.115.6",
+    "uvicorn==0.34.0",
+    "pydantic==2.10.4",
+]
+graph = [
+    "networkx==3.2.1",
+]
+postgres = [
+    "psycopg[binary]==3.2.3",
+]
+dev = [
+    "pytest==8.3.4",
+    "httpx==0.28.1",
+]
+
+[project.scripts]
+aml-monitor = "aml_engine.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

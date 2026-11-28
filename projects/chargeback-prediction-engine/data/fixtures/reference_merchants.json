@@ -1,0 +1,16 @@
+[
+  {
+    "merchant_id": "M_EST",
+    "mcc_group": "retail",
+    "onboarding_ts": "2024-01-01T00:00:00Z",
+    "country": "US",
+    "avg_fulfillment_days": 2.0
+  },
+  {
+    "merchant_id": "M_NEW",
+    "mcc_group": "digital_goods",
+    "onboarding_ts": "2025-05-01T00:00:00Z",
+    "country": "US",
+    "avg_fulfillment_days": 0.5
+  }
+]

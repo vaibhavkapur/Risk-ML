@@ -1,0 +1,487 @@
+{
+  "calibrated_policy_full_maturity": {
+    "abstain_rate": 0.0,
+    "action_counts": {
+      "abstain": 0,
+      "approve": 538,
+      "challenge": 148,
+      "decline": 66
+    },
+    "challenge_rate": 0.196809,
+    "daily_breakdown": [
+      {
+        "challenge_rate": 0.111111,
+        "date": "2026-02-20",
+        "decline_rate": 0.083333,
+        "immature_events": 0,
+        "matured_events": 72,
+        "matured_fraud_loss_rate": 0.077148,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.2,
+        "date": "2026-02-21",
+        "decline_rate": 0.058824,
+        "immature_events": 0,
+        "matured_events": 85,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 85
+      },
+      {
+        "challenge_rate": 0.178082,
+        "date": "2026-02-22",
+        "decline_rate": 0.136986,
+        "immature_events": 0,
+        "matured_events": 73,
+        "matured_fraud_loss_rate": 0.002374,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.208955,
+        "date": "2026-02-23",
+        "decline_rate": 0.074627,
+        "immature_events": 0,
+        "matured_events": 67,
+        "matured_fraud_loss_rate": 0.002139,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.176471,
+        "date": "2026-02-24",
+        "decline_rate": 0.161765,
+        "immature_events": 0,
+        "matured_events": 68,
+        "matured_fraud_loss_rate": 0.04551,
+        "total_events": 68
+      },
+      {
+        "challenge_rate": 0.227273,
+        "date": "2026-02-25",
+        "decline_rate": 0.045455,
+        "immature_events": 0,
+        "matured_events": 88,
+        "matured_fraud_loss_rate": 0.104865,
+        "total_events": 88
+      },
+      {
+        "challenge_rate": 0.219178,
+        "date": "2026-02-26",
+        "decline_rate": 0.054795,
+        "immature_events": 0,
+        "matured_events": 73,
+        "matured_fraud_loss_rate": 0.095248,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.208333,
+        "date": "2026-02-27",
+        "decline_rate": 0.111111,
+        "immature_events": 0,
+        "matured_events": 72,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.19403,
+        "date": "2026-02-28",
+        "decline_rate": 0.119403,
+        "immature_events": 0,
+        "matured_events": 67,
+        "matured_fraud_loss_rate": 0.004724,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.229885,
+        "date": "2026-03-01",
+        "decline_rate": 0.057471,
+        "immature_events": 0,
+        "matured_events": 87,
+        "matured_fraud_loss_rate": 0.010386,
+        "total_events": 87
+      }
+    ],
+    "decline_rate": 0.087766,
+    "evaluation_as_of": "2026-03-17T02:13:30.975063+00:00",
+    "fallback_count": 35,
+    "final_outcome_counts": {
+      "abandoned": 11,
+      "authorized": 666,
+      "declined": 75,
+      "held_for_review": 0
+    },
+    "immature_events": 0,
+    "mandatory_challenge_bypass_count": 0,
+    "matured_events": 752,
+    "matured_fraud_loss_minor": 151386.0,
+    "matured_fraud_loss_rate": 0.036069,
+    "matured_genuine_acceptance_rate": 0.925035,
+    "matured_gross_volume_minor": 4197078,
+    "override_bypass_count": 0,
+    "total_events": 752,
+    "total_friction_cost_minor": 22200.0
+  },
+  "calibrated_policy_partial_maturity_plus5d": {
+    "abstain_rate": 0.0,
+    "action_counts": {
+      "abstain": 0,
+      "approve": 538,
+      "challenge": 148,
+      "decline": 66
+    },
+    "challenge_rate": 0.196809,
+    "daily_breakdown": [
+      {
+        "challenge_rate": 0.111111,
+        "date": "2026-02-20",
+        "decline_rate": 0.083333,
+        "immature_events": 2,
+        "matured_events": 70,
+        "matured_fraud_loss_rate": 0.080874,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.2,
+        "date": "2026-02-21",
+        "decline_rate": 0.058824,
+        "immature_events": 83,
+        "matured_events": 2,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 85
+      },
+      {
+        "challenge_rate": 0.178082,
+        "date": "2026-02-22",
+        "decline_rate": 0.136986,
+        "immature_events": 70,
+        "matured_events": 3,
+        "matured_fraud_loss_rate": 0.079506,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.208955,
+        "date": "2026-02-23",
+        "decline_rate": 0.074627,
+        "immature_events": 64,
+        "matured_events": 3,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.176471,
+        "date": "2026-02-24",
+        "decline_rate": 0.161765,
+        "immature_events": 65,
+        "matured_events": 3,
+        "matured_fraud_loss_rate": 0.844117,
+        "total_events": 68
+      },
+      {
+        "challenge_rate": 0.227273,
+        "date": "2026-02-25",
+        "decline_rate": 0.045455,
+        "immature_events": 87,
+        "matured_events": 1,
+        "matured_fraud_loss_rate": 1.0,
+        "total_events": 88
+      },
+      {
+        "challenge_rate": 0.219178,
+        "date": "2026-02-26",
+        "decline_rate": 0.054795,
+        "immature_events": 71,
+        "matured_events": 2,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.208333,
+        "date": "2026-02-27",
+        "decline_rate": 0.111111,
+        "immature_events": 71,
+        "matured_events": 1,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.19403,
+        "date": "2026-02-28",
+        "decline_rate": 0.119403,
+        "immature_events": 65,
+        "matured_events": 2,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.229885,
+        "date": "2026-03-01",
+        "decline_rate": 0.057471,
+        "immature_events": 87,
+        "matured_events": 0,
+        "matured_fraud_loss_rate": null,
+        "total_events": 87
+      }
+    ],
+    "decline_rate": 0.087766,
+    "evaluation_as_of": "2026-03-06T23:39:43.506564+00:00",
+    "fallback_count": 35,
+    "final_outcome_counts": {
+      "abandoned": 15,
+      "authorized": 662,
+      "declined": 75,
+      "held_for_review": 0
+    },
+    "immature_events": 665,
+    "mandatory_challenge_bypass_count": 0,
+    "matured_events": 87,
+    "matured_fraud_loss_minor": 98294.0,
+    "matured_fraud_loss_rate": 0.175366,
+    "matured_genuine_acceptance_rate": 0.923077,
+    "matured_gross_volume_minor": 560509,
+    "override_bypass_count": 0,
+    "total_events": 752,
+    "total_friction_cost_minor": 22200.0
+  },
+  "model_outage_fallback_full_maturity": {
+    "abstain_rate": 0.0,
+    "action_counts": {
+      "abstain": 0,
+      "approve": 474,
+      "challenge": 255,
+      "decline": 23
+    },
+    "challenge_rate": 0.339096,
+    "daily_breakdown": [
+      {
+        "challenge_rate": 0.347222,
+        "date": "2026-02-20",
+        "decline_rate": 0.027778,
+        "immature_events": 0,
+        "matured_events": 72,
+        "matured_fraud_loss_rate": 0.025472,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.329412,
+        "date": "2026-02-21",
+        "decline_rate": 0.023529,
+        "immature_events": 0,
+        "matured_events": 85,
+        "matured_fraud_loss_rate": 0.007778,
+        "total_events": 85
+      },
+      {
+        "challenge_rate": 0.30137,
+        "date": "2026-02-22",
+        "decline_rate": 0.068493,
+        "immature_events": 0,
+        "matured_events": 73,
+        "matured_fraud_loss_rate": 0.002374,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.298507,
+        "date": "2026-02-23",
+        "decline_rate": 0.014925,
+        "immature_events": 0,
+        "matured_events": 67,
+        "matured_fraud_loss_rate": 0.002139,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.323529,
+        "date": "2026-02-24",
+        "decline_rate": 0.088235,
+        "immature_events": 0,
+        "matured_events": 68,
+        "matured_fraud_loss_rate": 0.067122,
+        "total_events": 68
+      },
+      {
+        "challenge_rate": 0.340909,
+        "date": "2026-02-25",
+        "decline_rate": 0.022727,
+        "immature_events": 0,
+        "matured_events": 88,
+        "matured_fraud_loss_rate": 0.025859,
+        "total_events": 88
+      },
+      {
+        "challenge_rate": 0.342466,
+        "date": "2026-02-26",
+        "decline_rate": 0.013699,
+        "immature_events": 0,
+        "matured_events": 73,
+        "matured_fraud_loss_rate": 0.08637,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.361111,
+        "date": "2026-02-27",
+        "decline_rate": 0.027778,
+        "immature_events": 0,
+        "matured_events": 72,
+        "matured_fraud_loss_rate": 0.151549,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.373134,
+        "date": "2026-02-28",
+        "decline_rate": 0.014925,
+        "immature_events": 0,
+        "matured_events": 67,
+        "matured_fraud_loss_rate": 0.004724,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.367816,
+        "date": "2026-03-01",
+        "decline_rate": 0.011494,
+        "immature_events": 0,
+        "matured_events": 87,
+        "matured_fraud_loss_rate": 0.026943,
+        "total_events": 87
+      }
+    ],
+    "decline_rate": 0.030585,
+    "evaluation_as_of": "2026-03-17T02:13:30.975063+00:00",
+    "fallback_count": 729,
+    "final_outcome_counts": {
+      "abandoned": 20,
+      "authorized": 683,
+      "declined": 49,
+      "held_for_review": 0
+    },
+    "immature_events": 0,
+    "mandatory_challenge_bypass_count": 0,
+    "matured_events": 752,
+    "matured_fraud_loss_minor": 178078.0,
+    "matured_fraud_loss_rate": 0.042429,
+    "matured_genuine_acceptance_rate": 0.946252,
+    "matured_gross_volume_minor": 4197078,
+    "override_bypass_count": 0,
+    "total_events": 752,
+    "total_friction_cost_minor": 38250.0
+  },
+  "reference_oracle_full_maturity": {
+    "abstain_rate": 0.0,
+    "action_counts": {
+      "abstain": 0,
+      "approve": 361,
+      "challenge": 240,
+      "decline": 151
+    },
+    "challenge_rate": 0.319149,
+    "daily_breakdown": [
+      {
+        "challenge_rate": 0.388889,
+        "date": "2026-02-20",
+        "decline_rate": 0.152778,
+        "immature_events": 0,
+        "matured_events": 72,
+        "matured_fraud_loss_rate": 0.023054,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.352941,
+        "date": "2026-02-21",
+        "decline_rate": 0.152941,
+        "immature_events": 0,
+        "matured_events": 85,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 85
+      },
+      {
+        "challenge_rate": 0.232877,
+        "date": "2026-02-22",
+        "decline_rate": 0.232877,
+        "immature_events": 0,
+        "matured_events": 73,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.313433,
+        "date": "2026-02-23",
+        "decline_rate": 0.179104,
+        "immature_events": 0,
+        "matured_events": 67,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.308824,
+        "date": "2026-02-24",
+        "decline_rate": 0.25,
+        "immature_events": 0,
+        "matured_events": 68,
+        "matured_fraud_loss_rate": 0.04551,
+        "total_events": 68
+      },
+      {
+        "challenge_rate": 0.318182,
+        "date": "2026-02-25",
+        "decline_rate": 0.204545,
+        "immature_events": 0,
+        "matured_events": 88,
+        "matured_fraud_loss_rate": 0.040248,
+        "total_events": 88
+      },
+      {
+        "challenge_rate": 0.315068,
+        "date": "2026-02-26",
+        "decline_rate": 0.246575,
+        "immature_events": 0,
+        "matured_events": 73,
+        "matured_fraud_loss_rate": 0.008877,
+        "total_events": 73
+      },
+      {
+        "challenge_rate": 0.305556,
+        "date": "2026-02-27",
+        "decline_rate": 0.208333,
+        "immature_events": 0,
+        "matured_events": 72,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 72
+      },
+      {
+        "challenge_rate": 0.313433,
+        "date": "2026-02-28",
+        "decline_rate": 0.208955,
+        "immature_events": 0,
+        "matured_events": 67,
+        "matured_fraud_loss_rate": 0.0,
+        "total_events": 67
+      },
+      {
+        "challenge_rate": 0.333333,
+        "date": "2026-03-01",
+        "decline_rate": 0.183908,
+        "immature_events": 0,
+        "matured_events": 87,
+        "matured_fraud_loss_rate": 0.016556,
+        "total_events": 87
+      }
+    ],
+    "decline_rate": 0.200798,
+    "evaluation_as_of": "2026-03-17T02:13:30.975063+00:00",
+    "fallback_count": 35,
+    "final_outcome_counts": {
+      "abandoned": 14,
+      "authorized": 574,
+      "declined": 164,
+      "held_for_review": 0
+    },
+    "immature_events": 0,
+    "mandatory_challenge_bypass_count": 0,
+    "matured_events": 752,
+    "matured_fraud_loss_minor": 62210.0,
+    "matured_fraud_loss_rate": 0.014822,
+    "matured_genuine_acceptance_rate": 0.80198,
+    "matured_gross_volume_minor": 4197078,
+    "override_bypass_count": 0,
+    "total_events": 752,
+    "total_friction_cost_minor": 36000.0
+  },
+  "schema_version": "1.0.0"
+}

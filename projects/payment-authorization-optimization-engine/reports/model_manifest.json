@@ -1,0 +1,46 @@
+{
+  "acceptance_calibration": {
+    "brier_after": 0.18493349037913864,
+    "brier_before": 0.18731592770788077,
+    "ece_after": 0.029366821879616513,
+    "ece_before": 0.05265769190976257,
+    "log_loss_after": 0.5529171178286094,
+    "log_loss_before": 0.5576035298134203,
+    "n_calibration_samples": 671,
+    "positive_rate": 0.6870342771982116,
+    "roc_auc": 0.7124987088110731
+  },
+  "cal_end_utc": "2025-04-01T09:57:58.872876+00:00",
+  "config_hash": "1364cf25c7eb2974",
+  "feature_schema_version": "1.0.0",
+  "imputation_stats": {
+    "account_age_days": 164.0,
+    "bin_approval_rate_30d": 0.861,
+    "risk_score": 0.2229,
+    "velocity_1h": 2.0,
+    "velocity_24h": 5.0
+  },
+  "loss_calibration": {
+    "brier_after": 0.018785604908891217,
+    "brier_before": 0.019012716667406053,
+    "ece_after": 0.00653800561735922,
+    "ece_before": 0.013393708063458961,
+    "log_loss_after": 0.08021081275373304,
+    "log_loss_before": 0.08505378863805042,
+    "n_calibration_samples": 450,
+    "positive_rate": 0.024444444444444446,
+    "roc_auc": 0.8685027956098571
+  },
+  "model_version": "v1.0.0-bb892ac96c",
+  "n_cal": 800,
+  "n_loss_cal_matured": 450,
+  "n_loss_train_matured": 1254,
+  "n_test": 1000,
+  "n_total": 4000,
+  "n_train": 2200,
+  "seed": 42,
+  "test_end_utc": "2025-04-30T23:19:27.013128+00:00",
+  "test_start_utc": "2025-04-01T10:05:35.309187+00:00",
+  "train_end_utc": "2025-03-07T11:32:45.596232+00:00",
+  "trained_at_utc": "2025-05-01T00:00:00+00:00"
+}

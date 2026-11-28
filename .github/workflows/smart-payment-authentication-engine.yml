@@ -1,0 +1,46 @@
+name: Smart Payment Authentication Engine CI
+
+on:
+  push:
+    paths:
+      - "projects/smart-payment-authentication-engine/**"
+      - ".github/workflows/smart-payment-authentication-engine.yml"
+  pull_request:
+    paths:
+      - "projects/smart-payment-authentication-engine/**"
+      - ".github/workflows/smart-payment-authentication-engine.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/smart-payment-authentication-engine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run full validation suite (pytest + reproducible demo)
+        run: |
+          python scripts/validate_all.py
+
+      - name: Verify required report artifacts exist
+        run: |
+          test -f reports/baseline_vs_calibrated_metrics.json
+          test -f reports/policy_tradeoff_frontier.json
+          test -f reports/chronological_evaluation.json
+          test -f reports/step_up_simulation_summary.json
+          test -f reports/run_metadata.json
+          test -f reports/acceptance.md

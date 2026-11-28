@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "reference-handcalc-v1",
+  "seed": 0,
+  "accounts": [
+    {
+      "account_id": "acc_faabe9081f89",
+      "created_at": "2024-12-27T00:00:00Z",
+      "account_age_days_at_start": 5.0,
+      "kyc_tier": "basic",
+      "home_region": "US-EAST",
+      "is_synthetic_ring_member": true,
+      "is_shared_household_member": false
+    },
+    {
+      "account_id": "acc_0fa6d0911146",
+      "created_at": "2024-12-28T00:00:00Z",
+      "account_age_days_at_start": 4.0,
+      "kyc_tier": "basic",
+      "home_region": "US-EAST",
+      "is_synthetic_ring_member": true,
+      "is_shared_household_member": false
+    },
+    {
+      "account_id": "acc_bbc739056b83",
+      "created_at": "2024-12-30T00:00:00Z",
+      "account_age_days_at_start": 2.0,
+      "kyc_tier": "basic",
+      "home_region": "US-EAST",
+      "is_synthetic_ring_member": true,
+      "is_shared_household_member": false
+    },
+    {
+      "account_id": "acc_71af845ee037",
+      "created_at": "2024-03-07T00:00:00Z",
+      "account_age_days_at_start": 300.0,
+      "kyc_tier": "enhanced",
+      "home_region": "US-WEST",
+      "is_synthetic_ring_member": false,
+      "is_shared_household_member": true
+    },
+    {
+      "account_id": "acc_d67a5d845c24",
+      "created_at": "2024-03-27T00:00:00Z",
+      "account_age_days_at_start": 280.0,
+      "kyc_tier": "standard",
+      "home_region": "US-WEST",
+      "is_synthetic_ring_member": false,
+      "is_shared_household_member": true
+    },
+    {
+      "account_id": "acc_2fc336e1e464",
+      "created_at": "2025-01-05T00:00:00Z",
+      "account_age_days_at_start": 0.0,
+      "kyc_tier": "basic",
+      "home_region": "US-MID",
+      "is_synthetic_ring_member": false,
+      "is_shared_household_member": false
+    }
+  ],
+  "devices": [
+    {
+      "device_id": "dev_ca9b6e1efecf",
+      "first_seen_at": "2025-01-01T00:00:00Z",
+      "device_type": "emulator",
+      "is_shared_legitimate": false,
+      "device_risk_hint": 0.9
+    },
+    {
+      "device_id": "dev_3d78d6170c5f",
+      "first_seen_at": "2024-04-26T00:00:00Z",
+      "device_type": "desktop_web",
+      "is_shared_legitimate": true,
+      "device_risk_hint": 0.1
+    },
+    {
+      "device_id": "dev_eeaefbb28be7",
+      "first_seen_at": "2025-01-06T00:00:00Z",
+      "device_type": "mobile_ios",
+      "is_shared_legitimate": false,
+      "device_risk_hint": 0.1
+    }
+  ],
+  "merchants": [
+    {
+      "merchant_id": "mer_a18a265af332",
+      "onboarded_at": "2024-11-02T00:00:00Z",
+      "category": "gift_cards",
+      "country": "US",
+      "base_chargeback_rate": 0.06
+    },
+    {
+      "merchant_id": "mer_cb7c7df96273",
+      "onboarded_at": "2023-11-28T00:00:00Z",
+      "category": "groceries",
+      "country": "US",
+      "base_chargeback_rate": 0.005
+    }
+  ],
+  "transactions": [
+    {
+      "tx_id": "tx_81ab82b9c428",
+      "account_id": "acc_faabe9081f89",
+      "device_id": "dev_ca9b6e1efecf",
+      "merchant_id": "mer_a18a265af332",
+      "tx_timestamp": "2025-01-02T10:00:00Z",
+      "amount_usd": 500.0,
+      "currency": "USD",
+      "channel": "mobile",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_e5ec77e4436b",
+      "account_id": "acc_0fa6d0911146",
+      "device_id": "dev_ca9b6e1efecf",
+      "merchant_id": "mer_a18a265af332",
+      "tx_timestamp": "2025-01-03T10:00:00Z",
+      "amount_usd": 450.0,
+      "currency": "USD",
+      "channel": "mobile",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_1ae90de7ed70",
+      "account_id": "acc_71af845ee037",
+      "device_id": "dev_3d78d6170c5f",
+      "merchant_id": "mer_cb7c7df96273",
+      "tx_timestamp": "2025-01-04T10:00:00Z",
+      "amount_usd": 40.0,
+      "currency": "USD",
+      "channel": "web",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_de8d2bd2e839",
+      "account_id": "acc_d67a5d845c24",
+      "device_id": "dev_3d78d6170c5f",
+      "merchant_id": "mer_cb7c7df96273",
+      "tx_timestamp": "2025-01-05T12:00:00Z",
+      "amount_usd": 55.0,
+      "currency": "USD",
+      "channel": "web",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_60cf016adc18",
+      "account_id": "acc_bbc739056b83",
+      "device_id": "dev_ca9b6e1efecf",
+      "merchant_id": "mer_a18a265af332",
+      "tx_timestamp": "2025-01-06T10:00:00Z",
+      "amount_usd": 600.0,
+      "currency": "USD",
+      "channel": "mobile",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_89139b0a8f3f",
+      "account_id": "acc_71af845ee037",
+      "device_id": "dev_3d78d6170c5f",
+      "merchant_id": "mer_cb7c7df96273",
+      "tx_timestamp": "2025-01-06T11:00:00Z",
+      "amount_usd": 45.0,
+      "currency": "USD",
+      "channel": "web",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_cb12cbacf41a",
+      "account_id": "acc_2fc336e1e464",
+      "device_id": "dev_eeaefbb28be7",
+      "merchant_id": "mer_a18a265af332",
+      "tx_timestamp": "2025-01-06T12:00:00Z",
+      "amount_usd": 100.0,
+      "currency": "USD",
+      "channel": "mobile",
+      "ip_prefix": "10.0.0"
+    },
+    {
+      "tx_id": "tx_8af5dc972ba7",
+      "account_id": "acc_faabe9081f89",
+      "device_id": "dev_ca9b6e1efecf",
+      "merchant_id": "mer_a18a265af332",
+      "tx_timestamp": "2025-01-07T10:00:00Z",
+      "amount_usd": 700.0,
+      "currency": "USD",
+      "channel": "mobile",
+      "ip_prefix": "10.0.0"
+    }
+  ],
+  "labels": [
+    {
+      "tx_id": "tx_81ab82b9c428",
+      "is_fraud": 1,
+      "tx_timestamp": "2025-01-02T10:00:00Z",
+      "label_available_at": "2025-01-05T10:00:00Z",
+      "label_source": "chargeback",
+      "fraud_pattern": "coordinated_fraud_ring"
+    },
+    {
+      "tx_id": "tx_e5ec77e4436b",
+      "is_fraud": 1,
+      "tx_timestamp": "2025-01-03T10:00:00Z",
+      "label_available_at": "2025-01-11T10:00:00Z",
+      "label_source": "chargeback",
+      "fraud_pattern": "coordinated_fraud_ring"
+    },
+    {
+      "tx_id": "tx_1ae90de7ed70",
+      "is_fraud": 0,
+      "tx_timestamp": "2025-01-04T10:00:00Z",
+      "label_available_at": "2025-01-11T10:00:00Z",
+      "label_source": "matured_clean",
+      "fraud_pattern": "legitimate_shared_device"
+    },
+    {
+      "tx_id": "tx_de8d2bd2e839",
+      "is_fraud": 0,
+      "tx_timestamp": "2025-01-05T12:00:00Z",
+      "label_available_at": "2025-01-12T12:00:00Z",
+      "label_source": "matured_clean",
+      "fraud_pattern": "legitimate_shared_device"
+    },
+    {
+      "tx_id": "tx_60cf016adc18",
+      "is_fraud": 1,
+      "tx_timestamp": "2025-01-06T10:00:00Z",
+      "label_available_at": "2025-01-13T10:00:00Z",
+      "label_source": "chargeback",
+      "fraud_pattern": "coordinated_fraud_ring"
+    },
+    {
+      "tx_id": "tx_89139b0a8f3f",
+      "is_fraud": 0,
+      "tx_timestamp": "2025-01-06T11:00:00Z",
+      "label_available_at": "2025-01-13T11:00:00Z",
+      "label_source": "matured_clean",
+      "fraud_pattern": "legitimate_shared_device"
+    },
+    {
+      "tx_id": "tx_cb12cbacf41a",
+      "is_fraud": 0,
+      "tx_timestamp": "2025-01-06T12:00:00Z",
+      "label_available_at": "2025-01-13T12:00:00Z",
+      "label_source": "matured_clean",
+      "fraud_pattern": "organic_legitimate"
+    },
+    {
+      "tx_id": "tx_8af5dc972ba7",
+      "is_fraud": 1,
+      "tx_timestamp": "2025-01-07T10:00:00Z",
+      "label_available_at": "2025-01-14T10:00:00Z",
+      "label_source": "chargeback",
+      "fraud_pattern": "coordinated_fraud_ring"
+    }
+  ]
+}

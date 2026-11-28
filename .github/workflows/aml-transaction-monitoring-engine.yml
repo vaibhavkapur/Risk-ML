@@ -1,0 +1,42 @@
+name: AML Transaction Monitoring Engine CI
+
+on:
+  push:
+    paths:
+      - "projects/aml-transaction-monitoring-engine/**"
+      - ".github/workflows/aml-transaction-monitoring-engine.yml"
+  pull_request:
+    paths:
+      - "projects/aml-transaction-monitoring-engine/**"
+      - ".github/workflows/aml-transaction-monitoring-engine.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/aml-transaction-monitoring-engine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run unit, integration, and boundary test suite (zero-dependency core)
+        run: PYTHONPATH=src python3 -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Run reproducible evaluation and demo scripts
+        run: |
+          python3 scripts/run_evaluation.py > /dev/null
+          python3 scripts/run_demo.py > /dev/null
+
+      - name: Verify reproducible artifacts generated
+        run: |
+          test -s reports/baseline_vs_ml_evaluation.json
+          test -s reports/demo_run_output.json
+          test -s reports/ml_prioritizer_artifact.json

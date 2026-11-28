@@ -1,0 +1,64 @@
+# Account Takeover Detection Engine — Default Configuration
+# Synthetic / research prototype configuration only.
+
+config_version: "1.0.0"
+seed: 42
+
+versions:
+  schema_version: "1.0.0"
+  feature_version: "1.0.0"
+  policy_version: "1.0.0"
+  model_version: "1.0.0"
+
+features:
+  short_window_seconds: 3600          # 1 hour
+  medium_window_seconds: 86400        # 24 hours
+  long_window_seconds: 2592000        # 30 days
+  feature_ttl_seconds: 2592000        # 30 days expiry for user/device profile
+  max_plausible_velocity_kmh: 900.0
+  shared_network_user_threshold: 4
+  burst_failed_attempts_1h: 5
+  missing_feature_fallback_ratio: 0.5
+
+training:
+  train_fraction: 0.60
+  calibration_fraction: 0.20
+  test_fraction: 0.20
+  label_maturity_hours: 48.0
+  isolation_forest_contamination: 0.08
+  isolation_forest_estimators: 120
+  gb_max_iter: 120
+  gb_max_depth: 4
+  gb_learning_rate: 0.08
+  anomaly_blend_weight: 0.20
+  calibration_method: "sigmoid"       # sigmoid (Platt) or isotonic
+
+policy:
+  target_fprs: [0.01, 0.02, 0.05]
+  base_thresholds:
+    challenge_otp: 0.25
+    challenge_webauthn: 0.55
+    block_and_reset: 0.82
+  high_value_account_delta: -0.08
+  shared_network_dampening_delta: 0.06
+  drift_tightening_delta: -0.05
+  repeated_attempt_hard_step_up: 5
+  repeated_attempt_hard_block: 10
+  stale_model_max_age_days: 90
+
+drift:
+  psi_warning_threshold: 0.15
+  psi_critical_threshold: 0.25
+  missingness_increase_warning: 0.10
+  missingness_increase_critical: 0.25
+  expiry_rate_warning: 0.20
+  min_sample_size: 20
+
+audit:
+  log_path: "reports/decision_audit.jsonl"
+  strict_logging: true
+
+store:
+  backend: "memory"                   # memory | redis (optional)
+  redis_url: null
+  redis_key_prefix: "ato_engine:"

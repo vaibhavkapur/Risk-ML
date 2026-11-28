@@ -1,0 +1,323 @@
+{
+  "audit_and_replay": {
+    "exact_match": true,
+    "hash_chain_valid": true,
+    "matched": 800,
+    "records_checked": 800,
+    "replayed": 800
+  },
+  "benchmark": {
+    "feature_version": "feat.v1",
+    "inference_timeout_budget_ms": 25.0,
+    "max_ms": 0.1262,
+    "mean_ms": 0.029,
+    "measurement_type": "measured_local_in_process",
+    "model_version": "model.logreg_cal.v1",
+    "p50_ms": 0.028,
+    "p95_ms": 0.0363,
+    "p99_ms": 0.0453,
+    "requests": 2000,
+    "throughput_rps": 34364.38,
+    "wall_time_sec": 0.0582
+  },
+  "parity": {
+    "recovery_passed": true,
+    "reference_passed": true,
+    "stream_events_compared": 800,
+    "stream_max_abs_diff": 0.0,
+    "stream_passed": true
+  },
+  "runtime_metadata": {
+    "config_path": "config/default.yaml",
+    "feature_version": "feat.v1",
+    "generated_at_utc": "2026-11-28T05:17:21Z",
+    "model_artifact_sha256": "e2730775eb0d9c98ef436235f1be53e91d96d64b51886f0de5b4d86fb078bb5d",
+    "model_version": "model.logreg_cal.v1",
+    "optional_external_brokers": {
+      "kafka_or_redpanda": "not_run_offline_prototype",
+      "redis": "not_run_offline_prototype"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "policy_version": "policy.v1",
+    "processor": "arm",
+    "python_version": "3.9.6",
+    "seed": 42
+  },
+  "sample_decisions": [
+    {
+      "account_id": "acct_syn_0136",
+      "action": "APPROVE",
+      "decided_at": "2026-01-08T00:38:07Z",
+      "decision_id": "dec_96204dcd93dbe6d0bd96",
+      "event_id": "evt_syn_003201",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "feature_freshness_ms": 233642,
+      "feature_status": "FRESH",
+      "feature_version": "feat.v1",
+      "latency_ms": 0.1165,
+      "model_version": "model.logreg_cal.v1",
+      "policy_version": "policy.v1",
+      "raw_score": 0.032385,
+      "reason_codes": [
+        "COUNTRY_CHANGED"
+      ],
+      "risk_score": 0.027929,
+      "top_attributions": [
+        {
+          "contribution": 1.028785,
+          "feature": "country_changed_from_prev",
+          "value": 1.0
+        },
+        {
+          "contribution": -0.873218,
+          "feature": "tx_amount_sum_24h_usd",
+          "value": 1809.527
+        },
+        {
+          "contribution": 0.656999,
+          "feature": "tx_count_24h",
+          "value": 6.0
+        },
+        {
+          "contribution": -0.181234,
+          "feature": "seconds_since_prev_tx_log1p",
+          "value": 10.180597
+        },
+        {
+          "contribution": 0.15499,
+          "feature": "amount_usd_log1p",
+          "value": 4.233382
+        }
+      ]
+    },
+    {
+      "account_id": "acct_syn_0077",
+      "action": "APPROVE",
+      "decided_at": "2026-01-08T00:39:53.074Z",
+      "decision_id": "dec_97c9ef75b39044e1a165",
+      "event_id": "evt_syn_003202",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "feature_freshness_ms": 106074,
+      "feature_status": "FRESH",
+      "feature_version": "feat.v1",
+      "latency_ms": 0.056,
+      "model_version": "model.logreg_cal.v1",
+      "policy_version": "policy.v1",
+      "raw_score": 0.027488,
+      "reason_codes": [],
+      "risk_score": 0.023958,
+      "top_attributions": [
+        {
+          "contribution": 0.865339,
+          "feature": "amount_usd_log1p",
+          "value": 5.720771
+        },
+        {
+          "contribution": -0.43514,
+          "feature": "tx_count_24h",
+          "value": 1.0
+        },
+        {
+          "contribution": 0.247783,
+          "feature": "amount_ratio_to_24h_avg",
+          "value": 3.888761
+        },
+        {
+          "contribution": -0.202645,
+          "feature": "seconds_since_prev_tx_log1p",
+          "value": 10.277623
+        },
+        {
+          "contribution": -0.16104,
+          "feature": "country_changed_from_prev",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "account_id": "acct_syn_0103",
+      "action": "APPROVE",
+      "decided_at": "2026-01-08T00:41:15.034Z",
+      "decision_id": "dec_17581a1be62c50c99290",
+      "event_id": "evt_syn_003203",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "feature_freshness_ms": 81960,
+      "feature_status": "FRESH",
+      "feature_version": "feat.v1",
+      "latency_ms": 0.0375,
+      "model_version": "model.logreg_cal.v1",
+      "policy_version": "policy.v1",
+      "raw_score": 0.011218,
+      "reason_codes": [],
+      "risk_score": 0.010379,
+      "top_attributions": [
+        {
+          "contribution": -0.216712,
+          "feature": "tx_count_24h",
+          "value": 2.0
+        },
+        {
+          "contribution": -0.174316,
+          "feature": "amount_usd_log1p",
+          "value": 3.543854
+        },
+        {
+          "contribution": -0.16104,
+          "feature": "country_changed_from_prev",
+          "value": 0.0
+        },
+        {
+          "contribution": -0.132814,
+          "feature": "seconds_since_prev_tx_log1p",
+          "value": 9.961181
+        },
+        {
+          "contribution": 0.103588,
+          "feature": "tx_amount_sum_24h_usd",
+          "value": 122.03
+        }
+      ]
+    },
+    {
+      "account_id": "acct_syn_0006",
+      "action": "APPROVE",
+      "decided_at": "2026-01-08T00:46:34.616Z",
+      "decision_id": "dec_8609445ab96e3de3987c",
+      "event_id": "evt_syn_003204",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "feature_freshness_ms": 319582,
+      "feature_status": "FRESH",
+      "feature_version": "feat.v1",
+      "latency_ms": 0.0358,
+      "model_version": "model.logreg_cal.v1",
+      "policy_version": "policy.v1",
+      "raw_score": 0.334134,
+      "reason_codes": [
+        "COUNTRY_CHANGED",
+        "HIGH_RISK_CONTEXT"
+      ],
+      "risk_score": 0.2636,
+      "top_attributions": [
+        {
+          "contribution": 2.217542,
+          "feature": "high_risk_context_score",
+          "value": 0.9667
+        },
+        {
+          "contribution": 1.028785,
+          "feature": "country_changed_from_prev",
+          "value": 1.0
+        },
+        {
+          "contribution": -0.43514,
+          "feature": "tx_count_24h",
+          "value": 1.0
+        },
+        {
+          "contribution": 0.426174,
+          "feature": "amount_usd_log1p",
+          "value": 4.801211
+        },
+        {
+          "contribution": -0.124953,
+          "feature": "seconds_since_prev_tx_log1p",
+          "value": 9.925556
+        }
+      ]
+    },
+    {
+      "account_id": "acct_syn_0006",
+      "action": "REVIEW",
+      "decided_at": "2026-01-08T00:48:00.696Z",
+      "decision_id": "dec_8593002eddbc9194a9be",
+      "event_id": "evt_syn_003205",
+      "fallback_reason": null,
+      "fallback_used": false,
+      "feature_freshness_ms": 86080,
+      "feature_status": "FRESH",
+      "feature_version": "feat.v1",
+      "latency_ms": 0.0392,
+      "model_version": "model.logreg_cal.v1",
+      "policy_version": "policy.v1",
+      "raw_score": 0.669946,
+      "reason_codes": [
+        "HIGH_RISK_CONTEXT",
+        "SCORE_ABOVE_REVIEW_THRESHOLD"
+      ],
+      "risk_score": 0.568214,
+      "top_attributions": [
+        {
+          "contribution": 2.189888,
+          "feature": "high_risk_context_score",
+          "value": 0.9586
+        },
+        {
+          "contribution": 1.079653,
+          "feature": "seconds_since_prev_tx_log1p",
+          "value": 4.466827
+        },
+        {
+          "contribution": 0.917212,
+          "feature": "amount_usd_log1p",
+          "value": 5.829387
+        },
+        {
+          "contribution": 0.506694,
+          "feature": "tx_count_5m",
+          "value": 1.0
+        },
+        {
+          "contribution": -0.216712,
+          "feature": "tx_count_24h",
+          "value": 2.0
+        }
+      ]
+    }
+  ],
+  "skew": {
+    "clean_max_psi": 0.026961,
+    "clean_status": "OK",
+    "drifted_alert_triggered": true,
+    "drifted_max_psi": 1.903775,
+    "drifted_status": "CRITICAL_SKEW"
+  },
+  "timeout_fallback": {
+    "action": "REVIEW",
+    "fallback_reason": "MODEL_TIMEOUT",
+    "fallback_used": true,
+    "latency_ms": 28.1868,
+    "model_version": "fallback.rules.v1"
+  },
+  "training_evaluation": {
+    "calibrated_brier": 0.02985,
+    "calibrated_ece": 0.018667,
+    "calibrated_pr_auc": 0.745241,
+    "calibrated_roc_auc": 0.887633,
+    "raw_brier": 0.02833,
+    "raw_ece": 0.01519,
+    "raw_pr_auc": 0.745241,
+    "raw_roc_auc": 0.887633,
+    "test_positive_rate": 0.075284,
+    "test_samples": 704
+  },
+  "training_splits": {
+    "calibration_immature_excluded": 469,
+    "calibration_matured_count": 234,
+    "calibration_raw_count": 703,
+    "calibration_snapshot_ts": "2026-01-08T05:23:47.548Z",
+    "test_count": 704,
+    "test_end_ts": "2026-01-09T20:01:55.002Z",
+    "total_labeled_events": 4000,
+    "train_immature_excluded": 455,
+    "train_matured_count": 1655,
+    "train_positive_rate": 0.093656,
+    "train_raw_count": 2110,
+    "train_snapshot_ts": "2026-01-06T16:13:37.137Z",
+    "train_start_ts": "2026-01-02T00:03:59.824Z",
+    "warmup_24h_excluded": 483
+  }
+}

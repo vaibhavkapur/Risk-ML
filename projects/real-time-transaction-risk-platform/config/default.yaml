@@ -1,0 +1,56 @@
+platform:
+  name: real-time-transaction-risk-platform
+  environment: prototype-offline
+  seed: 42
+
+schema:
+  supported_versions:
+    - tx.v1
+  feature_version: feat.v1
+  policy_version: policy.v1
+  supported_currencies:
+    - USD
+    - EUR
+    - GBP
+  fx_to_usd:
+    USD: 1.0
+    EUR: 1.08
+    GBP: 1.26
+  max_amount_cents: 100000000
+
+ingestion:
+  allowed_lateness_ms: 300000       # 5 minutes late-event acceptance window
+  retention_window_ms: 90000000     # 25 hours retained per account (>= 24h feature window)
+  max_events_per_account: 2000
+
+serving:
+  max_feature_staleness_ms: 600000  # 10 minutes before cached account state is flagged STALE
+  inference_timeout_ms: 25.0        # Bounded inference budget before conservative fallback
+  review_threshold: 0.35
+  decline_threshold: 0.70
+  stale_review_amount_usd: 150.0
+  fallback_decline_amount_usd: 1000.0
+  fallback_review_amount_usd: 200.0
+
+training:
+  seed: 42
+  num_synthetic_events: 4000
+  num_accounts: 160
+  label_maturity_hours: 24
+  train_fraction: 0.60
+  calibration_fraction: 0.20
+  test_fraction: 0.20
+  logreg_c: 1.0
+  max_iter: 500
+
+monitoring:
+  skew_psi_warning: 0.10
+  skew_psi_critical: 0.25
+  skew_mean_shift_sigma: 0.50
+
+storage:
+  model_artifact_path: data/artifacts/baseline_model_v1.json
+  checkpoint_path: data/artifacts/feature_store_checkpoint.json
+  audit_log_path: reports/audit_log.jsonl
+  redis_enabled: false
+  kafka_enabled: false

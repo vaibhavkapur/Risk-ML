@@ -1,0 +1,38 @@
+{
+  "calibrated_engine_counters": {
+    "action_counts": {
+      "abstain": 0,
+      "approve": 559,
+      "challenge": 151,
+      "decline": 67
+    },
+    "fallback_hits": 37,
+    "mandatory_rule_hits": 127,
+    "missing_feature_fallbacks": 37,
+    "model_outage_hits": 0,
+    "override_hits": 23,
+    "replay_requests": 25,
+    "step_up_simulations": 752,
+    "total_requests": 777
+  },
+  "decision_log_path": "reports/decision_log.jsonl",
+  "outage_engine_counters": {
+    "action_counts": {
+      "abstain": 0,
+      "approve": 474,
+      "challenge": 255,
+      "decline": 23
+    },
+    "fallback_hits": 729,
+    "mandatory_rule_hits": 125,
+    "missing_feature_fallbacks": 35,
+    "model_outage_hits": 729,
+    "override_hits": 23,
+    "replay_requests": 0,
+    "step_up_simulations": 752,
+    "total_requests": 752
+  },
+  "replay_all_exact_match": true,
+  "replay_checked_count": 25,
+  "schema_version": "1.0.0"
+}

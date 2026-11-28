@@ -1,0 +1,388 @@
+{
+  "run_id": "run_8c20db71476a0e",
+  "config_hash": "bc6cc12f868f442e",
+  "policy_comparison": {
+    "primary_expected_net_savings_policy": {
+      "rank_by": "expected_net_savings",
+      "total_scored": 1020,
+      "budget_capacity": 51,
+      "reviewed_count": 51,
+      "approved_count": 969,
+      "total_expected_loss_usd": 4638.32,
+      "reviewed_expected_loss_usd": 2426.87,
+      "total_expected_net_savings_usd": 1105.28,
+      "merchant_advisories": [],
+      "realized_disputes_total": 38,
+      "realized_disputes_in_review_queue": 13,
+      "precision_at_review_budget": 0.254902,
+      "recall_at_review_budget": 0.342105,
+      "total_realized_loss_usd": 4273.12,
+      "captured_realized_loss_usd": 2317.43,
+      "loss_capture_rate": 0.542327,
+      "realized_net_savings_usd": 1045.08
+    },
+    "primary_probability_only_policy": {
+      "rank_by": "probability",
+      "total_scored": 1020,
+      "budget_capacity": 51,
+      "reviewed_count": 51,
+      "approved_count": 969,
+      "total_expected_loss_usd": 4638.32,
+      "reviewed_expected_loss_usd": 2150.0,
+      "total_expected_net_savings_usd": 953.0,
+      "merchant_advisories": [
+        {
+          "merchant_id": "M_0018",
+          "batch_tx_count": 9,
+          "flagged_count": 4,
+          "flagged_rate": 0.4444,
+          "recommendation": "analyst_merchant_health_check",
+          "automated_punitive_action": false
+        }
+      ],
+      "realized_disputes_total": 38,
+      "realized_disputes_in_review_queue": 17,
+      "precision_at_review_budget": 0.333333,
+      "recall_at_review_budget": 0.447368,
+      "total_realized_loss_usd": 4273.12,
+      "captured_realized_loss_usd": 2417.2,
+      "loss_capture_rate": 0.565677,
+      "realized_net_savings_usd": 1099.96
+    },
+    "baseline_logistic_value_policy": {
+      "rank_by": "expected_net_savings",
+      "total_scored": 1020,
+      "budget_capacity": 51,
+      "reviewed_count": 51,
+      "approved_count": 969,
+      "total_expected_loss_usd": 4420.27,
+      "reviewed_expected_loss_usd": 1991.95,
+      "total_expected_net_savings_usd": 866.07,
+      "merchant_advisories": [
+        {
+          "merchant_id": "M_0006",
+          "batch_tx_count": 5,
+          "flagged_count": 2,
+          "flagged_rate": 0.4,
+          "recommendation": "analyst_merchant_health_check",
+          "automated_punitive_action": false
+        },
+        {
+          "merchant_id": "M_0018",
+          "batch_tx_count": 9,
+          "flagged_count": 6,
+          "flagged_rate": 0.6667,
+          "recommendation": "analyst_merchant_health_check",
+          "automated_punitive_action": false
+        }
+      ],
+      "realized_disputes_total": 38,
+      "realized_disputes_in_review_queue": 5,
+      "precision_at_review_budget": 0.098039,
+      "recall_at_review_budget": 0.131579,
+      "total_realized_loss_usd": 4273.12,
+      "captured_realized_loss_usd": 1211.53,
+      "loss_capture_rate": 0.283522,
+      "realized_net_savings_usd": 436.84
+    }
+  },
+  "delayed_outcome_monitoring": [
+    {
+      "checkpoint_offset_days": 0,
+      "checkpoint_ts": "2025-10-15T00:00:00+00:00",
+      "cohort_size": 1404,
+      "mature_fraction": 0.0,
+      "mean_expected_arrival_completion": 0.898,
+      "expected_disputes_by_checkpoint": 34.66,
+      "observed_disputes_by_checkpoint": 63,
+      "observed_to_expected_ratio": 1.8176,
+      "reviewed_queue_size": 70,
+      "reviewed_expected_disputes": 8.77,
+      "reviewed_observed_disputes": 19,
+      "reviewed_observed_precision": 0.271429,
+      "monitoring_status": "DRIFT_ALERT"
+    },
+    {
+      "checkpoint_offset_days": 15,
+      "checkpoint_ts": "2025-10-30T00:00:00+00:00",
+      "cohort_size": 1404,
+      "mature_fraction": 0.3269,
+      "mean_expected_arrival_completion": 0.9575,
+      "expected_disputes_by_checkpoint": 36.9,
+      "observed_disputes_by_checkpoint": 65,
+      "observed_to_expected_ratio": 1.7615,
+      "reviewed_queue_size": 70,
+      "reviewed_expected_disputes": 9.24,
+      "reviewed_observed_disputes": 19,
+      "reviewed_observed_precision": 0.271429,
+      "monitoring_status": "DRIFT_ALERT"
+    },
+    {
+      "checkpoint_offset_days": 30,
+      "checkpoint_ts": "2025-11-14T00:00:00+00:00",
+      "cohort_size": 1404,
+      "mature_fraction": 0.6845,
+      "mean_expected_arrival_completion": 0.9806,
+      "expected_disputes_by_checkpoint": 37.78,
+      "observed_disputes_by_checkpoint": 65,
+      "observed_to_expected_ratio": 1.7204,
+      "reviewed_queue_size": 70,
+      "reviewed_expected_disputes": 9.44,
+      "reviewed_observed_disputes": 19,
+      "reviewed_observed_precision": 0.271429,
+      "monitoring_status": "DRIFT_ALERT"
+    },
+    {
+      "checkpoint_offset_days": 60,
+      "checkpoint_ts": "2025-12-14T00:00:00+00:00",
+      "cohort_size": 1404,
+      "mature_fraction": 1.0,
+      "mean_expected_arrival_completion": 0.9991,
+      "expected_disputes_by_checkpoint": 38.48,
+      "observed_disputes_by_checkpoint": 66,
+      "observed_to_expected_ratio": 1.715,
+      "reviewed_queue_size": 70,
+      "reviewed_expected_disputes": 9.6,
+      "reviewed_observed_disputes": 19,
+      "reviewed_observed_precision": 0.271429,
+      "monitoring_status": "DRIFT_ALERT"
+    },
+    {
+      "checkpoint_offset_days": 90,
+      "checkpoint_ts": "2026-01-13T00:00:00+00:00",
+      "cohort_size": 1404,
+      "mature_fraction": 1.0,
+      "mean_expected_arrival_completion": 1.0,
+      "expected_disputes_by_checkpoint": 38.52,
+      "observed_disputes_by_checkpoint": 66,
+      "observed_to_expected_ratio": 1.7134,
+      "reviewed_queue_size": 70,
+      "reviewed_expected_disputes": 9.61,
+      "reviewed_observed_disputes": 19,
+      "reviewed_observed_precision": 0.271429,
+      "monitoring_status": "DRIFT_ALERT"
+    },
+    {
+      "checkpoint_offset_days": 120,
+      "checkpoint_ts": "2026-02-12T00:00:00+00:00",
+      "cohort_size": 1404,
+      "mature_fraction": 1.0,
+      "mean_expected_arrival_completion": 1.0,
+      "expected_disputes_by_checkpoint": 38.52,
+      "observed_disputes_by_checkpoint": 66,
+      "observed_to_expected_ratio": 1.7134,
+      "reviewed_queue_size": 70,
+      "reviewed_expected_disputes": 9.61,
+      "reviewed_observed_disputes": 19,
+      "reviewed_observed_precision": 0.271429,
+      "monitoring_status": "DRIFT_ALERT"
+    }
+  ],
+  "sample_explanations": [
+    {
+      "transaction_id": "TX_002485",
+      "merchant_id": "M_0014",
+      "action": "manual_review",
+      "calibrated_prob": 0.154212,
+      "amount_usd": 1611.22,
+      "expected_loss_usd": 213.51,
+      "expected_net_savings_usd": 112.93,
+      "top_drivers": [
+        {
+          "feature": "has_avs_match_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.145555,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "m_tx_amount_mean_30d",
+          "value": 80.1436,
+          "prob_delta_vs_median": 0.038417,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "m_reported_dispute_rate_90d",
+          "value": 0.05,
+          "prob_delta_vs_median": 0.034132,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "customer_tenure_days",
+          "value": 263.0,
+          "prob_delta_vs_median": -0.016616,
+          "direction": "reduces_risk"
+        },
+        {
+          "feature": "m_tx_amount_sum_30d",
+          "value": 641.1485,
+          "prob_delta_vs_median": -0.013721,
+          "direction": "reduces_risk"
+        }
+      ]
+    },
+    {
+      "transaction_id": "TX_003110",
+      "merchant_id": "M_0024",
+      "action": "manual_review",
+      "calibrated_prob": 0.209141,
+      "amount_usd": 960.38,
+      "expected_loss_usd": 173.86,
+      "expected_net_savings_usd": 91.13,
+      "top_drivers": [
+        {
+          "feature": "has_avs_match_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.185839,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "has_3ds_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.139031,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "avg_fulfillment_days",
+          "value": 10.74,
+          "prob_delta_vs_median": -0.032628,
+          "direction": "reduces_risk"
+        },
+        {
+          "feature": "amount_usd",
+          "value": 960.3792,
+          "prob_delta_vs_median": 0.009238,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "ch_card_not_present",
+          "value": 1.0,
+          "prob_delta_vs_median": 0.0,
+          "direction": "increases_risk"
+        }
+      ]
+    },
+    {
+      "transaction_id": "TX_002924",
+      "merchant_id": "M_0033",
+      "action": "manual_review",
+      "calibrated_prob": 0.363284,
+      "amount_usd": 502.34,
+      "expected_loss_usd": 160.57,
+      "expected_net_savings_usd": 83.81,
+      "top_drivers": [
+        {
+          "feature": "has_avs_match_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.27404,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "has_3ds_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.207297,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "m_reported_dispute_rate_90d",
+          "value": 0.1,
+          "prob_delta_vs_median": 0.084133,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "m_fraud_disputes_90d",
+          "value": 2.0,
+          "prob_delta_vs_median": -0.024191,
+          "direction": "reduces_risk"
+        },
+        {
+          "feature": "amount_usd",
+          "value": 502.34,
+          "prob_delta_vs_median": 0.013031,
+          "direction": "increases_risk"
+        }
+      ]
+    },
+    {
+      "transaction_id": "TX_001499",
+      "merchant_id": "M_0031",
+      "action": "manual_review",
+      "calibrated_prob": 0.248347,
+      "amount_usd": 588.01,
+      "expected_loss_usd": 127.85,
+      "expected_net_savings_usd": 65.82,
+      "top_drivers": [
+        {
+          "feature": "has_avs_match_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.205496,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "has_3ds_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.134189,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "customer_tenure_days",
+          "value": 4.0,
+          "prob_delta_vs_median": 0.030409,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "avg_fulfillment_days",
+          "value": 12.6,
+          "prob_delta_vs_median": -0.024888,
+          "direction": "reduces_risk"
+        },
+        {
+          "feature": "amount_usd",
+          "value": 588.01,
+          "prob_delta_vs_median": 0.010448,
+          "direction": "increases_risk"
+        }
+      ]
+    },
+    {
+      "transaction_id": "TX_001055",
+      "merchant_id": "M_0028",
+      "action": "manual_review",
+      "calibrated_prob": 0.235791,
+      "amount_usd": 536.25,
+      "expected_loss_usd": 111.01,
+      "expected_net_savings_usd": 56.56,
+      "top_drivers": [
+        {
+          "feature": "has_avs_match_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.180707,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "m_fraud_disputes_90d",
+          "value": 1.0,
+          "prob_delta_vs_median": -0.09765,
+          "direction": "reduces_risk"
+        },
+        {
+          "feature": "has_3ds_num",
+          "value": 0.0,
+          "prob_delta_vs_median": 0.057191,
+          "direction": "increases_risk"
+        },
+        {
+          "feature": "avg_fulfillment_days",
+          "value": 13.44,
+          "prob_delta_vs_median": -0.021174,
+          "direction": "reduces_risk"
+        },
+        {
+          "feature": "amount_usd",
+          "value": 536.25,
+          "prob_delta_vs_median": 0.010079,
+          "direction": "increases_risk"
+        }
+      ]
+    }
+  ]
+}

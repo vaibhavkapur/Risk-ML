@@ -1,0 +1,265 @@
+{
+  "in_distribution_test_slice": {
+    "alert_triggered": false,
+    "critical_features": [],
+    "feature_version": "feat.v1",
+    "features": {
+      "amount_ratio_to_24h_avg": {
+        "mean_shift_sigma": 0.01505,
+        "psi": 0.015849,
+        "serving_mean": 1.395771,
+        "serving_std": 2.742059,
+        "severity": "OK",
+        "train_mean": 1.436391,
+        "train_std": 2.69906
+      },
+      "amount_usd_log1p": {
+        "mean_shift_sigma": 0.078502,
+        "psi": 0.01534,
+        "serving_mean": 3.834704,
+        "serving_std": 0.902451,
+        "severity": "OK",
+        "train_mean": 3.908852,
+        "train_std": 0.944535
+      },
+      "country_changed_from_prev": {
+        "mean_shift_sigma": 0.044862,
+        "psi": 0.0,
+        "serving_mean": 0.12,
+        "serving_std": 0.324962,
+        "severity": "OK",
+        "train_mean": 0.135347,
+        "train_std": 0.342094
+      },
+      "distinct_devices_24h": {
+        "mean_shift_sigma": 0.136749,
+        "psi": 0.026961,
+        "serving_mean": 1.19,
+        "serving_std": 0.582151,
+        "severity": "OK",
+        "train_mean": 1.280967,
+        "train_std": 0.665213
+      },
+      "distinct_merchants_24h": {
+        "mean_shift_sigma": 0.072409,
+        "psi": 0.017462,
+        "serving_mean": 2.83125,
+        "serving_std": 1.789629,
+        "severity": "OK",
+        "train_mean": 2.977039,
+        "train_std": 2.013418
+      },
+      "high_risk_context_score": {
+        "mean_shift_sigma": 0.017792,
+        "psi": 0.021911,
+        "serving_mean": 0.321958,
+        "serving_std": 0.260464,
+        "severity": "OK",
+        "train_mean": 0.317167,
+        "train_std": 0.269304
+      },
+      "seconds_since_prev_tx_log1p": {
+        "mean_shift_sigma": 0.062161,
+        "psi": 0.018191,
+        "serving_mean": 9.481794,
+        "serving_std": 1.83285,
+        "severity": "OK",
+        "train_mean": 9.359328,
+        "train_std": 1.970127
+      },
+      "tx_amount_sum_1h_usd": {
+        "mean_shift_sigma": 0.107215,
+        "psi": 0.006452,
+        "serving_mean": 36.74501,
+        "serving_std": 144.524643,
+        "severity": "OK",
+        "train_mean": 61.628773,
+        "train_std": 232.093134
+      },
+      "tx_amount_sum_24h_usd": {
+        "mean_shift_sigma": 0.098686,
+        "psi": 0.021021,
+        "serving_mean": 252.787026,
+        "serving_std": 377.916695,
+        "severity": "OK",
+        "train_mean": 300.985512,
+        "train_std": 488.401464
+      },
+      "tx_count_1h": {
+        "mean_shift_sigma": 0.097997,
+        "psi": 0.007968,
+        "serving_mean": 0.1875,
+        "serving_std": 0.512195,
+        "severity": "OK",
+        "train_mean": 0.250151,
+        "train_std": 0.639315
+      },
+      "tx_count_24h": {
+        "mean_shift_sigma": 0.075986,
+        "psi": 0.01704,
+        "serving_mean": 2.8375,
+        "serving_std": 1.793347,
+        "severity": "OK",
+        "train_mean": 2.992145,
+        "train_std": 2.035174
+      },
+      "tx_count_5m": {
+        "mean_shift_sigma": 0.056148,
+        "psi": 0.0,
+        "serving_mean": 0.10125,
+        "serving_std": 0.428367,
+        "severity": "OK",
+        "train_mean": 0.128701,
+        "train_std": 0.488902
+      }
+    },
+    "max_mean_shift_sigma": 0.136749,
+    "max_psi": 0.026961,
+    "model_version": "model.logreg_cal.v1",
+    "samples": 800,
+    "status": "OK",
+    "thresholds": {
+      "mean_shift_sigma": 0.5,
+      "psi_critical": 0.25,
+      "psi_warning": 0.1
+    },
+    "warning_features": []
+  },
+  "simulated_drifted_serving_slice": {
+    "alert_triggered": true,
+    "critical_features": [
+      "amount_usd_log1p",
+      "tx_count_24h",
+      "tx_amount_sum_24h_usd",
+      "distinct_merchants_24h",
+      "distinct_devices_24h",
+      "seconds_since_prev_tx_log1p",
+      "high_risk_context_score"
+    ],
+    "feature_version": "feat.v1",
+    "features": {
+      "amount_ratio_to_24h_avg": {
+        "mean_shift_sigma": 0.028144,
+        "psi": 0.074695,
+        "serving_mean": 1.36043,
+        "serving_std": 2.158761,
+        "severity": "OK",
+        "train_mean": 1.436391,
+        "train_std": 2.69906
+      },
+      "amount_usd_log1p": {
+        "mean_shift_sigma": 1.125528,
+        "psi": 1.228655,
+        "serving_mean": 4.971953,
+        "serving_std": 1.012506,
+        "severity": "CRITICAL",
+        "train_mean": 3.908852,
+        "train_std": 0.944535
+      },
+      "country_changed_from_prev": {
+        "mean_shift_sigma": 0.360728,
+        "psi": 0.0,
+        "serving_mean": 0.25875,
+        "serving_std": 0.437948,
+        "severity": "OK",
+        "train_mean": 0.135347,
+        "train_std": 0.342094
+      },
+      "distinct_devices_24h": {
+        "mean_shift_sigma": 0.714482,
+        "psi": 0.296156,
+        "serving_mean": 1.75625,
+        "serving_std": 1.002166,
+        "severity": "CRITICAL",
+        "train_mean": 1.280967,
+        "train_std": 0.665213
+      },
+      "distinct_merchants_24h": {
+        "mean_shift_sigma": 1.36172,
+        "psi": 0.867604,
+        "serving_mean": 5.71875,
+        "serving_std": 3.759607,
+        "severity": "CRITICAL",
+        "train_mean": 2.977039,
+        "train_std": 2.013418
+      },
+      "high_risk_context_score": {
+        "mean_shift_sigma": 1.162791,
+        "psi": 1.903775,
+        "serving_mean": 0.630311,
+        "serving_std": 0.259589,
+        "severity": "CRITICAL",
+        "train_mean": 0.317167,
+        "train_std": 0.269304
+      },
+      "seconds_since_prev_tx_log1p": {
+        "mean_shift_sigma": 0.493246,
+        "psi": 0.662584,
+        "serving_mean": 8.387571,
+        "serving_std": 2.17966,
+        "severity": "CRITICAL",
+        "train_mean": 9.359328,
+        "train_std": 1.970127
+      },
+      "tx_amount_sum_1h_usd": {
+        "mean_shift_sigma": 0.588624,
+        "psi": 0.21919,
+        "serving_mean": 198.244399,
+        "serving_std": 501.003632,
+        "severity": "WARNING",
+        "train_mean": 61.628773,
+        "train_std": 232.093134
+      },
+      "tx_amount_sum_24h_usd": {
+        "mean_shift_sigma": 2.397958,
+        "psi": 1.653289,
+        "serving_mean": 1472.151525,
+        "serving_std": 1461.602371,
+        "severity": "CRITICAL",
+        "train_mean": 300.985512,
+        "train_std": 488.401464
+      },
+      "tx_count_1h": {
+        "mean_shift_sigma": 0.377121,
+        "psi": 0.131686,
+        "serving_mean": 0.49125,
+        "serving_std": 0.824575,
+        "severity": "WARNING",
+        "train_mean": 0.250151,
+        "train_std": 0.639315
+      },
+      "tx_count_24h": {
+        "mean_shift_sigma": 1.377821,
+        "psi": 0.879028,
+        "serving_mean": 5.79625,
+        "serving_std": 3.827824,
+        "severity": "CRITICAL",
+        "train_mean": 2.992145,
+        "train_std": 2.035174
+      },
+      "tx_count_5m": {
+        "mean_shift_sigma": 0.186743,
+        "psi": 0.0,
+        "serving_mean": 0.22,
+        "serving_std": 0.607536,
+        "severity": "OK",
+        "train_mean": 0.128701,
+        "train_std": 0.488902
+      }
+    },
+    "max_mean_shift_sigma": 2.397958,
+    "max_psi": 1.903775,
+    "model_version": "model.logreg_cal.v1",
+    "samples": 800,
+    "status": "CRITICAL_SKEW",
+    "thresholds": {
+      "mean_shift_sigma": 0.5,
+      "psi_critical": 0.25,
+      "psi_warning": 0.1
+    },
+    "warning_features": [
+      "tx_count_1h",
+      "tx_amount_sum_1h_usd"
+    ]
+  }
+}

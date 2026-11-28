@@ -1,0 +1,18 @@
+{
+  "reference_model": "logistic_regression_calibrated",
+  "candidate_model": "boosted_trees_calibrated",
+  "auroc_delta": -0.020748,
+  "brier_delta": 0.002381,
+  "candidate_ece": 0.029857,
+  "tolerances": {
+    "min_auroc_improvement_or_parity": -0.02,
+    "max_brier_degradation": 0.015,
+    "max_ece_calibrated": 0.05
+  },
+  "checks": {
+    "auroc_within_tolerance": false,
+    "brier_within_tolerance": true,
+    "calibrated_ece_within_tolerance": true
+  },
+  "all_checks_passed": false
+}

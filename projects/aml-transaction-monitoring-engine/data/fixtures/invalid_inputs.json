@@ -1,0 +1,97 @@
+{
+  "fixture_id": "invalid_inputs_v1",
+  "schema_version": "1.0.0",
+  "description": "Invalid input cases for verifying strict schema validation and explicit error propagation.",
+  "cases": [
+    {
+      "case_name": "negative_amount",
+      "expected_error": "ValidationError",
+      "transaction": {
+        "tx_id": "TX-BAD-001",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-B",
+        "amount": -100.0,
+        "currency": "USD",
+        "timestamp": "2026-01-10T10:00:00Z",
+        "channel": "WIRE"
+      }
+    },
+    {
+      "case_name": "zero_amount",
+      "expected_error": "ValidationError",
+      "transaction": {
+        "tx_id": "TX-BAD-002",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-B",
+        "amount": 0.0,
+        "currency": "USD",
+        "timestamp": "2026-01-10T10:00:00Z",
+        "channel": "WIRE"
+      }
+    },
+    {
+      "case_name": "missing_timestamp",
+      "expected_error": "ValidationError",
+      "transaction": {
+        "tx_id": "TX-BAD-003",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-B",
+        "amount": 500.0,
+        "currency": "USD",
+        "channel": "WIRE"
+      }
+    },
+    {
+      "case_name": "invalid_timestamp_format",
+      "expected_error": "ValidationError",
+      "transaction": {
+        "tx_id": "TX-BAD-004",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-B",
+        "amount": 500.0,
+        "currency": "USD",
+        "timestamp": "10/01/2026 10am",
+        "channel": "WIRE"
+      }
+    },
+    {
+      "case_name": "unsupported_currency",
+      "expected_error": "UnsupportedInputError",
+      "transaction": {
+        "tx_id": "TX-BAD-005",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-B",
+        "amount": 500.0,
+        "currency": "BTC",
+        "timestamp": "2026-01-10T10:00:00Z",
+        "channel": "WIRE"
+      }
+    },
+    {
+      "case_name": "unsupported_channel",
+      "expected_error": "UnsupportedInputError",
+      "transaction": {
+        "tx_id": "TX-BAD-006",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-B",
+        "amount": 500.0,
+        "currency": "USD",
+        "timestamp": "2026-01-10T10:00:00Z",
+        "channel": "CRYPTO_MIXER"
+      }
+    },
+    {
+      "case_name": "self_transfer",
+      "expected_error": "ValidationError",
+      "transaction": {
+        "tx_id": "TX-BAD-007",
+        "source_account_id": "ACC-A",
+        "target_account_id": "ACC-A",
+        "amount": 500.0,
+        "currency": "USD",
+        "timestamp": "2026-01-10T10:00:00Z",
+        "channel": "WIRE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+# Payment Authorization Optimization Engine — Default Configuration
+# Synthetic offline research prototype only.
+
+config_version: "1.0.0"
+seed: 42
+
+data:
+  n_samples: 4000
+  start_timestamp_utc: "2025-01-01T00:00:00Z"
+  span_days: 120
+  min_label_maturity_days: 30
+  train_fraction: 0.55
+  calibration_fraction: 0.20
+  test_fraction: 0.25
+
+economics:
+  merchant_margin_bps: 180.0
+  chargeback_fee_cents: 1500
+  loss_given_fraud_multiplier: 1.0
+  step_up_3ds_cost_cents: 12
+  secondary_route_cost_cents: 8
+
+retry:
+  max_retries: 2
+  allow_soft_decline_retry: true
+  allow_technical_failover: true
+
+policy:
+  baseline_risk_threshold: 0.72
+  max_expected_loss_bps: 45.0
+  max_p95_latency_ms: 420.0
+  missing_feature_risk_penalty: 0.08
+  missing_feature_uncertainty_multiplier: 1.25
+  dual_lambda_loss_grid: [0.0, 0.1, 0.25, 0.5, 0.75, 1.0, 1.5, 2.5, 4.0, 6.0]
+  dual_lambda_latency_grid: [0.0, 0.002, 0.005, 0.01, 0.02, 0.05]
+
+counterfactual:
+  min_propensity_threshold: 0.02
+  ips_clip_min: 0.05
+  min_ess_ratio: 0.15
+  bootstrap_resamples: 300
+  confidence_level: 0.95
+
+processors:
+  proc_a:
+    base_latency_ms: 140.0
+    approval_bias: 0.02
+    cost_cents: 0
+  proc_b:
+    base_latency_ms: 210.0
+    approval_bias: 0.05
+    cost_cents: 8
+  proc_c:
+    base_latency_ms: 175.0
+    approval_bias: 0.00
+    cost_cents: 4

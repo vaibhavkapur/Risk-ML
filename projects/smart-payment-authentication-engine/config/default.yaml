@@ -1,0 +1,80 @@
+# Smart Payment Authentication Engine - Default Configuration
+# Synthetic / educational prototype configuration only. No production credentials.
+
+seed: 42
+feature_version: "1.0.0"
+policy_version: "1.0.0"
+
+data_generation:
+  n_samples: 4500
+  start_date: "2026-01-01T00:00:00Z"
+  horizon_days: 60
+  base_fraud_rate: 0.05
+  fraud_label_delay_days_min: 3
+  fraud_label_delay_days_max: 18
+  non_fraud_maturity_days: 14
+
+training:
+  train_end_day: 30
+  cal_end_day: 40
+  val_end_day: 50
+  label_maturity_days: 14
+  calibration_method: "sigmoid"
+  n_estimators: 120
+  max_depth: 3
+  learning_rate: 0.08
+
+mandatory_challenge_rules:
+  high_amount_minor: 50000
+  high_risk_categories:
+    - "crypto_exchange"
+    - "gambling"
+  require_challenge_on_emulator: true
+  require_challenge_on_cross_border_high_amount_minor: 20000
+  max_ip_velocity_1h_without_challenge: 8
+
+high_risk_overrides:
+  decline_prior_chargebacks_90d_gte: 2
+  decline_ip_velocity_1h_gte: 20
+  decline_emulator_and_tor: true
+  decline_amount_minor_with_chargeback: 10000
+
+policy_optimization:
+  max_challenge_rate: 0.22
+  max_fraud_loss_rate: 0.015
+  friction_cost_minor: 150
+  decline_opportunity_cost_bps: 250
+  challenge_fraud_catch_rate: 0.80
+  challenge_genuine_pass_rate: 0.88
+  threshold_grid_steps: 45
+
+fallback:
+  critical_features:
+    - "device_trust_score"
+    - "account_age_days"
+    - "ip_velocity_1h"
+  max_missing_feature_ratio_for_model: 0.35
+  abstain_missing_feature_ratio: 0.65
+  outage_challenge_amount_minor: 10000
+  outage_decline_amount_minor: 250000
+
+step_up_simulation:
+  genuine_pass_prob: 0.88
+  genuine_abandon_prob: 0.08
+  genuine_timeout_prob: 0.02
+  genuine_fail_prob: 0.02
+  fraud_pass_prob: 0.14
+  fraud_abandon_prob: 0.34
+  fraud_timeout_prob: 0.06
+  fraud_fail_prob: 0.46
+
+evaluation:
+  oracle_probability_tolerance: 1.0e-6
+  reproducibility_tolerance: 1.0e-9
+  max_acceptable_ece: 0.035
+  max_acceptable_brier: 0.06
+
+storage:
+  backend: "memory"
+  jsonl_path: "reports/decision_log.jsonl"
+  redis_url: "redis://localhost:6379/0"

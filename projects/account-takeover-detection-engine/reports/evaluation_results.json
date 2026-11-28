@@ -1,0 +1,383 @@
+{
+  "adaptive_policy_test_summary": {
+    "ato_actions": {
+      "BLOCK_AND_RESET": 142,
+      "CHALLENGE_WEBAUTHN": 1
+    },
+    "ato_count": 143,
+    "ato_intervened_rate": 1.0,
+    "ato_strong_challenge_or_block_rate": 1.0,
+    "benign_actions": {
+      "ALLOW": 454
+    },
+    "benign_block_rate": 0.0,
+    "benign_count": 454,
+    "benign_step_up_or_block_rate": 0.0,
+    "counters": {
+      "avg_latency_ms": 8.033,
+      "critical_drift_events": 0,
+      "decisions_by_action": {
+        "ALLOW": 454,
+        "BLOCK_AND_RESET": 142,
+        "CHALLENGE_WEBAUTHN": 1
+      },
+      "drift_checks_run": 0,
+      "fallbacks_by_reason": {},
+      "total_decisions": 597,
+      "unsupported_input_errors": 0,
+      "validation_errors": 0
+    },
+    "decisions_logged": 597,
+    "every_decision_logged": true,
+    "total_events": 597
+  },
+  "baseline_comparison": {
+    "calibrated_vs_rule_oracle": {
+      "brier_delta": -0.047375,
+      "ece_delta": -0.160458,
+      "pr_auc_delta": 0.001855,
+      "recall_at_1pct_fpr_delta": 0.020979,
+      "roc_auc_delta": 0.000585
+    },
+    "calibrated_vs_uncalibrated_blend": {
+      "brier_delta": -0.00509,
+      "ece_delta": -0.060922
+    }
+  },
+  "chronological_evaluation": {
+    "split": {
+      "calibration_cutoff": "2026-02-06T07:28:08+00:00",
+      "calibration_rows": 597,
+      "excluded_immature_train_rows": 134,
+      "test_rows": 597,
+      "train_cutoff": "2026-01-28T04:01:39+00:00",
+      "train_rows": 1657
+    },
+    "test_metrics": {
+      "anomaly_isolation_forest": {
+        "brier_score": 0.121605,
+        "ece": 0.144861,
+        "n_samples": 597,
+        "positive_count": 143,
+        "positive_rate": 0.239531,
+        "pr_auc": 0.748105,
+        "recall_at_fpr": {
+          "1.00%": {
+            "achieved_fpr": 0.008811,
+            "recall": 0.20979,
+            "target_fpr": 0.01,
+            "threshold": 0.823276
+          },
+          "2.00%": {
+            "achieved_fpr": 0.017621,
+            "recall": 0.251748,
+            "target_fpr": 0.02,
+            "threshold": 0.758784
+          },
+          "5.00%": {
+            "achieved_fpr": 0.048458,
+            "recall": 0.468531,
+            "target_fpr": 0.05,
+            "threshold": 0.638899
+          }
+        },
+        "roc_auc": 0.923015
+      },
+      "calibrated_ensemble": {
+        "brier_score": 3e-06,
+        "ece": 0.000491,
+        "n_samples": 597,
+        "positive_count": 143,
+        "positive_rate": 0.239531,
+        "pr_auc": 1.0,
+        "recall_at_fpr": {
+          "1.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.01,
+            "threshold": 0.998962
+          },
+          "2.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.02,
+            "threshold": 0.998962
+          },
+          "5.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.05,
+            "threshold": 0.998962
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "logistic_regression": {
+        "brier_score": 0.000165,
+        "ece": 0.001903,
+        "n_samples": 597,
+        "positive_count": 143,
+        "positive_rate": 0.239531,
+        "pr_auc": 1.0,
+        "recall_at_fpr": {
+          "1.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.01,
+            "threshold": 0.891616
+          },
+          "2.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.02,
+            "threshold": 0.891616
+          },
+          "5.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.05,
+            "threshold": 0.891616
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "rule_oracle_baseline": {
+        "brier_score": 0.047378,
+        "ece": 0.160949,
+        "n_samples": 597,
+        "positive_count": 143,
+        "positive_rate": 0.239531,
+        "pr_auc": 0.998145,
+        "recall_at_fpr": {
+          "1.00%": {
+            "achieved_fpr": 0.006608,
+            "recall": 0.979021,
+            "target_fpr": 0.01,
+            "threshold": 0.413242
+          },
+          "2.00%": {
+            "achieved_fpr": 0.017621,
+            "recall": 1.0,
+            "target_fpr": 0.02,
+            "threshold": 0.377964
+          },
+          "5.00%": {
+            "achieved_fpr": 0.017621,
+            "recall": 1.0,
+            "target_fpr": 0.05,
+            "threshold": 0.377964
+          }
+        },
+        "roc_auc": 0.999415
+      },
+      "supervised_combined": {
+        "brier_score": 6.1e-05,
+        "ece": 0.001504,
+        "n_samples": 597,
+        "positive_count": 143,
+        "positive_rate": 0.239531,
+        "pr_auc": 1.0,
+        "recall_at_fpr": {
+          "1.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.01,
+            "threshold": 0.911067
+          },
+          "2.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.02,
+            "threshold": 0.911067
+          },
+          "5.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.05,
+            "threshold": 0.911067
+          }
+        },
+        "roc_auc": 1.0
+      },
+      "supervised_uncalibrated_blend": {
+        "brier_score": 0.005093,
+        "ece": 0.061413,
+        "n_samples": 597,
+        "positive_count": 143,
+        "positive_rate": 0.239531,
+        "pr_auc": 1.0,
+        "recall_at_fpr": {
+          "1.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.01,
+            "threshold": 0.835273
+          },
+          "2.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.02,
+            "threshold": 0.835273
+          },
+          "5.00%": {
+            "achieved_fpr": 0.0,
+            "recall": 1.0,
+            "target_fpr": 0.05,
+            "threshold": 0.835273
+          }
+        },
+        "roc_auc": 1.0
+      }
+    }
+  },
+  "config": {
+    "audit": {
+      "log_path": "reports/decision_audit.jsonl",
+      "strict_logging": true
+    },
+    "config_version": "1.0.0",
+    "drift": {
+      "expiry_rate_warning": 0.2,
+      "min_sample_size": 20,
+      "missingness_increase_critical": 0.25,
+      "missingness_increase_warning": 0.1,
+      "psi_critical_threshold": 0.25,
+      "psi_warning_threshold": 0.15
+    },
+    "features": {
+      "burst_failed_attempts_1h": 5,
+      "feature_ttl_seconds": 2592000,
+      "long_window_seconds": 2592000,
+      "max_plausible_velocity_kmh": 900.0,
+      "medium_window_seconds": 86400,
+      "missing_feature_fallback_ratio": 0.5,
+      "shared_network_user_threshold": 4,
+      "short_window_seconds": 3600
+    },
+    "policy": {
+      "base_thresholds": {
+        "block_and_reset": 0.82,
+        "challenge_otp": 0.25,
+        "challenge_webauthn": 0.55
+      },
+      "drift_tightening_delta": -0.05,
+      "high_value_account_delta": -0.08,
+      "repeated_attempt_hard_block": 10,
+      "repeated_attempt_hard_step_up": 5,
+      "shared_network_dampening_delta": 0.06,
+      "stale_model_max_age_days": 90,
+      "target_fprs": [
+        0.01,
+        0.02,
+        0.05
+      ]
+    },
+    "seed": 42,
+    "store": {
+      "backend": "memory",
+      "redis_key_prefix": "ato_engine:",
+      "redis_url": null
+    },
+    "training": {
+      "anomaly_blend_weight": 0.2,
+      "calibration_fraction": 0.2,
+      "calibration_method": "sigmoid",
+      "gb_learning_rate": 0.08,
+      "gb_max_depth": 4,
+      "gb_max_iter": 120,
+      "isolation_forest_contamination": 0.08,
+      "isolation_forest_estimators": 120,
+      "label_maturity_hours": 48.0,
+      "test_fraction": 0.2,
+      "train_fraction": 0.6
+    },
+    "versions": {
+      "feature_version": "1.0.0",
+      "model_version": "1.0.0",
+      "policy_version": "1.0.0",
+      "schema_version": "1.0.0"
+    }
+  },
+  "dataset": {
+    "benign_events": 2297,
+    "positive_events": 688,
+    "source": "synthetic_deterministic_generator",
+    "time_range_utc": [
+      "2026-01-01T01:07:13+00:00",
+      "2026-02-14T23:36:39+00:00"
+    ],
+    "total_events": 2985
+  },
+  "model_artifact_sha256": "90ed6fefe1f9a3e8f20ffc1c4a57eae4aed9e6ef5bd1a83cfacf6323214b9ec9",
+  "replay_reproducibility": {
+    "checked": 597,
+    "matched": true,
+    "mismatches": []
+  },
+  "required_scenarios": {
+    "drift_alerts": {
+      "alert_count": 6,
+      "circuit_breaker_engaged": true,
+      "critical_drift_detected": true,
+      "passed": true,
+      "score_psi": 8.241859
+    },
+    "feature_expiry": {
+      "action": "CHALLENGE_OTP",
+      "passed": true,
+      "profile_expired": true,
+      "user_prior_event_count_30d": 0.0
+    },
+    "missing_data_fallback": {
+      "action": "CHALLENGE_OTP",
+      "fallback_reason": "excessive_missing_features",
+      "fallback_used": true,
+      "missing_fields": [
+        "device_id",
+        "device_trust_score",
+        "ip_address",
+        "ip_reputation_risk",
+        "geo_coordinates"
+      ],
+      "passed": true
+    },
+    "new_device_vs_compromised_session": {
+      "compromised_action": "BLOCK_AND_RESET",
+      "compromised_score": 1.0,
+      "new_device_action": "ALLOW",
+      "new_device_score": 7e-06,
+      "passed": true
+    },
+    "repeated_attempts": {
+      "action": "BLOCK_AND_RESET",
+      "failed_attempts_1h": 10.0,
+      "passed": true,
+      "triggered_rules": [
+        "HARD_BLOCK_REPEATED_ATTEMPTS_1H",
+        "CREDENTIAL_STUFFING_BURST"
+      ]
+    },
+    "shared_network": {
+      "action": "ALLOW",
+      "inferred_shared_network": 1.0,
+      "passed": true,
+      "score": 0.000339,
+      "threshold_adjustments": {
+        "shared_network_dampening": 0.06
+      }
+    }
+  },
+  "runtime": {
+    "config_version": "1.0.0",
+    "feature_version": "1.0.0",
+    "generated_at_utc": "2026-11-28T06:17:27.385297+00:00",
+    "numpy_version": "1.26.4",
+    "package_version": "0.1.0",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "policy_version": "1.0.0",
+    "python_version": "3.9.6",
+    "schema_version": "1.0.0",
+    "scikit_learn_version": "1.5.2",
+    "seed": 42
+  }
+}

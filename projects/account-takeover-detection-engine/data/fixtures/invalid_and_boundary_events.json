@@ -1,0 +1,169 @@
+{
+  "fixture_version": "1.0.0",
+  "description": "Invalid contract cases, unsupported input cases, and boundary valid cases.",
+  "invalid_contract_cases": [
+    {
+      "name": "naive_timestamp",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_001",
+        "timestamp": "2026-01-01T10:00:00",
+        "user_id": "usr_001",
+        "session_id": "ses_001"
+      }
+    },
+    {
+      "name": "latitude_out_of_range",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_002",
+        "timestamp": "2026-01-01T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "geo_lat": 95.5,
+        "geo_lon": -74.0
+      }
+    },
+    {
+      "name": "partial_geo_coordinates",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_003",
+        "timestamp": "2026-01-01T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "geo_lat": 40.7,
+        "geo_lon": null
+      }
+    },
+    {
+      "name": "label_available_before_event",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_004",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "label": 1,
+        "label_available_at": "2026-01-04T10:00:00Z"
+      }
+    },
+    {
+      "name": "invalid_ip_address",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_005",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "ip_address": "999.999.999.999"
+      }
+    },
+    {
+      "name": "negative_session_duration",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_006",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "session_duration_seconds": -5.0
+      }
+    },
+    {
+      "name": "extra_unexpected_field",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "event_id": "inv_007",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "raw_password": "never_allowed_field"
+      }
+    }
+  ],
+  "unsupported_input_cases": [
+    {
+      "name": "unsupported_schema_version",
+      "expected_error": "UnsupportedInputError",
+      "payload": {
+        "event_id": "uns_001",
+        "schema_version": "2.0.0",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001"
+      }
+    },
+    {
+      "name": "unsupported_event_type",
+      "expected_error": "UnsupportedInputError",
+      "payload": {
+        "event_id": "uns_002",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "event_type": "biometric_raw_scan"
+      }
+    },
+    {
+      "name": "unsupported_auth_method",
+      "expected_error": "UnsupportedInputError",
+      "payload": {
+        "event_id": "uns_003",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "auth_method": "carrier_pigeon"
+      }
+    },
+    {
+      "name": "unsupported_sensitive_action",
+      "expected_error": "UnsupportedInputError",
+      "payload": {
+        "event_id": "uns_004",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_001",
+        "session_id": "ses_001",
+        "sensitive_actions": ["delete_entire_bank"]
+      }
+    }
+  ],
+  "boundary_valid_cases": [
+    {
+      "name": "all_optional_telemetry_missing",
+      "payload": {
+        "event_id": "bnd_001",
+        "timestamp": "2026-01-05T10:00:00Z",
+        "user_id": "usr_bnd_01",
+        "session_id": "ses_bnd_001",
+        "device_id": null,
+        "device_trust_score": null,
+        "ip_address": null,
+        "ip_reputation_risk": null,
+        "geo_lat": null,
+        "geo_lon": null,
+        "country_code": null,
+        "session_duration_seconds": 0.0
+      }
+    },
+    {
+      "name": "extreme_valid_bounds",
+      "payload": {
+        "event_id": "bnd_002",
+        "timestamp": "2026-01-05T10:00:00+00:00",
+        "user_id": "usr_bnd_02",
+        "session_id": "ses_bnd_002",
+        "device_id": "dev_bnd_02",
+        "device_trust_score": 0.0,
+        "ip_address": "192.0.2.254",
+        "ip_reputation_risk": 1.0,
+        "geo_lat": -90.0,
+        "geo_lon": 180.0,
+        "country_code": "AQ",
+        "session_duration_seconds": 0.0,
+        "label": 1,
+        "label_available_at": "2026-01-05T10:00:00+00:00"
+      }
+    }
+  ]
+}

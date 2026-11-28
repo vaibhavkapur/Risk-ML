@@ -1,0 +1,21 @@
+{
+  "fixture_id": "boundary_cases_v1",
+  "schema_version": "1.0.0",
+  "description": "Boundary and resilience fixture covering duplicate event IDs, missing entity mappings, exact 24h rolling window boundary, and structuring band boundary.",
+  "entities": [
+    {"entity_id": "ENT-BND-1", "name": "Synthetic Boundary Entity", "risk_tier": "LOW", "jurisdiction": "US"}
+  ],
+  "accounts": [
+    {"account_id": "ACC-BND-1", "entity_id": "ENT-BND-1", "account_type": "RETAIL", "opened_at": "2025-01-01T00:00:00Z", "baseline_monthly_usd": 5000.0},
+    {"account_id": "ACC-BND-2", "entity_id": "ENT-BND-1", "account_type": "RETAIL", "opened_at": "2025-01-01T00:00:00Z", "baseline_monthly_usd": 5000.0},
+    {"account_id": "ACC-ORPHAN-ENT", "entity_id": "ENT-MISSING-999", "account_type": "RETAIL", "opened_at": "2025-01-01T00:00:00Z", "baseline_monthly_usd": 2000.0}
+  ],
+  "transactions": [
+    {"tx_id": "TX-BND-WIN-1", "source_account_id": "ACC-BND-2", "target_account_id": "ACC-BND-1", "amount": 8000.0, "currency": "USD", "timestamp": "2026-01-20T00:00:00Z", "channel": "CASH_DEPOSIT", "scenario_label": "BENIGN"},
+    {"tx_id": "TX-BND-WIN-2", "source_account_id": "ACC-BND-2", "target_account_id": "ACC-BND-1", "amount": 8000.0, "currency": "USD", "timestamp": "2026-01-20T12:00:00Z", "channel": "CASH_DEPOSIT", "scenario_label": "BENIGN"},
+    {"tx_id": "TX-BND-WIN-3", "source_account_id": "ACC-BND-2", "target_account_id": "ACC-BND-1", "amount": 8000.0, "currency": "USD", "timestamp": "2026-01-21T00:00:01Z", "channel": "CASH_DEPOSIT", "scenario_label": "BENIGN"},
+    {"tx_id": "TX-BND-DUP-1", "source_account_id": "ACC-BND-2", "target_account_id": "ACC-BND-1", "amount": 1200.0, "currency": "USD", "timestamp": "2026-01-22T09:00:00Z", "channel": "ACH", "scenario_label": "BENIGN"},
+    {"tx_id": "TX-BND-DUP-1", "source_account_id": "ACC-BND-2", "target_account_id": "ACC-BND-1", "amount": 1200.0, "currency": "USD", "timestamp": "2026-01-22T09:00:00Z", "channel": "ACH", "scenario_label": "BENIGN"},
+    {"tx_id": "TX-BND-MISSING-ENT", "source_account_id": "ACC-UNKNOWN-404", "target_account_id": "ACC-ORPHAN-ENT", "amount": 9500.0, "currency": "USD", "timestamp": "2026-01-22T10:00:00Z", "channel": "WIRE", "scenario_label": "BENIGN"}
+  ]
+}

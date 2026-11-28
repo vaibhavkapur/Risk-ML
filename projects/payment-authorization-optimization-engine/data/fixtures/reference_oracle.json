@@ -1,0 +1,57 @@
+{
+  "description": "Independent hand-calculated reference oracle fixtures for numerical and safety verification.",
+  "counterfactual_oracle": {
+    "logged_actions": [
+      "APPROVE_PRIMARY",
+      "ROUTE_SECONDARY",
+      "APPROVE_PRIMARY",
+      "STEP_UP_3DS"
+    ],
+    "candidate_actions": [
+      "APPROVE_PRIMARY",
+      "APPROVE_PRIMARY",
+      "APPROVE_PRIMARY",
+      "STEP_UP_3DS"
+    ],
+    "propensities": [0.5, 0.5, 0.5, 0.8],
+    "observed_rewards": [1.0, 0.0, 0.0, 1.0],
+    "dm_candidate_rewards": [0.8, 0.7, 0.6, 0.9],
+    "dm_logged_rewards": [0.8, 0.4, 0.6, 0.9],
+    "ips_clip_min": 0.05,
+    "min_propensity_threshold": 0.02,
+    "min_ess_ratio": 0.1,
+    "expected": {
+      "dm": 0.75,
+      "ips": 0.8125,
+      "snips": 0.6190476190476191,
+      "dr": 0.58125,
+      "ess": 2.8823529411764706,
+      "ess_ratio": 0.7205882352941176,
+      "matched_samples": 3
+    },
+    "tolerance": 1e-9
+  },
+  "economics_oracle": {
+    "amount_cents": 10000,
+    "merchant_margin_bps": 180.0,
+    "loss_given_fraud_multiplier": 1.0,
+    "chargeback_fee_cents": 1500,
+    "action_cost_cents": 0.0,
+    "p_acc": 0.9,
+    "p_fraud": 0.01,
+    "expected": {
+      "lgd_cents": 11500.0,
+      "expected_loss_cents": 103.5,
+      "expected_revenue_cents": 162.0,
+      "expected_net_value_cents": 58.5,
+      "expected_loss_bps_on_approved": 115.0
+    },
+    "tolerance": 1e-9
+  },
+  "retry_taxonomy_oracle": {
+    "hard_decline_codes": ["14", "54", "57", "59", "63"],
+    "uncertain_codes": ["TIMEOUT", "NETWORK_ERROR", "UNKNOWN", "UNMAPPED_99"],
+    "technical_retriable_codes": ["91", "96"],
+    "soft_decline_codes": ["05", "51", "61", "65"]
+  }
+}

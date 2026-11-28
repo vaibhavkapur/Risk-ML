@@ -1,0 +1,20 @@
+{
+  "captured_at_utc": "2026-11-28T05:17:10.479013Z",
+  "project_version": "0.1.0",
+  "python_version": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "seed": 42,
+  "config_sha256": "6eca6ff09edfee4fc1513ae9ab812e1373d4ddff149f5f47937524c5697f9662",
+  "installed_libraries": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit_learn": "1.5.2",
+    "matplotlib": "3.9.2",
+    "joblib": "1.4.2",
+    "pyyaml": "6.0.2"
+  },
+  "optional_libraries": {
+    "xgboost": "not_installed",
+    "shap": "not_installed"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "config_hash": "1364cf25c7eb2974",
+  "constraints": {
+    "max_expected_loss_bps": 45.0,
+    "max_p95_latency_ms": 420.0
+  },
+  "diagnostics": {
+    "baseline_threshold": {
+      "action_counts": {
+        "APPROVE_PRIMARY": 927,
+        "DECLINE_POLICY": 73
+      },
+      "counters": {
+        "missing_feature_requests": 186,
+        "total_requests": 1000
+      },
+      "latency_summary_ms": {
+        "max": 228.0,
+        "p50": 140.0,
+        "p95": 210.0
+      },
+      "recent_events_count": 500
+    },
+    "constrained_risk_aware": {
+      "action_counts": {
+        "APPROVE_PRIMARY": 257,
+        "DECLINE_POLICY": 601,
+        "ROUTE_SECONDARY": 74,
+        "STEP_UP_3DS": 68
+      },
+      "counters": {
+        "missing_feature_requests": 186,
+        "total_requests": 1000
+      },
+      "latency_summary_ms": {
+        "max": 470.0,
+        "p50": 25.0,
+        "p95": 400.0
+      },
+      "recent_events_count": 500
+    },
+    "unconstrained_ev": {
+      "action_counts": {
+        "APPROVE_PRIMARY": 311,
+        "DECLINE_POLICY": 338,
+        "ROUTE_SECONDARY": 108,
+        "STEP_UP_3DS": 243
+      },
+      "counters": {
+        "missing_feature_requests": 186,
+        "total_requests": 1000
+      },
+      "latency_summary_ms": {
+        "max": 500.0,
+        "p50": 140.0,
+        "p95": 470.0
+      },
+      "recent_events_count": 500
+    }
+  },
+  "model_version": "v1.0.0-bb892ac96c",
+  "policy_audit": {
+    "baseline_threshold": {
+      "decision_level_breaches": 0,
+      "expected_loss_bps": 209.3336,
+      "n_decisions": 1000,
+      "net_acceptance_rate": 0.66024,
+      "p50_latency_ms": 140.0,
+      "p95_latency_ms": 210.0,
+      "passed": false,
+      "portfolio_breaches": [
+        "PORTFOLIO_EXPECTED_LOSS_BREACH:209.33bps>45.00bps"
+      ]
+    },
+    "constrained_risk_aware": {
+      "decision_level_breaches": 0,
+      "expected_loss_bps": 42.0508,
+      "n_decisions": 1000,
+      "net_acceptance_rate": 0.315248,
+      "p50_latency_ms": 25.0,
+      "p95_latency_ms": 400.0,
+      "passed": true,
+      "portfolio_breaches": []
+    },
+    "unconstrained_ev": {
+      "decision_level_breaches": 0,
+      "expected_loss_bps": 46.9736,
+      "n_decisions": 1000,
+      "net_acceptance_rate": 0.500946,
+      "p50_latency_ms": 140.0,
+      "p95_latency_ms": 470.0,
+      "passed": false,
+      "portfolio_breaches": [
+        "PORTFOLIO_EXPECTED_LOSS_BREACH:46.97bps>45.00bps",
+        "PORTFOLIO_P95_LATENCY_BREACH:470.00ms>420.00ms"
+      ]
+    }
+  }
+}

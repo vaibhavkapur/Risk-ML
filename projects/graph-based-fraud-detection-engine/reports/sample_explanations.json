@@ -1,0 +1,408 @@
+{
+  "fraud_ring_example": {
+    "decision_id": "dec_ac378d7682533d",
+    "schema_version": "1.0.0",
+    "feature_version": "1.0.0",
+    "model_name": "gnn",
+    "model_version": "0.1.0",
+    "tx_id": "tx_eb94386458d1",
+    "raw_score": 0.999999,
+    "calibrated_probability": 0.934765,
+    "decision": "block",
+    "cold_start_flags": {
+      "account_unseen": false,
+      "device_unseen": false,
+      "merchant_unseen": false
+    },
+    "explanation": {
+      "as_of_timestamp": "2025-04-28T02:46:58.818747Z",
+      "reason_codes": [
+        "DEVICE_PRIOR_MATURED_FRAUD",
+        "TWO_HOP_RING_MATURED_FRAUD",
+        "COORDINATED_MERCHANT_TRIANGULATION",
+        "SHARED_DEVICE_HIGH_RISK_BURST"
+      ],
+      "top_feature_contributions": {
+        "two_hop_ring_account_count": 0.00011,
+        "account_prior_tx_30d": 1e-05,
+        "device_distinct_accounts_24h": 1e-05,
+        "device_prior_distinct_accounts_30d": 1e-05,
+        "is_high_risk_mcc": 1e-05,
+        "log_amount_usd": 1e-05
+      },
+      "linked_entities": [
+        {
+          "entity_id": "acc_f36ea1b0e91a",
+          "entity_type": "account",
+          "prior_tx_count": 3,
+          "prior_known_fraud_count": 3,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "dev_bc7fa8d7e5ac",
+          "entity_type": "device",
+          "prior_tx_count": 15,
+          "prior_known_fraud_count": 8,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "mer_57198144a521",
+          "entity_type": "merchant",
+          "prior_tx_count": 40,
+          "prior_known_fraud_count": 3,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "acc_28eeb634b475",
+          "entity_type": "account",
+          "prior_tx_count": 5,
+          "prior_known_fraud_count": 3,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "acc_93e7e5917a9e",
+          "entity_type": "account",
+          "prior_tx_count": 4,
+          "prior_known_fraud_count": 3,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "acc_b964bb8e4a58",
+          "entity_type": "account",
+          "prior_tx_count": 4,
+          "prior_known_fraud_count": 2,
+          "unseen_cold_start": false
+        }
+      ],
+      "evidence_paths": [
+        {
+          "path_id": "path_2f6a575f47",
+          "summary": "Shared device dev_bc7fa8d7e5ac previously used by co-account acc_28eeb634b475 with matured prior fraud",
+          "nodes": [
+            "acc_f36ea1b0e91a",
+            "dev_bc7fa8d7e5ac",
+            "acc_28eeb634b475"
+          ],
+          "edges": [
+            {
+              "source": "acc_f36ea1b0e91a",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-28T02:46:58.818747Z",
+              "tx_id": "tx_eb94386458d1"
+            },
+            {
+              "source": "acc_28eeb634b475",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-12T09:41:26.853454Z",
+              "tx_id": "tx_b8d4d9c00a12"
+            }
+          ],
+          "contains_known_fraud": true
+        },
+        {
+          "path_id": "path_1914872d59",
+          "summary": "Co-account acc_93e7e5917a9e previously used shared device dev_bc7fa8d7e5ac and transacted at same merchant mer_57198144a521 (matured fraud linked)",
+          "nodes": [
+            "acc_f36ea1b0e91a",
+            "dev_bc7fa8d7e5ac",
+            "acc_93e7e5917a9e",
+            "mer_57198144a521"
+          ],
+          "edges": [
+            {
+              "source": "acc_f36ea1b0e91a",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-28T02:46:58.818747Z",
+              "tx_id": "tx_eb94386458d1"
+            },
+            {
+              "source": "acc_93e7e5917a9e",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-12T10:28:18.434709Z",
+              "tx_id": "tx_d912b5f38446"
+            },
+            {
+              "source": "acc_93e7e5917a9e",
+              "target": "mer_57198144a521",
+              "relation": "PRIOR_TRANSACTS_AT",
+              "timestamp": "2025-04-12T10:28:18.434709Z",
+              "tx_id": "tx_d912b5f38446"
+            }
+          ],
+          "contains_known_fraud": true
+        },
+        {
+          "path_id": "path_4d912cb4a2",
+          "summary": "Shared device dev_bc7fa8d7e5ac previously used by co-account acc_b964bb8e4a58 with matured prior fraud",
+          "nodes": [
+            "acc_f36ea1b0e91a",
+            "dev_bc7fa8d7e5ac",
+            "acc_b964bb8e4a58"
+          ],
+          "edges": [
+            {
+              "source": "acc_f36ea1b0e91a",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-28T02:46:58.818747Z",
+              "tx_id": "tx_eb94386458d1"
+            },
+            {
+              "source": "acc_b964bb8e4a58",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-28T00:49:39.977494Z",
+              "tx_id": "tx_b1b589ecc571"
+            }
+          ],
+          "contains_known_fraud": true
+        },
+        {
+          "path_id": "path_ee4eceb9af",
+          "summary": "Shared device dev_bc7fa8d7e5ac previously used by co-account acc_f70cdca61637 with matured prior fraud",
+          "nodes": [
+            "acc_f36ea1b0e91a",
+            "dev_bc7fa8d7e5ac",
+            "acc_f70cdca61637"
+          ],
+          "edges": [
+            {
+              "source": "acc_f36ea1b0e91a",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-28T02:46:58.818747Z",
+              "tx_id": "tx_eb94386458d1"
+            },
+            {
+              "source": "acc_f70cdca61637",
+              "target": "dev_bc7fa8d7e5ac",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-12T11:18:43.036125Z",
+              "tx_id": "tx_d6d8031f7425"
+            }
+          ],
+          "contains_known_fraud": true
+        }
+      ],
+      "ring_cluster_size": 5,
+      "shared_device_accounts_prior": 4,
+      "legitimate_shared_device_mitigant": false,
+      "graph_audit_max_edge_timestamp": "2025-04-28T02:25:51.267597Z"
+    },
+    "review_case_id": "case_e7faa1be0598",
+    "diagnostics": {
+      "run_id": "run_b737379321a3",
+      "max_edge_timestamp_used": "2025-04-28T00:49:39.977494+00:00",
+      "max_label_available_at_used": "2025-04-26T11:18:43.036125+00:00"
+    }
+  },
+  "legitimate_shared_device_example": {
+    "decision_id": "dec_fa2b7a82723bc8",
+    "schema_version": "1.0.0",
+    "feature_version": "1.0.0",
+    "model_name": "gnn",
+    "model_version": "0.1.0",
+    "tx_id": "tx_c540f0dd0804",
+    "raw_score": 6e-06,
+    "calibrated_probability": 0.001644,
+    "decision": "approve",
+    "cold_start_flags": {
+      "account_unseen": false,
+      "device_unseen": false,
+      "merchant_unseen": false
+    },
+    "explanation": {
+      "as_of_timestamp": "2025-04-30T18:50:15.195746Z",
+      "reason_codes": [
+        "LEGITIMATE_SHARED_DEVICE_MITIGANT"
+      ],
+      "top_feature_contributions": {
+        "account_prior_tx_30d": -8e-05,
+        "account_prior_tx_24h": -3e-05,
+        "device_tenure_days": -3e-05,
+        "account_amount_zscore": -0.0,
+        "account_prior_tx_7d": 0.0,
+        "account_unseen_cold_start": 0.0
+      },
+      "linked_entities": [
+        {
+          "entity_id": "acc_7eaeaa033871",
+          "entity_type": "account",
+          "prior_tx_count": 15,
+          "prior_known_fraud_count": 0,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "dev_d192a20ac3a1",
+          "entity_type": "device",
+          "prior_tx_count": 63,
+          "prior_known_fraud_count": 0,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "mer_eafce8276819",
+          "entity_type": "merchant",
+          "prior_tx_count": 83,
+          "prior_known_fraud_count": 0,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "acc_4b74890cfaf2",
+          "entity_type": "account",
+          "prior_tx_count": 18,
+          "prior_known_fraud_count": 0,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "acc_f2e80d24aad7",
+          "entity_type": "account",
+          "prior_tx_count": 13,
+          "prior_known_fraud_count": 0,
+          "unseen_cold_start": false
+        },
+        {
+          "entity_id": "acc_f69a14953357",
+          "entity_type": "account",
+          "prior_tx_count": 17,
+          "prior_known_fraud_count": 0,
+          "unseen_cold_start": false
+        }
+      ],
+      "evidence_paths": [
+        {
+          "path_id": "path_3e6380c537",
+          "summary": "Shared device dev_d192a20ac3a1 previously used by co-account acc_4b74890cfaf2",
+          "nodes": [
+            "acc_7eaeaa033871",
+            "dev_d192a20ac3a1",
+            "acc_4b74890cfaf2"
+          ],
+          "edges": [
+            {
+              "source": "acc_7eaeaa033871",
+              "target": "dev_d192a20ac3a1",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-30T18:50:15.195746Z",
+              "tx_id": "tx_c540f0dd0804"
+            },
+            {
+              "source": "acc_4b74890cfaf2",
+              "target": "dev_d192a20ac3a1",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-11T19:54:06.476756Z",
+              "tx_id": "tx_06103b23972c"
+            }
+          ],
+          "contains_known_fraud": false
+        },
+        {
+          "path_id": "path_5fec5e1ac3",
+          "summary": "Shared device dev_d192a20ac3a1 previously used by co-account acc_f2e80d24aad7",
+          "nodes": [
+            "acc_7eaeaa033871",
+            "dev_d192a20ac3a1",
+            "acc_f2e80d24aad7"
+          ],
+          "edges": [
+            {
+              "source": "acc_7eaeaa033871",
+              "target": "dev_d192a20ac3a1",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-30T18:50:15.195746Z",
+              "tx_id": "tx_c540f0dd0804"
+            },
+            {
+              "source": "acc_f2e80d24aad7",
+              "target": "dev_d192a20ac3a1",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-27T20:03:15.880970Z",
+              "tx_id": "tx_1e59533d6992"
+            }
+          ],
+          "contains_known_fraud": false
+        },
+        {
+          "path_id": "path_d5aea2e0db",
+          "summary": "Co-account acc_f69a14953357 previously used shared device dev_d192a20ac3a1 and transacted at same merchant mer_eafce8276819",
+          "nodes": [
+            "acc_7eaeaa033871",
+            "dev_d192a20ac3a1",
+            "acc_f69a14953357",
+            "mer_eafce8276819"
+          ],
+          "edges": [
+            {
+              "source": "acc_7eaeaa033871",
+              "target": "dev_d192a20ac3a1",
+              "relation": "CURRENT_TX_USES_DEVICE",
+              "timestamp": "2025-04-30T18:50:15.195746Z",
+              "tx_id": "tx_c540f0dd0804"
+            },
+            {
+              "source": "acc_f69a14953357",
+              "target": "dev_d192a20ac3a1",
+              "relation": "PRIOR_USES_DEVICE",
+              "timestamp": "2025-04-26T07:46:14.381388Z",
+              "tx_id": "tx_8dde51b25d0e"
+            },
+            {
+              "source": "acc_f69a14953357",
+              "target": "mer_eafce8276819",
+              "relation": "PRIOR_TRANSACTS_AT",
+              "timestamp": "2025-04-19T12:45:50.990835Z",
+              "tx_id": "tx_86ae50735238"
+            }
+          ],
+          "contains_known_fraud": false
+        }
+      ],
+      "ring_cluster_size": 4,
+      "shared_device_accounts_prior": 3,
+      "legitimate_shared_device_mitigant": true,
+      "graph_audit_max_edge_timestamp": "2025-04-30T13:51:13.643433Z"
+    },
+    "review_case_id": null,
+    "diagnostics": {
+      "run_id": "run_b737379321a3",
+      "max_edge_timestamp_used": "2025-04-30T10:51:08.442409+00:00",
+      "max_label_available_at_used": "2025-04-30T12:17:32.410643+00:00"
+    }
+  },
+  "analyst_disposition_example": {
+    "disposition_id": "disp_bd13bb79e45a",
+    "case_id": "case_e7faa1be0598",
+    "tx_id": "tx_eb94386458d1",
+    "analyst_id": "analyst_demo_01",
+    "disposition": "confirmed_fraud",
+    "notes": "Verified coordinated shared-device cash-out ring via graph evidence paths.",
+    "recorded_at": "2025-04-28T02:46:58.818747Z"
+  },
+  "service_diagnostics": {
+    "run_id": "run_b737379321a3",
+    "schema_version": "1.0.0",
+    "feature_version": "1.0.0",
+    "model_version": "0.1.0",
+    "available_models": [
+      "boosted",
+      "gnn",
+      "logistic",
+      "logistic_tabular_baseline"
+    ],
+    "default_model": "gnn",
+    "counters": {
+      "total_scored": 2,
+      "approved": 1,
+      "reviewed": 0,
+      "blocked": 1,
+      "cold_start_transactions": 0,
+      "review_cases_created": 1,
+      "dispositions_recorded": 1
+    },
+    "open_review_cases": 0,
+    "resolved_review_cases": 1
+  }
+}

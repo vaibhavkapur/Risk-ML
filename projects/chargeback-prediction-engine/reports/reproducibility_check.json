@@ -1,0 +1,13 @@
+{
+  "exact_match": true,
+  "run_id_a": "run_8c20db71476a0e",
+  "run_id_b": "run_8c20db71476a0e",
+  "config_hash": "bc6cc12f868f442e",
+  "seed": 42,
+  "pr_auc_a": 0.423724,
+  "pr_auc_b": 0.423724,
+  "expected_loss_a": 4638.32,
+  "expected_loss_b": 4638.32,
+  "precision_at_budget_a": 0.254902,
+  "precision_at_budget_b": 0.254902
+}

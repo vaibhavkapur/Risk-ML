@@ -1,0 +1,83 @@
+# Default configuration for Chargeback Prediction Engine
+schema_version: "1.0.0"
+feature_set_version: "1.0.0"
+seed: 42
+
+maturity:
+  # Number of calendar days after transaction settlement before a non-disputed
+  # transaction is considered a mature negative.
+  default_maturity_days: 90
+  # Optional reason-category specific maturity overrides (calendar days).
+  # If a transaction has no dispute, default_maturity_days governs negative maturity.
+  max_dispute_delay_days: 120
+  # How duplicate dispute records for the same transaction_id are handled:
+  # "raise" (strict contract enforcement) or "deduplicate_earliest"
+  duplicate_dispute_policy: "raise"
+
+features:
+  # Rolling lookback windows (days) for causal merchant aggregates
+  merchant_windows_days: [7, 30, 90]
+  # Empirical Bayes smoothing strength (pseudo-count) for cold-start merchants
+  cold_start_prior_weight: 20.0
+  # Fallback prior dispute rate when global mature history is empty
+  fallback_prior_dispute_rate: 0.02
+  # Minimum prior mature transactions before a merchant is no longer flagged cold-start
+  cold_start_min_mature_txns: 10
+  # Missing reason code sentinel
+  missing_reason_code_label: "UNKNOWN"
+
+split:
+  # Temporal split fractions over transaction timestamps (strictly chronological)
+  train_fraction: 0.60
+  calibration_fraction: 0.20
+  test_fraction: 0.20
+  # Gap in days between splits to prevent boundary leakage (optional buffer)
+  embargo_days: 0
+
+model:
+  # Model family: "hist_gbdt" (scikit-learn HistGradientBoostingClassifier) or "logistic"
+  primary_model: "hist_gbdt"
+  # Calibration method: "isotonic" or "sigmoid" (Platt scaling)
+  calibration_method: "sigmoid"
+  # Class weighting for imbalanced datasets ("balanced" or null)
+  class_weight: "balanced"
+  hist_gbdt_params:
+    max_iter: 80
+    max_depth: 3
+    learning_rate: 0.05
+    min_samples_leaf: 25
+    l2_regularization: 5.0
+  logistic_params:
+    C: 1.0
+    max_iter: 500
+
+economics:
+  # Fixed operational/network fee per chargeback in USD
+  chargeback_fee_usd: 15.0
+  # Average recovery rate when a dispute is represented/won (0.0 to 1.0)
+  expected_recovery_rate: 0.15
+  # Direct cost to manually review a transaction in USD
+  review_cost_usd: 4.50
+  # Assumed probability that a timely pre-dispute review prevents a true dispute
+  review_prevention_effectiveness: 0.55
+
+policy:
+  # Fraction of scored transactions that can be sent to manual review
+  review_budget_fraction: 0.05
+  # Minimum expected net savings (USD) required to trigger review
+  min_expected_net_savings_usd: 0.0
+  # Non-punitive guardrail: never auto-suspend or auto-terminate merchants
+  allow_automated_merchant_punishment: false
+  # Maximum share of a single merchant's transactions flagged in one batch
+  # before triggering manual analyst escalation instead of automated holds
+  merchant_alert_rate_cap: 0.25
+
+synthetic:
+  n_merchants: 60
+  n_transactions: 6500
+  cold_start_merchant_fraction: 0.20
+  base_dispute_rate: 0.028
+  missing_reason_code_rate: 0.12
+  start_date: "2025-01-01T00:00:00Z"
+  span_days: 240
+  as_of_date: "2025-10-15T00:00:00Z"

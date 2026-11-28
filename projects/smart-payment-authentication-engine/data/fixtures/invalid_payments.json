@@ -1,0 +1,113 @@
+[
+  {
+    "case_name": "negative_amount",
+    "expected_error_substring": "amount_minor",
+    "payload": {
+      "payment_id": "pay_inv_001",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "retail",
+      "amount_minor": -500,
+      "currency": "USD",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US"
+    }
+  },
+  {
+    "case_name": "naive_timestamp_without_timezone",
+    "expected_error_substring": "timezone-aware",
+    "payload": {
+      "payment_id": "pay_inv_002",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "retail",
+      "amount_minor": 1000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T12:00:00",
+      "billing_country": "US",
+      "card_bin_country": "US"
+    }
+  },
+  {
+    "case_name": "unsupported_currency",
+    "expected_error_substring": "Unsupported currency",
+    "payload": {
+      "payment_id": "pay_inv_003",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "retail",
+      "amount_minor": 1000,
+      "currency": "BTC",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US"
+    }
+  },
+  {
+    "case_name": "unsupported_merchant_category",
+    "expected_error_substring": "Unsupported merchant_category",
+    "payload": {
+      "payment_id": "pay_inv_004",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "weapons",
+      "amount_minor": 1000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US"
+    }
+  },
+  {
+    "case_name": "inconsistent_ip_velocities",
+    "expected_error_substring": "ip_velocity_24h cannot be less than ip_velocity_1h",
+    "payload": {
+      "payment_id": "pay_inv_005",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "retail",
+      "amount_minor": 1000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US",
+      "device": {
+        "ip_velocity_1h": 10,
+        "ip_velocity_24h": 4
+      }
+    }
+  },
+  {
+    "case_name": "unsupported_schema_version",
+    "expected_error_substring": "Unsupported schema_version",
+    "payload": {
+      "schema_version": "9.9.9",
+      "payment_id": "pay_inv_006",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "retail",
+      "amount_minor": 1000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US"
+    }
+  },
+  {
+    "case_name": "unknown_extra_field_forbidden",
+    "expected_error_substring": "Extra inputs are not permitted",
+    "payload": {
+      "payment_id": "pay_inv_007",
+      "account_id": "acct_1",
+      "merchant_id": "merch_1",
+      "merchant_category": "retail",
+      "amount_minor": 1000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US",
+      "raw_pan_number": "4111-xxxx"
+    }
+  }
+]

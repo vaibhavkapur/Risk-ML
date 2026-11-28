@@ -1,0 +1,46 @@
+{
+  "ids": {
+    "A1": "acc_faabe9081f89",
+    "A2": "acc_0fa6d0911146",
+    "A3": "acc_bbc739056b83",
+    "H1": "acc_71af845ee037",
+    "H2": "acc_d67a5d845c24",
+    "U1": "acc_2fc336e1e464",
+    "D_RING": "dev_ca9b6e1efecf",
+    "D_HOME": "dev_3d78d6170c5f",
+    "D_NEW": "dev_eeaefbb28be7",
+    "M_GIFT": "mer_a18a265af332",
+    "M_GROC": "mer_cb7c7df96273",
+    "T1": "tx_81ab82b9c428",
+    "T2": "tx_e5ec77e4436b",
+    "T3": "tx_1ae90de7ed70",
+    "T4": "tx_de8d2bd2e839",
+    "T5": "tx_60cf016adc18",
+    "T6": "tx_8af5dc972ba7",
+    "T7": "tx_89139b0a8f3f",
+    "T8": "tx_cb12cbacf41a"
+  },
+  "T5_expected": {
+    "device_prior_distinct_accounts_30d": 2.0,
+    "device_matured_fraud_count": 1.0,
+    "two_hop_ring_account_count": 2.0,
+    "two_hop_ring_matured_fraud_count": 1.0,
+    "shared_merchant_with_co_accounts_30d": 2.0,
+    "device_high_risk_mcc_ratio_30d": 1.0,
+    "account_unseen_cold_start": 1.0,
+    "device_unseen_cold_start": 0.0
+  },
+  "T7_expected": {
+    "device_prior_distinct_accounts_30d": 1.0,
+    "device_matured_fraud_count": 0.0,
+    "device_high_risk_mcc_ratio_30d": 0.0,
+    "account_unseen_cold_start": 0.0,
+    "device_unseen_cold_start": 0.0
+  },
+  "T8_expected": {
+    "device_prior_distinct_accounts_30d": 0.0,
+    "device_matured_fraud_count": 0.0,
+    "account_unseen_cold_start": 1.0,
+    "device_unseen_cold_start": 1.0
+  }
+}

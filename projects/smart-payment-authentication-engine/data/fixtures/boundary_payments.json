@@ -1,0 +1,104 @@
+[
+  {
+    "case_name": "exact_min_amount_1_minor",
+    "payload": {
+      "payment_id": "pay_bnd_001",
+      "account_id": "acct_b1",
+      "merchant_id": "merch_b1",
+      "merchant_category": "utilities",
+      "amount_minor": 1,
+      "currency": "USD",
+      "timestamp": "2026-02-15T00:00:00Z",
+      "billing_country": "US",
+      "card_bin_country": "US",
+      "account_age_days": 0.0,
+      "prior_chargebacks_90d": 0,
+      "tx_count_24h": 0,
+      "tx_amount_24h_minor": 0,
+      "device": {
+        "device_trust_score": 1.0,
+        "ip_velocity_1h": 0,
+        "ip_velocity_24h": 0,
+        "is_emulator": false,
+        "is_tor_or_vpn": false,
+        "biometric_enrolled": true,
+        "browser_fingerprint_mismatch": false,
+        "ip_country": "US",
+        "device_age_days": 0.0
+      }
+    }
+  },
+  {
+    "case_name": "exact_mandatory_high_amount_threshold",
+    "payload": {
+      "payment_id": "pay_bnd_002",
+      "account_id": "acct_b2",
+      "merchant_id": "merch_b2",
+      "merchant_category": "retail",
+      "amount_minor": 50000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T00:00:01Z",
+      "billing_country": "US",
+      "card_bin_country": "US",
+      "account_age_days": 400.0,
+      "prior_chargebacks_90d": 0,
+      "tx_count_24h": 1,
+      "tx_amount_24h_minor": 50000,
+      "device": {
+        "device_trust_score": 0.95,
+        "ip_velocity_1h": 1,
+        "ip_velocity_24h": 1,
+        "is_emulator": false,
+        "is_tor_or_vpn": false,
+        "biometric_enrolled": true,
+        "browser_fingerprint_mismatch": false,
+        "ip_country": "US",
+        "device_age_days": 200.0
+      }
+    }
+  },
+  {
+    "case_name": "just_below_mandatory_high_amount_threshold",
+    "payload": {
+      "payment_id": "pay_bnd_003",
+      "account_id": "acct_b3",
+      "merchant_id": "merch_b3",
+      "merchant_category": "retail",
+      "amount_minor": 49999,
+      "currency": "USD",
+      "timestamp": "2026-02-15T00:00:02Z",
+      "billing_country": "US",
+      "card_bin_country": "US",
+      "account_age_days": 400.0,
+      "prior_chargebacks_90d": 0,
+      "tx_count_24h": 1,
+      "tx_amount_24h_minor": 49999,
+      "device": {
+        "device_trust_score": 0.95,
+        "ip_velocity_1h": 1,
+        "ip_velocity_24h": 1,
+        "is_emulator": false,
+        "is_tor_or_vpn": false,
+        "biometric_enrolled": true,
+        "browser_fingerprint_mismatch": false,
+        "ip_country": "US",
+        "device_age_days": 200.0
+      }
+    }
+  },
+  {
+    "case_name": "all_optional_telemetry_missing_abstain",
+    "payload": {
+      "payment_id": "pay_bnd_004",
+      "account_id": "acct_b4",
+      "merchant_id": "merch_b4",
+      "merchant_category": "retail",
+      "amount_minor": 5000,
+      "currency": "USD",
+      "timestamp": "2026-02-15T00:00:03Z",
+      "billing_country": "US",
+      "card_bin_country": "US",
+      "device": {}
+    }
+  }
+]

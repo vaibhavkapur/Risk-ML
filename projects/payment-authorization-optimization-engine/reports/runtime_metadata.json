@@ -1,0 +1,15 @@
+{
+  "config_hash": "1364cf25c7eb2974",
+  "config_version": "1.0.0",
+  "data_provenance": "100% synthetic generated via payment_auth_engine.synthetic (no real transactions or PII)",
+  "feature_schema_version": "1.0.0",
+  "generated_at_utc": "2026-11-28T05:21:43.454004+00:00",
+  "model_version": "v1.0.0-bb892ac96c",
+  "numpy_version": "2.0.2",
+  "package_version": "0.1.0",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "python_version": "3.9.6",
+  "schema_version": "1.0.0",
+  "scikit_learn_version": "1.6.1",
+  "seed": 42
+}

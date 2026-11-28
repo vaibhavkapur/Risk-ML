@@ -1,0 +1,41 @@
+name: Account Takeover Detection Engine CI
+
+on:
+  push:
+    paths:
+      - "projects/account-takeover-detection-engine/**"
+      - ".github/workflows/account-takeover-detection-engine.yml"
+  pull_request:
+    paths:
+      - "projects/account-takeover-detection-engine/**"
+      - ".github/workflows/account-takeover-detection-engine.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/account-takeover-detection-engine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit, integration, boundary, and API tests
+        run: pytest -v
+
+      - name: Run reproducible evaluation and demo smoke check
+        run: |
+          python scripts/run_evaluation.py --config config/default.yaml --output-dir /tmp/ato_ci_reports
+          python scripts/run_demo.py

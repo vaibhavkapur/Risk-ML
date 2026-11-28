@@ -1,0 +1,18 @@
+{
+  "artifact_sha256": "f4b38904a1a2b7a2e04f53c61075adbc705e5a00c61b94bcab3d56da80810111",
+  "config_hash": "e4ca065622f53430",
+  "config_path": "config/default.yaml",
+  "data_provenance": "100% synthetic data generated deterministically via fixed seed; zero real transactions or PII.",
+  "generated_at_utc": "2026-11-28T06:17:25.884440+00:00",
+  "model_artifact": "artifacts/models/gbm_sigmoid_seed42_fv1.0.0.joblib",
+  "model_manifest": "artifacts/models/gbm_sigmoid_seed42_fv1.0.0.manifest.json",
+  "runtime": {
+    "fastapi": "0.115.6",
+    "numpy": "1.26.4",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "pydantic": "2.10.4",
+    "python_version": "3.9.6",
+    "scikit_learn": "1.5.2"
+  },
+  "seed": 42
+}

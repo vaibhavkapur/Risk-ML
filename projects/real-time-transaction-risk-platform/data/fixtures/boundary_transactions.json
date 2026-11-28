@@ -1,0 +1,78 @@
+{
+  "fixture_id": "boundary_transactions_v1",
+  "description": "Boundary cases testing exact half-open window inclusion/exclusion, minimum/maximum amounts, unknown MCC conservative handling, and identical-timestamp tie-breaking.",
+  "cases": [
+    {
+      "case_name": "minimum_amount_1_cent",
+      "event": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_bnd_001",
+        "account_id": "acct_syn_bnd_001",
+        "card_token": "card_tok_bnd_001",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": 1,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_bnd_01",
+        "event_ts": "2026-01-15T12:00:00Z",
+        "ip_risk_score": 0.0
+      }
+    },
+    {
+      "case_name": "exact_5m_boundary_excluded",
+      "event": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_bnd_002",
+        "account_id": "acct_syn_bnd_001",
+        "card_token": "card_tok_bnd_001",
+        "merchant_id": "merch_syn_002",
+        "merchant_category": "utilities",
+        "amount_cents": 10000,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "recurring",
+        "device_id": "dev_bnd_01",
+        "event_ts": "2026-01-15T12:05:00Z",
+        "ip_risk_score": 0.0
+      }
+    },
+    {
+      "case_name": "unknown_mcc_conservative_input",
+      "event": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_bnd_003",
+        "account_id": "acct_syn_bnd_002",
+        "card_token": "card_tok_bnd_002",
+        "merchant_id": "merch_syn_999",
+        "merchant_category": "unknown",
+        "amount_cents": 500000,
+        "currency": "USD",
+        "country_code": "ZZ",
+        "channel": "ecommerce",
+        "device_id": "dev_bnd_unknown",
+        "event_ts": "2026-01-15T12:10:00Z",
+        "ip_risk_score": 0.5
+      }
+    },
+    {
+      "case_name": "same_timestamp_lexicographic_tie_break",
+      "event": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_bnd_002b",
+        "account_id": "acct_syn_bnd_001",
+        "card_token": "card_tok_bnd_001",
+        "merchant_id": "merch_syn_003",
+        "merchant_category": "restaurant",
+        "amount_cents": 2000,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_bnd_01",
+        "event_ts": "2026-01-15T12:05:00Z",
+        "ip_risk_score": 0.0
+      }
+    }
+  ]
+}

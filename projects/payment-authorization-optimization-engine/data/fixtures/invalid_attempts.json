@@ -1,0 +1,175 @@
+[
+  {
+    "case_name": "zero_amount",
+    "expected_error_code": "CONTRACT_VALIDATION_ERROR",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_001",
+      "transaction_id": "txn_inv_001",
+      "idempotency_key": "idem_inv_001",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 0,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "unsupported_currency",
+    "expected_error_code": "UNSUPPORTED_CURRENCY",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_002",
+      "transaction_id": "txn_inv_002",
+      "idempotency_key": "idem_inv_002",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 5000,
+      "currency": "BTC",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "naive_timestamp_missing_timezone",
+    "expected_error_code": "MISSING_TIMEZONE",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_003",
+      "transaction_id": "txn_inv_003",
+      "idempotency_key": "idem_inv_003",
+      "timestamp_utc": "2025-03-01T10:00:00",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "risk_score_out_of_range",
+    "expected_error_code": "INVALID_RISK_SCORE",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_004",
+      "transaction_id": "txn_inv_004",
+      "idempotency_key": "idem_inv_004",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "risk_score": 1.25,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "invalid_mcc_format",
+    "expected_error_code": "INVALID_MCC",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_005",
+      "transaction_id": "txn_inv_005",
+      "idempotency_key": "idem_inv_005",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "AB12",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "retry_missing_prior_code_when_known",
+    "expected_error_code": "MISSING_PRIOR_RESPONSE_CODE",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_006",
+      "transaction_id": "txn_inv_006",
+      "idempotency_key": "idem_inv_006",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 2,
+      "prior_response_code": null,
+      "prior_outcome_known": true,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "initial_attempt_with_prior_code",
+    "expected_error_code": "UNEXPECTED_PRIOR_RESPONSE_CODE",
+    "payload": {
+      "schema_version": "1.0.0",
+      "attempt_id": "inv_007",
+      "transaction_id": "txn_inv_007",
+      "idempotency_key": "idem_inv_007",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "prior_response_code": "05",
+      "prior_outcome_known": true,
+      "processor_id": "proc_a"
+    }
+  },
+  {
+    "case_name": "unsupported_schema_version",
+    "expected_error_code": "UNSUPPORTED_SCHEMA_VERSION",
+    "payload": {
+      "schema_version": "9.9.9",
+      "attempt_id": "inv_008",
+      "transaction_id": "txn_inv_008",
+      "idempotency_key": "idem_inv_008",
+      "timestamp_utc": "2025-03-01T10:00:00Z",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "merchant_id": "merch_001",
+      "merchant_category_code": "5411",
+      "card_network": "visa",
+      "issuer_country": "US",
+      "merchant_country": "US",
+      "entry_mode": "ecommerce",
+      "attempt_number": 1,
+      "processor_id": "proc_a"
+    }
+  }
+]

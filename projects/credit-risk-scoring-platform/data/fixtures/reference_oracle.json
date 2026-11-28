@@ -1,0 +1,62 @@
+{
+  "description": "Independent hand-calculated reference oracle for PD, Brier score, AUROC, ECE, and risk-band routing.",
+  "logistic_oracle": {
+    "intercept": -2.0,
+    "weights": {
+      "z_credit_score": -0.8,
+      "z_dti": 0.6,
+      "z_utilization": 0.5
+    },
+    "cases": [
+      {
+        "case_id": "ORACLE-LOW",
+        "features": {
+          "z_credit_score": 1.5,
+          "z_dti": -0.5,
+          "z_utilization": -0.6
+        },
+        "expected_logit": -3.8,
+        "expected_pd": 0.021881270936130476,
+        "expected_risk_band": "LOW_RISK_REVIEW"
+      },
+      {
+        "case_id": "ORACLE-MOD",
+        "features": {
+          "z_credit_score": 0.0,
+          "z_dti": 0.0,
+          "z_utilization": 0.0
+        },
+        "expected_logit": -2.0,
+        "expected_pd": 0.11920292202211755,
+        "expected_risk_band": "MODERATE_RISK_REVIEW"
+      },
+      {
+        "case_id": "ORACLE-HIGH",
+        "features": {
+          "z_credit_score": -1.0,
+          "z_dti": 0.5,
+          "z_utilization": 0.2
+        },
+        "expected_logit": -0.8,
+        "expected_pd": 0.31002551887238755,
+        "expected_risk_band": "VERY_HIGH_RISK_ESCALATION"
+      }
+    ]
+  },
+  "metrics_oracle": {
+    "y_true": [0, 0, 1, 1],
+    "y_prob": [0.1, 0.4, 0.35, 0.8],
+    "expected_brier_score": 0.158125,
+    "expected_auroc": 0.75,
+    "expected_pr_auc": 0.8333333333333333,
+    "tolerance": 1e-6
+  },
+  "psi_oracle": {
+    "expected_proportions": [0.25, 0.25, 0.25, 0.25],
+    "actual_proportions_identical": [0.25, 0.25, 0.25, 0.25],
+    "expected_psi_identical": 0.0,
+    "actual_proportions_shifted": [0.10, 0.20, 0.30, 0.40],
+    "expected_psi_shifted": 0.22821740957363455,
+    "tolerance": 1e-6
+  }
+}

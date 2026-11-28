@@ -1,0 +1,44 @@
+{
+  "valid_matured": [
+    {
+      "application_id": "FIX-VALID-001",
+      "application_timestamp": "2023-04-15T14:30:00Z",
+      "observation_window_days": 365,
+      "label_maturity_date": "2024-04-14T14:30:00Z",
+      "as_of_cutoff_date": "2025-07-01T00:00:00Z",
+      "default_flag": 0,
+      "label_status": "MATURED"
+    },
+    {
+      "application_id": "FIX-MISSING-002",
+      "application_timestamp": "2023-05-10T09:15:00Z",
+      "observation_window_days": 365,
+      "label_maturity_date": "2024-05-09T09:15:00Z",
+      "as_of_cutoff_date": "2025-07-01T00:00:00Z",
+      "default_flag": 1,
+      "label_status": "MATURED"
+    }
+  ],
+  "valid_censored_immature": [
+    {
+      "application_id": "FIX-IMMATURE-001",
+      "application_timestamp": "2025-01-15T10:00:00Z",
+      "observation_window_days": 365,
+      "label_maturity_date": "2026-01-15T10:00:00Z",
+      "as_of_cutoff_date": "2025-07-01T00:00:00Z",
+      "default_flag": null,
+      "label_status": "CENSORED_IMMATURE"
+    }
+  ],
+  "invalid_premature_matured_leakage": [
+    {
+      "application_id": "FIX-LEAK-LBL-001",
+      "application_timestamp": "2025-01-15T10:00:00Z",
+      "observation_window_days": 365,
+      "label_maturity_date": "2026-01-15T10:00:00Z",
+      "as_of_cutoff_date": "2025-07-01T00:00:00Z",
+      "default_flag": 0,
+      "label_status": "MATURED"
+    }
+  ]
+}

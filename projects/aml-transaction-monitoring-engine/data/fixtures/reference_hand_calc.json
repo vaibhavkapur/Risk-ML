@@ -1,0 +1,110 @@
+{
+  "fixture_id": "reference_hand_calc_v1",
+  "schema_version": "1.0.0",
+  "description": "Small deterministic hand-calculated oracle fixture for verifying USD normalization, 24h rolling aggregations, structuring detection, and 3-hop rapid layering detection.",
+  "entities": [
+    {"entity_id": "ENT-STR", "name": "Synthetic Retail Entity A", "risk_tier": "MEDIUM", "jurisdiction": "US"},
+    {"entity_id": "ENT-LAY-0", "name": "Synthetic Shell Origin", "risk_tier": "HIGH", "jurisdiction": "PA"},
+    {"entity_id": "ENT-LAY-1", "name": "Synthetic Intermediary One", "risk_tier": "MEDIUM", "jurisdiction": "CY"},
+    {"entity_id": "ENT-LAY-2", "name": "Synthetic Intermediary Two", "risk_tier": "MEDIUM", "jurisdiction": "SG"},
+    {"entity_id": "ENT-LAY-3", "name": "Synthetic Destination LLC", "risk_tier": "HIGH", "jurisdiction": "US"},
+    {"entity_id": "ENT-EXT", "name": "Synthetic External Counterparties", "risk_tier": "LOW", "jurisdiction": "US"}
+  ],
+  "accounts": [
+    {"account_id": "ACC-STR-1", "entity_id": "ENT-STR", "account_type": "RETAIL", "opened_at": "2025-01-01T00:00:00Z", "baseline_monthly_usd": 6000.0},
+    {"account_id": "ACC-EXT-1", "entity_id": "ENT-EXT", "account_type": "RETAIL", "opened_at": "2024-06-01T00:00:00Z", "baseline_monthly_usd": 10000.0},
+    {"account_id": "ACC-EXT-2", "entity_id": "ENT-EXT", "account_type": "RETAIL", "opened_at": "2024-06-01T00:00:00Z", "baseline_monthly_usd": 10000.0},
+    {"account_id": "ACC-EXT-3", "entity_id": "ENT-EXT", "account_type": "RETAIL", "opened_at": "2024-06-01T00:00:00Z", "baseline_monthly_usd": 10000.0},
+    {"account_id": "ACC-LAY-0", "entity_id": "ENT-LAY-0", "account_type": "CORPORATE", "opened_at": "2025-08-01T00:00:00Z", "baseline_monthly_usd": 5000.0},
+    {"account_id": "ACC-LAY-1", "entity_id": "ENT-LAY-1", "account_type": "CORPORATE", "opened_at": "2025-09-01T00:00:00Z", "baseline_monthly_usd": 2000.0},
+    {"account_id": "ACC-LAY-2", "entity_id": "ENT-LAY-2", "account_type": "CORPORATE", "opened_at": "2025-09-01T00:00:00Z", "baseline_monthly_usd": 2000.0},
+    {"account_id": "ACC-LAY-3", "entity_id": "ENT-LAY-3", "account_type": "CORPORATE", "opened_at": "2025-10-01T00:00:00Z", "baseline_monthly_usd": 3000.0}
+  ],
+  "transactions": [
+    {
+      "tx_id": "TX-REF-001",
+      "source_account_id": "ACC-EXT-1",
+      "target_account_id": "ACC-STR-1",
+      "amount": 8500.0,
+      "currency": "USD",
+      "timestamp": "2026-01-10T09:00:00Z",
+      "channel": "CASH_DEPOSIT",
+      "scenario_label": "STRUCTURING_SMURFING"
+    },
+    {
+      "tx_id": "TX-REF-002",
+      "source_account_id": "ACC-EXT-2",
+      "target_account_id": "ACC-STR-1",
+      "amount": 8000.0,
+      "currency": "EUR",
+      "timestamp": "2026-01-10T13:30:00Z",
+      "channel": "WIRE",
+      "scenario_label": "STRUCTURING_SMURFING"
+    },
+    {
+      "tx_id": "TX-REF-003",
+      "source_account_id": "ACC-EXT-3",
+      "target_account_id": "ACC-STR-1",
+      "amount": 7000.0,
+      "currency": "GBP",
+      "timestamp": "2026-01-10T18:00:00Z",
+      "channel": "WIRE",
+      "scenario_label": "STRUCTURING_SMURFING"
+    },
+    {
+      "tx_id": "TX-REF-004",
+      "source_account_id": "ACC-LAY-0",
+      "target_account_id": "ACC-LAY-1",
+      "amount": 25000.0,
+      "currency": "USD",
+      "timestamp": "2026-01-11T10:00:00Z",
+      "channel": "WIRE",
+      "scenario_label": "RAPID_LAYERING_CHAIN"
+    },
+    {
+      "tx_id": "TX-REF-005",
+      "source_account_id": "ACC-LAY-1",
+      "target_account_id": "ACC-LAY-2",
+      "amount": 24500.0,
+      "currency": "USD",
+      "timestamp": "2026-01-11T11:30:00Z",
+      "channel": "WIRE",
+      "scenario_label": "RAPID_LAYERING_CHAIN"
+    },
+    {
+      "tx_id": "TX-REF-006",
+      "source_account_id": "ACC-LAY-2",
+      "target_account_id": "ACC-LAY-3",
+      "amount": 24000.0,
+      "currency": "USD",
+      "timestamp": "2026-01-11T13:00:00Z",
+      "channel": "WIRE",
+      "scenario_label": "RAPID_LAYERING_CHAIN"
+    }
+  ],
+  "expected_oracle": {
+    "normalized_amounts_usd": {
+      "TX-REF-001": 8500.0,
+      "TX-REF-002": 8640.0,
+      "TX-REF-003": 8890.0,
+      "TX-REF-004": 25000.0,
+      "TX-REF-005": 24500.0,
+      "TX-REF-006": 24000.0
+    },
+    "rolling_at_tx_ref_003_target": {
+      "account_id": "ACC-STR-1",
+      "inbound_count_24h": 3,
+      "inbound_sum_24h_usd": 26030.0,
+      "structuring_band_count_24h": 3,
+      "structuring_band_sum_24h_usd": 26030.0,
+      "unique_inbound_senders_24h": 3
+    },
+    "expected_scenarios": [
+      {"scenario": "STRUCTURING_SMURFING", "subject_account_id": "ACC-STR-1"},
+      {"scenario": "RAPID_LAYERING_CHAIN", "subject_account_id": "ACC-LAY-0"}
+    ],
+    "layering_chain_preservation_ratio": 0.96,
+    "layering_chain_elapsed_hours": 3.0,
+    "numeric_tolerance": 1e-6
+  }
+}

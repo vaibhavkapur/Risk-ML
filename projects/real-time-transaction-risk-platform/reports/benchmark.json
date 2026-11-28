@@ -1,0 +1,14 @@
+{
+  "feature_version": "feat.v1",
+  "inference_timeout_budget_ms": 25.0,
+  "max_ms": 0.1262,
+  "mean_ms": 0.029,
+  "measurement_type": "measured_local_in_process",
+  "model_version": "model.logreg_cal.v1",
+  "p50_ms": 0.028,
+  "p95_ms": 0.0363,
+  "p99_ms": 0.0453,
+  "requests": 2000,
+  "throughput_rps": 34364.38,
+  "wall_time_sec": 0.0582
+}

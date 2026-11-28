@@ -1,0 +1,42 @@
+name: Chargeback Prediction Engine CI
+
+on:
+  push:
+    paths:
+      - "projects/chargeback-prediction-engine/**"
+      - ".github/workflows/chargeback-prediction-engine.yml"
+  pull_request:
+    paths:
+      - "projects/chargeback-prediction-engine/**"
+      - ".github/workflows/chargeback-prediction-engine.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/chargeback-prediction-engine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.lock
+          pip install --no-deps -e .
+
+      - name: Run test suite
+        run: pytest
+
+      - name: Verify reference fixture and deterministic demo
+        run: |
+          python scripts/run_demo.py --config config/default.yaml --output-dir /tmp/cb_demo_ci
+          python scripts/run_benchmarks.py --config config/default.yaml --output-dir /tmp/cb_bench_ci

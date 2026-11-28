@@ -1,0 +1,81 @@
+{
+  "bias": 2.56270456,
+  "feature_names": [
+    "rule_score",
+    "num_scenarios_triggered",
+    "is_layering_or_cycle",
+    "is_cash_or_wire_ratio",
+    "log_total_involved_usd",
+    "entity_risk_tier_num",
+    "is_high_risk_jurisdiction",
+    "structuring_band_count_24h",
+    "passthrough_ratio_24h",
+    "velocity_ratio_vs_baseline",
+    "fan_in_fan_out_ratio",
+    "ego_density",
+    "dormancy_days_log"
+  ],
+  "feature_version": "1.0.0",
+  "means": [
+    0.86842194,
+    1.0,
+    0.32258065,
+    0.67204306,
+    10.87094929,
+    0.62903226,
+    0.48387097,
+    1.22580645,
+    0.33035365,
+    14.25541916,
+    2.52469074,
+    0.25826658,
+    1.509873
+  ],
+  "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+  "platt_a": 1.86897676,
+  "platt_b": 0.1967255,
+  "stds": [
+    0.0393905,
+    1.0,
+    0.46746377,
+    0.44497159,
+    0.61359451,
+    0.38031697,
+    0.49973979,
+    1.67927937,
+    0.46837029,
+    9.59615143,
+    2.24910683,
+    0.11252782,
+    1.39954325
+  ],
+  "training_metadata": {
+    "calibration": {
+      "calibrated_brier": 0.000541,
+      "calibrated_ece": 0.013357,
+      "calibration_samples": 7,
+      "raw_brier": 0.008592,
+      "raw_ece": 0.067634
+    },
+    "config_hash": "a738d18172e4413b",
+    "python_version": "3.9.6",
+    "seed": 42,
+    "train_positives": 25,
+    "train_samples": 31
+  },
+  "weights": [
+    0.15215981,
+    0.0,
+    0.15312073,
+    0.64563826,
+    0.52703917,
+    0.6929341,
+    0.25079906,
+    -0.36565432,
+    0.32298226,
+    0.46515104,
+    0.49683742,
+    -0.23585519,
+    0.09534055
+  ]
+}

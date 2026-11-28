@@ -1,0 +1,25 @@
+{
+  "description": "Boundary test transactions for unseen cold-start nodes and immature delayed labels",
+  "unseen_cold_start_transaction": {
+    "tx_id": "tx_9999999999aa",
+    "account_id": "acc_9999999999aa",
+    "device_id": "dev_9999999999aa",
+    "merchant_id": "mer_9999999999aa",
+    "tx_timestamp": "2025-04-01T12:00:00Z",
+    "amount_usd": 0.01,
+    "currency": "USD",
+    "channel": "api",
+    "ip_prefix": "203.0.113"
+  },
+  "max_amount_boundary_transaction": {
+    "tx_id": "tx_9999999999bb",
+    "account_id": "acc_bbc739056b83",
+    "device_id": "dev_ca9b6e1efecf",
+    "merchant_id": "mer_a18a265af332",
+    "tx_timestamp": "2025-01-06T00:00:00Z",
+    "amount_usd": 999999.99,
+    "currency": "USD",
+    "channel": "mobile",
+    "ip_prefix": "198.51.100"
+  }
+}

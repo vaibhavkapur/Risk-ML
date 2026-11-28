@@ -1,0 +1,16 @@
+{
+  "config_path": "config/default.yaml",
+  "feature_version": "feat.v1",
+  "generated_at_utc": "2026-11-28T05:17:21Z",
+  "model_artifact_sha256": "e2730775eb0d9c98ef436235f1be53e91d96d64b51886f0de5b4d86fb078bb5d",
+  "model_version": "model.logreg_cal.v1",
+  "optional_external_brokers": {
+    "kafka_or_redpanda": "not_run_offline_prototype",
+    "redis": "not_run_offline_prototype"
+  },
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "policy_version": "policy.v1",
+  "processor": "arm",
+  "python_version": "3.9.6",
+  "seed": 42
+}

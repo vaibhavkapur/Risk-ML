@@ -1,0 +1,29 @@
+{
+  "reference_fixture_parity": {
+    "events_compared": 4,
+    "features_per_event": 12,
+    "max_abs_diff": 0.0,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "passed": true,
+    "tolerance": 1e-09
+  },
+  "restart_recovery_parity": {
+    "events_compared": 1,
+    "features_per_event": 12,
+    "max_abs_diff": 0.0,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "passed": true,
+    "tolerance": 0.0
+  },
+  "test_stream_parity": {
+    "events_compared": 800,
+    "features_per_event": 12,
+    "max_abs_diff": 0.0,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "passed": true,
+    "tolerance": 1e-09
+  }
+}

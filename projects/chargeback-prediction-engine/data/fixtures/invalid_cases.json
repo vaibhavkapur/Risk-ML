@@ -1,0 +1,54 @@
+{
+  "negative_amount_tx": {
+    "transaction_id": "TX_BAD_AMT",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-01-10T00:00:00Z",
+    "settlement_ts": "2025-01-11T00:00:00Z",
+    "amount": -25.0,
+    "currency": "USD",
+    "channel": "card_not_present"
+  },
+  "unsupported_currency_tx": {
+    "transaction_id": "TX_BAD_CCY",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-01-10T00:00:00Z",
+    "settlement_ts": "2025-01-11T00:00:00Z",
+    "amount": 50.0,
+    "currency": "JPY",
+    "channel": "card_not_present"
+  },
+  "naive_timestamp_tx": {
+    "transaction_id": "TX_NO_TZ",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-01-10T00:00:00",
+    "settlement_ts": "2025-01-11T00:00:00Z",
+    "amount": 50.0,
+    "currency": "USD",
+    "channel": "card_not_present"
+  },
+  "settlement_before_tx": {
+    "transaction_id": "TX_BAD_SETTLE",
+    "merchant_id": "M_EST",
+    "transaction_ts": "2025-01-12T00:00:00Z",
+    "settlement_ts": "2025-01-11T00:00:00Z",
+    "amount": 50.0,
+    "currency": "USD",
+    "channel": "card_not_present"
+  },
+  "dispute_before_tx": {
+    "dispute_id": "DSP_BEFORE",
+    "transaction_id": "TX_001",
+    "dispute_ts": "2025-01-01T00:00:00Z",
+    "reason_code": "10.4",
+    "dispute_amount": 100.0,
+    "currency": "USD"
+  },
+  "duplicate_dispute": {
+    "dispute_id": "DSP_001_DUP",
+    "transaction_id": "TX_001",
+    "dispute_ts": "2025-02-15T00:00:00Z",
+    "reason_code": "10.4",
+    "dispute_amount": 100.0,
+    "currency": "USD"
+  }
+}

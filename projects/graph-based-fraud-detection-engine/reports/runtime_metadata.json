@@ -1,0 +1,19 @@
+{
+  "run_id": "run_b737379321a3",
+  "engine_version": "0.1.0",
+  "schema_version": "1.0.0",
+  "feature_version": "1.0.0",
+  "model_version": "0.1.0",
+  "config_version": "1.0.0",
+  "seed": 42,
+  "python_version": "3.9.6",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "dependencies": {
+    "numpy": "1.26.4",
+    "scikit_learn": "1.5.2",
+    "networkx": "3.2.1",
+    "torch_geometric_available": false
+  },
+  "gnn_backend": "numpy_temporal_graphsage",
+  "pyg_note": "Optional PyTorch Geometric is not installed in this environment; using deterministic native NumPy 2-layer TemporalGraphSAGE."
+}

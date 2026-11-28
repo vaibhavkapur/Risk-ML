@@ -1,0 +1,98 @@
+{
+  "config_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "feature_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "base_currency": "USD",
+  "seed": 42,
+  "fx_rates_to_usd": {
+    "USD": 1.0,
+    "EUR": 1.08,
+    "GBP": 1.27,
+    "CAD": 0.74,
+    "SGD": 0.75,
+    "JPY": 0.0067
+  },
+  "supported_channels": [
+    "WIRE",
+    "ACH",
+    "CASH_DEPOSIT",
+    "INTERNAL_TRANSFER",
+    "CARD_SETTLEMENT",
+    "PAYROLL"
+  ],
+  "rolling_windows_hours": {
+    "short": 1,
+    "day": 24,
+    "week": 168,
+    "month": 720
+  },
+  "scenarios": {
+    "structuring": {
+      "enabled": true,
+      "band_min_usd": 7500.0,
+      "band_max_usd": 9999.99,
+      "min_count_24h": 3,
+      "min_total_usd_24h": 24000.0,
+      "channels": ["CASH_DEPOSIT", "WIRE", "ACH", "INTERNAL_TRANSFER"],
+      "weight": 0.85
+    },
+    "rapid_layering": {
+      "enabled": true,
+      "min_hops": 3,
+      "max_hops": 5,
+      "max_chain_window_hours": 12.0,
+      "min_initial_amount_usd": 10000.0,
+      "min_value_preservation_ratio": 0.80,
+      "max_value_preservation_ratio": 1.02,
+      "weight": 0.90
+    },
+    "round_trip_cycle": {
+      "enabled": true,
+      "min_hops": 3,
+      "max_hops": 5,
+      "max_cycle_window_hours": 48.0,
+      "min_amount_usd": 10000.0,
+      "min_return_ratio": 0.75,
+      "weight": 0.92
+    },
+    "mule_fan_in_fan_out": {
+      "enabled": true,
+      "window_hours": 24.0,
+      "min_distinct_senders": 4,
+      "min_inbound_total_usd": 15000.0,
+      "min_passthrough_ratio": 0.80,
+      "max_passthrough_ratio": 1.15,
+      "max_outbound_recipients": 2,
+      "exempt_account_types": ["MERCHANT", "PAYROLL_DISBURSEMENT", "TREASURY"],
+      "weight": 0.82
+    },
+    "dormant_spike": {
+      "enabled": true,
+      "min_dormancy_days": 30.0,
+      "min_burst_amount_usd": 20000.0,
+      "min_burst_ratio_vs_baseline": 5.0,
+      "exempt_account_types": ["TREASURY"],
+      "weight": 0.65
+    }
+  },
+  "ml": {
+    "learning_rate": 0.15,
+    "l2_regularization": 0.05,
+    "epochs": 400,
+    "train_fraction": 0.60,
+    "calibration_fraction": 0.20,
+    "label_maturity_days": 7
+  },
+  "policy": {
+    "rule_only_alert_threshold": 0.50,
+    "hybrid_rule_weight": 0.45,
+    "hybrid_ml_weight": 0.55,
+    "priority_thresholds": {
+      "P1_HIGH": 0.75,
+      "P2_MEDIUM": 0.45,
+      "P3_LOW": 0.25
+    },
+    "max_daily_review_capacity": 25
+  }
+}

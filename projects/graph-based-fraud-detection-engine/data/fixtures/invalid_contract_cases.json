@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "invalid-fixture-v1",
+  "seed": 1,
+  "accounts": [
+    {
+      "account_id": "user@example.com",
+      "created_at": "2025-01-01T00:00:00",
+      "account_age_days_at_start": -5.0,
+      "kyc_tier": "basic",
+      "home_region": "US"
+    }
+  ],
+  "devices": [],
+  "merchants": [],
+  "transactions": [
+    {
+      "tx_id": "tx_000000000001",
+      "account_id": "acc_000000000001",
+      "device_id": "dev_000000000001",
+      "merchant_id": "mer_000000000001",
+      "tx_timestamp": "2025-01-02T10:00:00Z",
+      "amount_usd": -25.0,
+      "currency": "BTC",
+      "channel": "fax"
+    }
+  ],
+  "labels": [
+    {
+      "tx_id": "tx_000000000001",
+      "is_fraud": 1,
+      "tx_timestamp": "2025-01-02T10:00:00Z",
+      "label_available_at": "2025-01-01T10:00:00Z",
+      "label_source": "chargeback"
+    }
+  ]
+}

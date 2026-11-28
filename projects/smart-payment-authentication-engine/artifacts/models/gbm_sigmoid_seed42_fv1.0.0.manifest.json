@@ -1,0 +1,39 @@
+{
+  "artifact_sha256": "f4b38904a1a2b7a2e04f53c61075adbc705e5a00c61b94bcab3d56da80810111",
+  "calibration_method": "sigmoid",
+  "feature_names": [
+    "log_amount_major",
+    "merchant_category_risk",
+    "is_recurring",
+    "is_cross_border",
+    "log_account_age_months",
+    "prior_chargebacks_90d",
+    "tx_count_24h",
+    "log_tx_amount_24h_major",
+    "log_device_age_months",
+    "is_emulator",
+    "is_tor_or_vpn",
+    "ip_velocity_1h",
+    "ip_velocity_24h",
+    "device_trust_score",
+    "biometric_enrolled",
+    "browser_fingerprint_mismatch"
+  ],
+  "feature_version": "1.0.0",
+  "label_maturity_days": 14,
+  "metrics": {
+    "raw_val_brier_score": 0.03756,
+    "raw_val_ece": 0.021482,
+    "val_brier_score": 0.036566,
+    "val_ece": 0.020609,
+    "val_log_loss": 0.141579,
+    "val_roc_auc": 0.856782
+  },
+  "model_version": "gbm_sigmoid_seed42_fv1.0.0",
+  "n_calibration_mature": 474,
+  "n_train_excluded_immature": 1027,
+  "n_train_mature": 1243,
+  "n_train_total": 2270,
+  "seed": 42,
+  "trained_as_of": "2026-01-31T00:00:00Z"
+}

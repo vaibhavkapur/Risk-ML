@@ -1,0 +1,80 @@
+[
+  {
+    "case_name": "post_origination_days_past_due",
+    "expected_error": "POINT_IN_TIME_LEAKAGE_ERROR",
+    "payload": {
+      "application_id": "FIX-LEAK-001",
+      "applicant_id": "USR-LEAK-001",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-01T09:00:00Z",
+      "annual_income_usd": 65000.0,
+      "loan_amount_usd": 15000.0,
+      "loan_term_months": 36,
+      "debt_to_income_ratio": 0.25,
+      "credit_score": 680,
+      "credit_history_months": 84,
+      "revolving_utilization_ratio": 0.40,
+      "delinquencies_24m": 0,
+      "inquiries_6m": 1,
+      "employment_length_years": 4.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "30_44",
+      "region_tier": "METRO",
+      "days_past_due_30d": 1
+    }
+  },
+  {
+    "case_name": "future_feature_as_of_timestamp",
+    "expected_error": "POINT_IN_TIME_LEAKAGE_ERROR",
+    "payload": {
+      "application_id": "FIX-LEAK-002",
+      "applicant_id": "USR-LEAK-002",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-02T10:00:00Z",
+      "annual_income_usd": 65000.0,
+      "loan_amount_usd": 15000.0,
+      "loan_term_months": 36,
+      "debt_to_income_ratio": 0.25,
+      "credit_score": 680,
+      "credit_history_months": 84,
+      "revolving_utilization_ratio": 0.40,
+      "delinquencies_24m": 0,
+      "inquiries_6m": 1,
+      "employment_length_years": 4.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "30_44",
+      "region_tier": "METRO"
+    }
+  },
+  {
+    "case_name": "post_origination_collections_and_chargeoff",
+    "expected_error": "POINT_IN_TIME_LEAKAGE_ERROR",
+    "payload": {
+      "application_id": "FIX-LEAK-003",
+      "applicant_id": "USR-LEAK-003",
+      "schema_version": "1.0.0",
+      "application_timestamp": "2023-05-01T10:00:00Z",
+      "feature_as_of_timestamp": "2023-05-01T08:00:00Z",
+      "annual_income_usd": 55000.0,
+      "loan_amount_usd": 18000.0,
+      "loan_term_months": 48,
+      "debt_to_income_ratio": 0.38,
+      "credit_score": 610,
+      "credit_history_months": 48,
+      "revolving_utilization_ratio": 0.72,
+      "delinquencies_24m": 1,
+      "inquiries_6m": 3,
+      "employment_length_years": 2.0,
+      "home_ownership": "RENT",
+      "loan_purpose": "DEBT_CONSOLIDATION",
+      "age_band": "18_29",
+      "region_tier": "SUBURBAN",
+      "collections_status": "ACTIVE",
+      "chargeoff_amount": 4200.0
+    }
+  }
+]

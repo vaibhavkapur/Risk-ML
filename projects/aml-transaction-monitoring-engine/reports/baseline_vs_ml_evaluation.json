@@ -1,0 +1,128 @@
+{
+  "calibration_metadata": {
+    "calibrated_brier": 0.000541,
+    "calibrated_ece": 0.013357,
+    "calibration_samples": 7,
+    "raw_brier": 0.008592,
+    "raw_ece": 0.067634
+  },
+  "dataset_id": "synthetic_aml_seed42_d90",
+  "dataset_summary": {
+    "benign_rule_false_positives": 13,
+    "synthetic_suspicious_tx_coverage_recall": 1.0,
+    "total_normalized_transactions": 2280,
+    "total_rule_candidates": 62,
+    "true_suspicious_candidates": 49
+  },
+  "evaluation_type": "synthetic_temporal_rule_vs_ml_prioritization",
+  "note": "Measured on synthetic data generated with fixed seed. Not a regulatory compliance benchmark or production performance guarantee.",
+  "out_of_time_test_metrics": {
+    "hybrid_rule_plus_ml_p1_high_queue": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "review_volume": 9,
+      "threshold": 0.75,
+      "tn": 3,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9,
+      "workload_reduction_vs_rules_only": 0.25
+    },
+    "hybrid_rule_plus_ml_p2_and_above": {
+      "at_positive_capacity": {
+        "k": 9,
+        "positives_captured": 9,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reviewed": 9,
+        "total_positives": 9
+      },
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "pr_auc": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "review_volume": 9,
+      "threshold": 0.45,
+      "tn": 3,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9
+    },
+    "ml_calibrated_only": {
+      "at_positive_capacity": {
+        "k": 9,
+        "positives_captured": 9,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reviewed": 9,
+        "total_positives": 9
+      },
+      "brier_score": 0.00119,
+      "ece": 0.015127,
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "pr_auc": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "review_volume": 9,
+      "threshold": 0.5,
+      "tn": 3,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9
+    },
+    "rules_only_baseline": {
+      "at_positive_capacity": {
+        "k": 9,
+        "positives_captured": 6,
+        "precision_at_k": 0.6667,
+        "recall_at_k": 0.6667,
+        "reviewed": 9,
+        "total_positives": 9
+      },
+      "f1": 0.8571,
+      "fn": 0,
+      "fp": 3,
+      "pr_auc": 0.8623,
+      "precision": 0.75,
+      "recall": 1.0,
+      "review_volume": 12,
+      "threshold": 0.5,
+      "tn": 0,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9
+    }
+  },
+  "runtime_environment": {
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.9.6"
+  },
+  "seed": 42,
+  "temporal_split": {
+    "cal_end_iso": "2026-03-12T15:00:00Z",
+    "calibration_count": 7,
+    "calibration_positives": 6,
+    "excluded_immature_cal": 6,
+    "excluded_immature_train": 6,
+    "label_maturity_days": 7,
+    "test_count": 12,
+    "test_positives": 9,
+    "train_count": 31,
+    "train_end_iso": "2026-02-23T15:00:00Z",
+    "train_positives": 25
+  },
+  "versions": {
+    "config_hash": "a738d18172e4413b",
+    "config_version": "1.0.0",
+    "feature_version": "1.0.0",
+    "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+    "policy_version": "1.0.0"
+  }
+}

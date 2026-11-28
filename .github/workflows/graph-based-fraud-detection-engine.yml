@@ -1,0 +1,42 @@
+name: Graph-Based Fraud Detection Engine CI
+
+on:
+  push:
+    paths:
+      - "projects/graph-based-fraud-detection-engine/**"
+      - ".github/workflows/graph-based-fraud-detection-engine.yml"
+  pull_request:
+    paths:
+      - "projects/graph-based-fraud-detection-engine/**"
+      - ".github/workflows/graph-based-fraud-detection-engine.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/graph-based-fraud-detection-engine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate fixtures and verify pipeline
+        run: |
+          python scripts/generate_fixtures.py
+          python scripts/run_pipeline.py --config config/default.yaml
+          python scripts/run_demo.py
+
+      - name: Run full test suite
+        run: pytest -v

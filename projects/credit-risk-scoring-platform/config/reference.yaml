@@ -1,0 +1,95 @@
+# Minimal deterministic reference configuration for fast regression and oracle verification
+
+project:
+  name: "credit-risk-scoring-platform"
+  version: "0.1.0"
+  schema_version: "1.0.0"
+  feature_version: "1.0.0"
+  policy_version: "1.0.0"
+  seed: 7
+
+data:
+  n_applicants: 1000
+  start_date: "2022-01-01"
+  end_date: "2024-06-30"
+  observation_window_days: 365
+  as_of_cutoff_date: "2025-07-01"
+  missing_rate: 0.05
+  shift_start_date: "2024-01-01"
+  shift_magnitude: 0.25
+
+temporal_split:
+  train_end_date: "2023-06-30"
+  calibration_end_date: "2023-12-31"
+  test_end_date: "2024-06-30"
+  require_label_maturity: true
+
+models:
+  logistic_regression:
+    C: 1.0
+    max_iter: 500
+    class_weight: null
+  boosted_trees:
+    backend: "sklearn_hist_gb"
+    max_iter: 60
+    max_depth: 3
+    learning_rate: 0.05
+    min_samples_leaf: 25
+    l2_regularization: 5.0
+  primary_model: "boosted_trees"
+
+calibration:
+  method: "sigmoid"
+  comparison_methods:
+    - "sigmoid"
+    - "isotonic"
+  n_bins: 5
+  clip_epsilon: 0.0001
+  monotonicity_tolerance: 0.000001
+
+evaluation:
+  min_subgroup_sample_size: 20
+  subgroup_columns:
+    - "age_band"
+    - "region_tier"
+  psi_bins: 5
+  psi_warning_threshold: 0.10
+  psi_alert_threshold: 0.25
+  decision_threshold: 0.15
+  baseline_comparison:
+    min_auroc_improvement_or_parity: -0.05
+    max_brier_degradation: 0.025
+    max_ece_calibrated: 0.08
+
+policy:
+  automated_decision_allowed: false
+  risk_bands:
+    - name: "LOW_RISK_REVIEW"
+      max_pd: 0.05
+      queue_priority: "standard"
+      review_sla_hours: 48
+      recommended_action: "ROUTE_TO_STANDARD_UNDERWRITER_CHECK"
+    - name: "MODERATE_RISK_REVIEW"
+      max_pd: 0.15
+      queue_priority: "elevated"
+      review_sla_hours: 24
+      recommended_action: "ROUTE_TO_DETAILED_UNDERWRITER_REVIEW"
+    - name: "HIGH_RISK_REVIEW"
+      max_pd: 0.30
+      queue_priority: "high"
+      review_sla_hours: 12
+      recommended_action: "ROUTE_TO_SENIOR_CREDIT_ANALYST"
+    - name: "VERY_HIGH_RISK_ESCALATION"
+      max_pd: 1.00
+      queue_priority: "urgent"
+      review_sla_hours: 4
+      recommended_action: "ROUTE_TO_CREDIT_COMMITTEE_MANUAL_REVIEW"
+
+explainability:
+  top_k_factors: 5
+  use_shap_if_available: false
+
+paths:
+  artifacts_dir: "reports/reference_artifacts"
+  reports_dir: "reports/reference"
+  review_store_path: "reports/reference/manual_review_queue.json"

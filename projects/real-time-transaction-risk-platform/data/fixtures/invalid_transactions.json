@@ -1,0 +1,120 @@
+{
+  "fixture_id": "invalid_transactions_v1",
+  "description": "Invalid transaction payloads verifying schema, currency, amount, sensitive PAN rejection, and timestamp validation.",
+  "cases": [
+    {
+      "case_name": "unsupported_schema_version",
+      "expected_error": "UnsupportedSchemaVersionError",
+      "payload": {
+        "schema_version": "tx.v99",
+        "event_id": "evt_inv_001",
+        "account_id": "acct_syn_001",
+        "card_token": "card_tok_001",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": 1000,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_01",
+        "event_ts": "2026-01-15T10:00:00Z",
+        "ip_risk_score": 0.1
+      }
+    },
+    {
+      "case_name": "unsupported_currency",
+      "expected_error": "UnsupportedCurrencyError",
+      "payload": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_inv_002",
+        "account_id": "acct_syn_001",
+        "card_token": "card_tok_001",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": 1000,
+        "currency": "JPY",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_01",
+        "event_ts": "2026-01-15T10:00:00Z",
+        "ip_risk_score": 0.1
+      }
+    },
+    {
+      "case_name": "negative_amount",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_inv_003",
+        "account_id": "acct_syn_001",
+        "card_token": "card_tok_001",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": -500,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_01",
+        "event_ts": "2026-01-15T10:00:00Z",
+        "ip_risk_score": 0.1
+      }
+    },
+    {
+      "case_name": "raw_pan_in_card_token_rejected",
+      "expected_error": "SensitiveDataViolationError",
+      "payload": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_inv_004",
+        "account_id": "acct_syn_001",
+        "card_token": "4111111111111111",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": 1000,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_01",
+        "event_ts": "2026-01-15T10:00:00Z",
+        "ip_risk_score": 0.1
+      }
+    },
+    {
+      "case_name": "naive_timestamp_without_timezone",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_inv_005",
+        "account_id": "acct_syn_001",
+        "card_token": "card_tok_001",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": 1000,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_01",
+        "event_ts": "2026-01-15T10:00:00",
+        "ip_risk_score": 0.1
+      }
+    },
+    {
+      "case_name": "ip_risk_out_of_range",
+      "expected_error": "ContractValidationError",
+      "payload": {
+        "schema_version": "tx.v1",
+        "event_id": "evt_inv_006",
+        "account_id": "acct_syn_001",
+        "card_token": "card_tok_001",
+        "merchant_id": "merch_syn_001",
+        "merchant_category": "grocery",
+        "amount_cents": 1000,
+        "currency": "USD",
+        "country_code": "US",
+        "channel": "card_present",
+        "device_id": "dev_01",
+        "event_ts": "2026-01-15T10:00:00Z",
+        "ip_risk_score": 1.5
+      }
+    }
+  ]
+}

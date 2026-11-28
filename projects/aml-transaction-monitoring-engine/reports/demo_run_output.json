@@ -1,0 +1,604 @@
+{
+  "all_evidence_provenance_verified": true,
+  "evaluation_snapshot": {
+    "hybrid_rule_plus_ml_p1_high_queue": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "review_volume": 9,
+      "threshold": 0.75,
+      "tn": 3,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9,
+      "workload_reduction_vs_rules_only": 0.25
+    },
+    "hybrid_rule_plus_ml_p2_and_above": {
+      "at_positive_capacity": {
+        "k": 9,
+        "positives_captured": 9,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reviewed": 9,
+        "total_positives": 9
+      },
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "pr_auc": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "review_volume": 9,
+      "threshold": 0.45,
+      "tn": 3,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9
+    },
+    "ml_calibrated_only": {
+      "at_positive_capacity": {
+        "k": 9,
+        "positives_captured": 9,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "reviewed": 9,
+        "total_positives": 9
+      },
+      "brier_score": 0.00119,
+      "ece": 0.015127,
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "pr_auc": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "review_volume": 9,
+      "threshold": 0.5,
+      "tn": 3,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9
+    },
+    "rules_only_baseline": {
+      "at_positive_capacity": {
+        "k": 9,
+        "positives_captured": 6,
+        "precision_at_k": 0.6667,
+        "recall_at_k": 0.6667,
+        "reviewed": 9,
+        "total_positives": 9
+      },
+      "f1": 0.8571,
+      "fn": 0,
+      "fp": 3,
+      "pr_auc": 0.8623,
+      "precision": 0.75,
+      "recall": 1.0,
+      "review_volume": 12,
+      "threshold": 0.5,
+      "tn": 0,
+      "total_candidates": 12,
+      "total_positives": 9,
+      "tp": 9
+    }
+  },
+  "replay_idempotent": true,
+  "reviewed_case_demo": {
+    "audit_chain_error": null,
+    "audit_chain_verified": true,
+    "audit_events": 3,
+    "case_id": "CASE-ED1EE81EDC3B6112",
+    "current_priority": "P3_LOW",
+    "disposition": "CLEARED_EXPLAINED_ACTIVITY",
+    "override_count": 1,
+    "status": "CLOSED_BENIGN",
+    "system_priority": "P1_HIGH"
+  },
+  "run_diagnostics_initial": {
+    "alerts_generated": 62,
+    "cases_created": 62,
+    "cases_reused_on_replay": 0,
+    "config_hash": "a738d18172e4413b",
+    "config_version": "1.0.0",
+    "duplicate_events_skipped": 0,
+    "errors": [],
+    "feature_version": "1.0.0",
+    "invalid_events_rejected": 0,
+    "missing_entity_mappings": 0,
+    "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+    "policy_version": "1.0.0",
+    "run_id": "RUN-5EB6FAD0E7778CDB",
+    "scenario_hits_count": 63,
+    "total_raw_events": 2280,
+    "valid_normalized_events": 2280,
+    "warnings": []
+  },
+  "run_diagnostics_replay": {
+    "alerts_generated": 62,
+    "cases_created": 0,
+    "cases_reused_on_replay": 62,
+    "config_hash": "a738d18172e4413b",
+    "config_version": "1.0.0",
+    "duplicate_events_skipped": 0,
+    "errors": [],
+    "feature_version": "1.0.0",
+    "invalid_events_rejected": 0,
+    "missing_entity_mappings": 0,
+    "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+    "policy_version": "1.0.0",
+    "run_id": "RUN-5EB6FAD0E7778CDB",
+    "scenario_hits_count": 63,
+    "total_raw_events": 2280,
+    "valid_normalized_events": 2280,
+    "warnings": []
+  },
+  "sample_alerts": [
+    {
+      "advisory_notice": "Advisory transaction-monitoring indicator for human analyst review only. This output is not an automated accusation, legal finding, or regulatory filing.",
+      "alert_id": "ALT-298863D00269DD72",
+      "evidence": {
+        "alert_id": "ALT-298863D00269DD72",
+        "config_hash": "a738d18172e4413b",
+        "entity_mapping_warnings": [],
+        "evidence_id": "EVD-CC5AB245B1A47912",
+        "feature_version": "1.0.0",
+        "graph_path": [
+          "ACC-SYN-CORP-010",
+          "ACC-SYN-CORP-011",
+          "ACC-SYN-CORP-002",
+          "ACC-SYN-CORP-010"
+        ],
+        "involved_tx_ids": [
+          "TX-SYN-002270",
+          "TX-SYN-002271",
+          "TX-SYN-002272"
+        ],
+        "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+        "policy_version": "1.0.0",
+        "provenance_hash": "cc5ab245b1a47912dab43c08728d743e25658fdf3f12b3058274e875289faec7",
+        "source_tx_hashes": [
+          "852f5f34b282e282d6a3af0c62544eff1833f3fe25651e48dc4aa6933c39171f",
+          "18a8f1bc70ca5c5ec946abbefb3b6df54fc9241f4c49b22eeaedc21bfe0508d8",
+          "4518eb000c0b895e916e8c10ed12dfb412479fa6ab0efd71798ca6f31bbfc125"
+        ]
+      },
+      "involved_tx_ids": [
+        "TX-SYN-002270",
+        "TX-SYN-002271",
+        "TX-SYN-002272"
+      ],
+      "prioritization": {
+        "combined_score": 0.963996,
+        "feature_contributions": [
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_LOG_TOTAL_INVOLVED_USD",
+            "description": "Feature 'log_total_involved_usd'=11.694 increased prioritization log-odds by +0.707.",
+            "evidence_metrics": {
+              "feature": "log_total_involved_usd",
+              "log_odds_delta": 0.70719,
+              "value": 11.694281
+            },
+            "weight": 0.70719
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_ENTITY_RISK_TIER_NUM",
+            "description": "Feature 'entity_risk_tier_num'=1.000 increased prioritization log-odds by +0.676.",
+            "evidence_metrics": {
+              "feature": "entity_risk_tier_num",
+              "log_odds_delta": 0.6759,
+              "value": 1.0
+            },
+            "weight": 0.6759
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_PASSTHROUGH_RATIO_24H",
+            "description": "Feature 'passthrough_ratio_24h'=1.054 increased prioritization log-odds by +0.499.",
+            "evidence_metrics": {
+              "feature": "passthrough_ratio_24h",
+              "log_odds_delta": 0.498808,
+              "value": 1.053696
+            },
+            "weight": 0.498808
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_IS_CASH_OR_WIRE_RATIO",
+            "description": "Feature 'is_cash_or_wire_ratio'=1.000 increased prioritization log-odds by +0.476.",
+            "evidence_metrics": {
+              "feature": "is_cash_or_wire_ratio",
+              "log_odds_delta": 0.475854,
+              "value": 1.0
+            },
+            "weight": 0.475854
+          }
+        ],
+        "ml_calibrated_probability": 0.999993,
+        "ml_raw_score": 0.998045,
+        "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+        "policy_version": "1.0.0",
+        "priority": "P1_HIGH",
+        "rule_score": 0.92
+      },
+      "reasons": [
+        {
+          "category": "GRAPH",
+          "code": "GRAPH_ROUND_TRIP_CYCLE",
+          "description": "Detected 3-hop circular flow ACC-SYN-CORP-010 -> ACC-SYN-CORP-011 -> ACC-SYN-CORP-002 -> ACC-SYN-CORP-010 returning $39,007.10 of $41,101.63 USD (94.9%) within 6.00h.",
+          "evidence_metrics": {
+            "elapsed_hours": 6.0,
+            "hops": 3,
+            "origin_amount_usd": 41101.63,
+            "return_ratio": 0.94904,
+            "returned_amount_usd": 39007.1
+          },
+          "weight": 0.92
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_LOG_TOTAL_INVOLVED_USD",
+          "description": "Feature 'log_total_involved_usd'=11.694 increased prioritization log-odds by +0.707.",
+          "evidence_metrics": {
+            "feature": "log_total_involved_usd",
+            "log_odds_delta": 0.70719,
+            "value": 11.694281
+          },
+          "weight": 0.70719
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_ENTITY_RISK_TIER_NUM",
+          "description": "Feature 'entity_risk_tier_num'=1.000 increased prioritization log-odds by +0.676.",
+          "evidence_metrics": {
+            "feature": "entity_risk_tier_num",
+            "log_odds_delta": 0.6759,
+            "value": 1.0
+          },
+          "weight": 0.6759
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_PASSTHROUGH_RATIO_24H",
+          "description": "Feature 'passthrough_ratio_24h'=1.054 increased prioritization log-odds by +0.499.",
+          "evidence_metrics": {
+            "feature": "passthrough_ratio_24h",
+            "log_odds_delta": 0.498808,
+            "value": 1.053696
+          },
+          "weight": 0.498808
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_IS_CASH_OR_WIRE_RATIO",
+          "description": "Feature 'is_cash_or_wire_ratio'=1.000 increased prioritization log-odds by +0.476.",
+          "evidence_metrics": {
+            "feature": "is_cash_or_wire_ratio",
+            "log_odds_delta": 0.475854,
+            "value": 1.0
+          },
+          "weight": 0.475854
+        }
+      ],
+      "scenarios": [
+        "ROUND_TRIP_CYCLE"
+      ],
+      "subject_account_id": "ACC-SYN-CORP-010",
+      "subject_entity_id": "ENT-SYN-CORP-010",
+      "trigger_timestamp_iso": "2026-03-21T19:00:00Z"
+    },
+    {
+      "advisory_notice": "Advisory transaction-monitoring indicator for human analyst review only. This output is not an automated accusation, legal finding, or regulatory filing.",
+      "alert_id": "ALT-116372AD8B8DA232",
+      "evidence": {
+        "alert_id": "ALT-116372AD8B8DA232",
+        "config_hash": "a738d18172e4413b",
+        "entity_mapping_warnings": [],
+        "evidence_id": "EVD-98421C0786DDC0E0",
+        "feature_version": "1.0.0",
+        "graph_path": [
+          "ACC-SYN-CORP-006",
+          "ACC-SYN-CORP-019",
+          "ACC-SYN-CORP-002",
+          "ACC-SYN-CORP-006"
+        ],
+        "involved_tx_ids": [
+          "TX-SYN-002252",
+          "TX-SYN-002253",
+          "TX-SYN-002254"
+        ],
+        "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+        "policy_version": "1.0.0",
+        "provenance_hash": "98421c0786ddc0e07689ac0779496e87bb18958ee12e836dc5a68396ca3ac824",
+        "source_tx_hashes": [
+          "99feb06b9a48d9695318aac67542f5669dd136be3a3fd84a13aa95b2eb080b48",
+          "61d0423148b12ca20c4ec763df4aa50dbf60e3c5f92dc8564a6ed8d9e43bae40",
+          "500ea592772c10956b2bdaa71889ee1d47271c3f9c83a2b282a35a72fe66b94c"
+        ]
+      },
+      "involved_tx_ids": [
+        "TX-SYN-002252",
+        "TX-SYN-002253",
+        "TX-SYN-002254"
+      ],
+      "prioritization": {
+        "combined_score": 0.96399,
+        "feature_contributions": [
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_LOG_TOTAL_INVOLVED_USD",
+            "description": "Feature 'log_total_involved_usd'=11.859 increased prioritization log-odds by +0.849.",
+            "evidence_metrics": {
+              "feature": "log_total_involved_usd",
+              "log_odds_delta": 0.848506,
+              "value": 11.858805
+            },
+            "weight": 0.848506
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_ENTITY_RISK_TIER_NUM",
+            "description": "Feature 'entity_risk_tier_num'=1.000 increased prioritization log-odds by +0.676.",
+            "evidence_metrics": {
+              "feature": "entity_risk_tier_num",
+              "log_odds_delta": 0.6759,
+              "value": 1.0
+            },
+            "weight": 0.6759
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_PASSTHROUGH_RATIO_24H",
+            "description": "Feature 'passthrough_ratio_24h'=1.081 increased prioritization log-odds by +0.518.",
+            "evidence_metrics": {
+              "feature": "passthrough_ratio_24h",
+              "log_odds_delta": 0.51797,
+              "value": 1.081484
+            },
+            "weight": 0.51797
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_IS_CASH_OR_WIRE_RATIO",
+            "description": "Feature 'is_cash_or_wire_ratio'=1.000 increased prioritization log-odds by +0.476.",
+            "evidence_metrics": {
+              "feature": "is_cash_or_wire_ratio",
+              "log_odds_delta": 0.475854,
+              "value": 1.0
+            },
+            "weight": 0.475854
+          }
+        ],
+        "ml_calibrated_probability": 0.999982,
+        "ml_raw_score": 0.996784,
+        "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+        "policy_version": "1.0.0",
+        "priority": "P1_HIGH",
+        "rule_score": 0.92
+      },
+      "reasons": [
+        {
+          "category": "GRAPH",
+          "code": "GRAPH_ROUND_TRIP_CYCLE",
+          "description": "Detected 3-hop circular flow ACC-SYN-CORP-006 -> ACC-SYN-CORP-019 -> ACC-SYN-CORP-002 -> ACC-SYN-CORP-006 returning $45,145.80 of $48,824.44 USD (92.5%) within 7.00h.",
+          "evidence_metrics": {
+            "elapsed_hours": 7.0,
+            "hops": 3,
+            "origin_amount_usd": 48824.44,
+            "return_ratio": 0.924656,
+            "returned_amount_usd": 45145.8
+          },
+          "weight": 0.92
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_LOG_TOTAL_INVOLVED_USD",
+          "description": "Feature 'log_total_involved_usd'=11.859 increased prioritization log-odds by +0.849.",
+          "evidence_metrics": {
+            "feature": "log_total_involved_usd",
+            "log_odds_delta": 0.848506,
+            "value": 11.858805
+          },
+          "weight": 0.848506
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_ENTITY_RISK_TIER_NUM",
+          "description": "Feature 'entity_risk_tier_num'=1.000 increased prioritization log-odds by +0.676.",
+          "evidence_metrics": {
+            "feature": "entity_risk_tier_num",
+            "log_odds_delta": 0.6759,
+            "value": 1.0
+          },
+          "weight": 0.6759
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_PASSTHROUGH_RATIO_24H",
+          "description": "Feature 'passthrough_ratio_24h'=1.081 increased prioritization log-odds by +0.518.",
+          "evidence_metrics": {
+            "feature": "passthrough_ratio_24h",
+            "log_odds_delta": 0.51797,
+            "value": 1.081484
+          },
+          "weight": 0.51797
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_IS_CASH_OR_WIRE_RATIO",
+          "description": "Feature 'is_cash_or_wire_ratio'=1.000 increased prioritization log-odds by +0.476.",
+          "evidence_metrics": {
+            "feature": "is_cash_or_wire_ratio",
+            "log_odds_delta": 0.475854,
+            "value": 1.0
+          },
+          "weight": 0.475854
+        }
+      ],
+      "scenarios": [
+        "ROUND_TRIP_CYCLE"
+      ],
+      "subject_account_id": "ACC-SYN-CORP-006",
+      "subject_entity_id": "ENT-SYN-CORP-006",
+      "trigger_timestamp_iso": "2026-03-12T17:00:00Z"
+    },
+    {
+      "advisory_notice": "Advisory transaction-monitoring indicator for human analyst review only. This output is not an automated accusation, legal finding, or regulatory filing.",
+      "alert_id": "ALT-810BBF0CEF1A1D73",
+      "evidence": {
+        "alert_id": "ALT-810BBF0CEF1A1D73",
+        "config_hash": "a738d18172e4413b",
+        "entity_mapping_warnings": [],
+        "evidence_id": "EVD-2044D6C7EB0C5CC3",
+        "feature_version": "1.0.0",
+        "graph_path": [
+          "ACC-SYN-CORP-004",
+          "ACC-SYN-CORP-012",
+          "ACC-SYN-CORP-014",
+          "ACC-SYN-CORP-004"
+        ],
+        "involved_tx_ids": [
+          "TX-SYN-002162",
+          "TX-SYN-002163",
+          "TX-SYN-002164"
+        ],
+        "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+        "policy_version": "1.0.0",
+        "provenance_hash": "2044d6c7eb0c5cc3f4cb0afb0ad196375b889584cf500028c7c983192711e393",
+        "source_tx_hashes": [
+          "35cc88b54c9218e5b3bd06e5ad4c4af06d1d02fabb2a005a695c1832e34dc0d6",
+          "6138567320fe691af9b6983a428d896d59ff1600f19c2ca9b5aee5c26c4ee8bc",
+          "3f9a3e8223719ac75a0a0973e7661f01bfb4385d802fbcb00a04b79d2c277753"
+        ]
+      },
+      "involved_tx_ids": [
+        "TX-SYN-002162",
+        "TX-SYN-002163",
+        "TX-SYN-002164"
+      ],
+      "prioritization": {
+        "combined_score": 0.963987,
+        "feature_contributions": [
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_LOG_TOTAL_INVOLVED_USD",
+            "description": "Feature 'log_total_involved_usd'=11.726 increased prioritization log-odds by +0.735.",
+            "evidence_metrics": {
+              "feature": "log_total_involved_usd",
+              "log_odds_delta": 0.734855,
+              "value": 11.726489
+            },
+            "weight": 0.734855
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_ENTITY_RISK_TIER_NUM",
+            "description": "Feature 'entity_risk_tier_num'=1.000 increased prioritization log-odds by +0.676.",
+            "evidence_metrics": {
+              "feature": "entity_risk_tier_num",
+              "log_odds_delta": 0.6759,
+              "value": 1.0
+            },
+            "weight": 0.6759
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_PASSTHROUGH_RATIO_24H",
+            "description": "Feature 'passthrough_ratio_24h'=1.045 increased prioritization log-odds by +0.493.",
+            "evidence_metrics": {
+              "feature": "passthrough_ratio_24h",
+              "log_odds_delta": 0.493148,
+              "value": 1.045489
+            },
+            "weight": 0.493148
+          },
+          {
+            "category": "ML_FEATURE",
+            "code": "ML_DRIVER_IS_CASH_OR_WIRE_RATIO",
+            "description": "Feature 'is_cash_or_wire_ratio'=1.000 increased prioritization log-odds by +0.476.",
+            "evidence_metrics": {
+              "feature": "is_cash_or_wire_ratio",
+              "log_odds_delta": 0.475854,
+              "value": 1.0
+            },
+            "weight": 0.475854
+          }
+        ],
+        "ml_calibrated_probability": 0.999976,
+        "ml_raw_score": 0.996233,
+        "model_version": "logreg-platt-1.0.0-93b3da0d0608",
+        "policy_version": "1.0.0",
+        "priority": "P1_HIGH",
+        "rule_score": 0.92
+      },
+      "reasons": [
+        {
+          "category": "GRAPH",
+          "code": "GRAPH_ROUND_TRIP_CYCLE",
+          "description": "Detected 3-hop circular flow ACC-SYN-CORP-004 -> ACC-SYN-CORP-012 -> ACC-SYN-CORP-014 -> ACC-SYN-CORP-004 returning $40,361.62 of $42,197.62 USD (95.6%) within 7.00h.",
+          "evidence_metrics": {
+            "elapsed_hours": 7.0,
+            "hops": 3,
+            "origin_amount_usd": 42197.62,
+            "return_ratio": 0.95649,
+            "returned_amount_usd": 40361.62
+          },
+          "weight": 0.92
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_LOG_TOTAL_INVOLVED_USD",
+          "description": "Feature 'log_total_involved_usd'=11.726 increased prioritization log-odds by +0.735.",
+          "evidence_metrics": {
+            "feature": "log_total_involved_usd",
+            "log_odds_delta": 0.734855,
+            "value": 11.726489
+          },
+          "weight": 0.734855
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_ENTITY_RISK_TIER_NUM",
+          "description": "Feature 'entity_risk_tier_num'=1.000 increased prioritization log-odds by +0.676.",
+          "evidence_metrics": {
+            "feature": "entity_risk_tier_num",
+            "log_odds_delta": 0.6759,
+            "value": 1.0
+          },
+          "weight": 0.6759
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_PASSTHROUGH_RATIO_24H",
+          "description": "Feature 'passthrough_ratio_24h'=1.045 increased prioritization log-odds by +0.493.",
+          "evidence_metrics": {
+            "feature": "passthrough_ratio_24h",
+            "log_odds_delta": 0.493148,
+            "value": 1.045489
+          },
+          "weight": 0.493148
+        },
+        {
+          "category": "ML_FEATURE",
+          "code": "ML_DRIVER_IS_CASH_OR_WIRE_RATIO",
+          "description": "Feature 'is_cash_or_wire_ratio'=1.000 increased prioritization log-odds by +0.476.",
+          "evidence_metrics": {
+            "feature": "is_cash_or_wire_ratio",
+            "log_odds_delta": 0.475854,
+            "value": 1.0
+          },
+          "weight": 0.475854
+        }
+      ],
+      "scenarios": [
+        "ROUND_TRIP_CYCLE"
+      ],
+      "subject_account_id": "ACC-SYN-CORP-004",
+      "subject_entity_id": "ENT-SYN-CORP-004",
+      "trigger_timestamp_iso": "2026-01-27T18:00:00Z"
+    }
+  ]
+}
